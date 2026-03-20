@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses"
+  xmlns:v8="http://v8.1c.ru/8.1/data/core"
+  xmlns:xr="http://v8.1c.ru/8.3/xcf/readable"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  version="2.21">
+  <Subsystem uuid="b2c3d4e5-f6a7-8901-bcde-f12345678901">
+    <Properties>
+      <Name>НУ_НефтеУчёт</Name>
+      <Synonym>
+        <v8:item>
+          <v8:lang>ru</v8:lang>
+          <v8:content>НефтеУчёт</v8:content>
+        </v8:item>
+      </Synonym>
+      <IncludeHelpInContents>true</IncludeHelpInContents>
+      <IncludeInCommandInterface>true</IncludeInCommandInterface>
+      <Content>
+        <xr:Item xsi:type="xr:MDObjectRef">DataProcessor.НУ_Загрузка</xr:Item>
+        <xr:Item xsi:type="xr:MDObjectRef">InformationRegister.НУ_Настройки</xr:Item>
+        <xr:Item xsi:type="xr:MDObjectRef">CommonModule.НУ_ApiКлиент</xr:Item>
+        <xr:Item xsi:type="xr:MDObjectRef">CommonModule.НУ_СозданиеДокументов</xr:Item>
+      </Content>
+    </Properties>
+    <ChildObjects/>
+  </Subsystem>
+</MetaDataObject>

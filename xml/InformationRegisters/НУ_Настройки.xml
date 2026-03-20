@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses"
+  xmlns:v8="http://v8.1c.ru/8.1/data/core"
+  xmlns:xr="http://v8.1c.ru/8.3/xcf/readable"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  version="2.21">
+  <InformationRegister uuid="f6a7b8c9-d0e1-2345-fabc-456789012345">
+    <Properties>
+      <Name>НУ_Настройки</Name>
+      <Synonym>
+        <v8:item>
+          <v8:lang>ru</v8:lang>
+          <v8:content>НУ Настройки</v8:content>
+        </v8:item>
+      </Synonym>
+      <Comment>Параметры расширения НефтеУчёт: API, маппинг складов, номенклатура</Comment>
+      <InformationRegisterPeriodicity>Nonperiodical</InformationRegisterPeriodicity>
+      <WriteMode>Independent</WriteMode>
+      <DataLockControlMode>Managed</DataLockControlMode>
+    </Properties>
+    <ChildObjects>
+      <Dimension uuid="a1234567-b890-cdef-1234-567890abcde1">
+        <Properties>
+          <Name>Ключ</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>Ключ</v8:content>
+            </v8:item>
+          </Synonym>
+          <Type>
+            <v8:Type>xs:string</v8:Type>
+            <v8:StringQualifiers>
+              <v8:Length>260</v8:Length>
+              <v8:AllowedLength>Variable</v8:AllowedLength>
+            </v8:StringQualifiers>
+          </Type>
+          <MainFilter>true</MainFilter>
+        </Properties>
+      </Dimension>
+      <Resource uuid="a1234567-b890-cdef-1234-567890abcde2">
+        <Properties>
+          <Name>Значение</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>Значение</v8:content>
+            </v8:item>
+          </Synonym>
+          <Type>
+            <v8:Type>xs:string</v8:Type>
+            <v8:StringQualifiers>
+              <v8:Length>1024</v8:Length>
+              <v8:AllowedLength>Variable</v8:AllowedLength>
+            </v8:StringQualifiers>
+          </Type>
+        </Properties>
+      </Resource>
+      <Resource uuid="a1234567-b890-cdef-1234-567890abcde3">
+        <Properties>
+          <Name>Описание</Name>
+          <Synonym>
+            <v8:item>
+              <v8:lang>ru</v8:lang>
+              <v8:content>Описание</v8:content>
+            </v8:item>
+          </Synonym>
+          <Type>
+            <v8:Type>xs:string</v8:Type>
+            <v8:StringQualifiers>
+              <v8:Length>500</v8:Length>
+              <v8:AllowedLength>Variable</v8:AllowedLength>
+            </v8:StringQualifiers>
+          </Type>
+        </Properties>
+      </Resource>
+    </ChildObjects>
+  </InformationRegister>
+</MetaDataObject>

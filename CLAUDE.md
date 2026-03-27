@@ -1,4 +1,4 @@
-# НефтеУчёт — расширение 1С:БП 3.0
+# TradeLedger — расширение 1С:БП 3.0
 
 ## Суть
 
@@ -21,19 +21,22 @@ MVP — минимальное рабочее расширение:
 
 ## Префикс объектов
 
-`НУ_` (НефтеУчёт)
+Актуальный и единственный рабочий контур: `TL_` (`TradeLedger`)
+
+Legacy-контур `НУ_` удалён из `src/` и `xml/`. В git он остаётся только как история удалённых файлов до коммита.
 
 ## Разработка
 
-- Исходники: `xml/` (XML-выгрузка) + `src/` (.bsl модули)
-- Сборка: `scripts/build.ps1` → `1cv8.exe DESIGNER /LoadConfigFromFiles /DumpCfg`
+- Актуальные исходники: `xml-v4/` + `src/`
+- `xml/` больше не используется для сборки
+- Сборка по умолчанию: `scripts/build.ps1` → `TradeLedger` из `xml-v4/`
 - Язык: BSL (встроенный язык 1С)
 - VS Code + BSL плагин для редактирования
 
 ## API
 
 **Base URL:** `https://pos.autooplata.ru/tms`
-- `POST /v1/login` → JWT (UserTest / sys5tem6 для тестов)
+- `POST /v2/login` → JWT
 - `GET /v1/report/shift_report?system=&station=&shift=` → смена
 - `GET /v1/report/receipts?system=&station=&shift=` → ТТН
 - Подробнее: `ELSYPLUS/TF_1C_Projects/docs/API_AUTOOPLATA.md`

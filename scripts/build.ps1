@@ -1,20 +1,26 @@
-[Console]::InputEncoding = [System.Text.Encoding]::UTF8
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-$OutputEncoding = [System.Text.Encoding]::UTF8
-
-param(
+﻿param(
     [string]$PlatformExe = '',
     [string]$ConnectionString = '',
-    [string]$ExtensionName = 'НУ_НефтеУчёт',
+    [string]$ExtensionName = 'TradeLedger',
+    [string]$XmlPath = '',
     [switch]$LoadOnly,
     [switch]$UpdateDB
 )
 
+[Console]::InputEncoding = [System.Text.Encoding]::UTF8
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
+
 # === Определение путей ===
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $ProjectRoot = Split-Path -Parent $ScriptDir
-$XmlPath = Join-Path $ProjectRoot 'xml'
 $BuildDir = Join-Path $ProjectRoot 'build'
+$srcCommon = Join-Path $ProjectRoot 'src\CommonModules'
+$srcDP = Join-Path $ProjectRoot 'src\DataProcessors'
+
+if (-not $XmlPath) {
+    $XmlPath = Join-Path $ProjectRoot 'xml-v4'
+}
 
 # === Поиск платформы 1С ===
 if (-not $PlatformExe) {
@@ -45,20 +51,68 @@ Write-Host "Расширение: $ExtensionName" -ForegroundColor Cyan
 # === Копирование .bsl из src/ в xml/ ===
 Write-Host "`nКопирование .bsl модулей из src/ в xml/..." -ForegroundColor Yellow
 
-$srcCommon = Join-Path $ProjectRoot 'src\CommonModules'
-$srcDP = Join-Path $ProjectRoot 'src\DataProcessors'
+if (-not (Test-Path $XmlPath)) {
+    Write-Error "XML-путь не найден: $XmlPath"
+    exit 1
+}
 
-if (Test-Path "$srcCommon\НУ_ApiКлиент.bsl") {
-    Copy-Item "$srcCommon\НУ_ApiКлиент.bsl" "$XmlPath\CommonModules\НУ_ApiКлиент\Ext\Module.bsl" -Force
-    Write-Host "  НУ_ApiКлиент.bsl -> OK"
-}
-if (Test-Path "$srcCommon\НУ_СозданиеДокументов.bsl") {
-    Copy-Item "$srcCommon\НУ_СозданиеДокументов.bsl" "$XmlPath\CommonModules\НУ_СозданиеДокументов\Ext\Module.bsl" -Force
-    Write-Host "  НУ_СозданиеДокументов.bsl -> OK"
-}
-if (Test-Path "$srcDP\НУ_Загрузка\Forms\Форма\Module.bsl") {
-    Copy-Item "$srcDP\НУ_Загрузка\Forms\Форма\Module.bsl" "$XmlPath\DataProcessors\НУ_Загрузка\Forms\Форма\Ext\Form\Module.bsl" -Force
-    Write-Host "  НУ_Загрузка форма -> OK"
+$CopyMap = @(
+    @{
+        Source = Join-Path $srcCommon 'TL_ApiКлиент.bsl'
+        Target = Join-Path $XmlPath 'CommonModules\TL_ApiКлиент\Ext\Module.bsl'
+        Label = 'TL_ApiКлиент.bsl'
+    },
+    @{
+        Source = Join-Path $srcCommon 'TL_Настройки.bsl'
+        Target = Join-Path $XmlPath 'CommonModules\TL_Настройки\Ext\Module.bsl'
+        Label = 'TL_Настройки.bsl'
+    },
+    @{
+        Source = Join-Path $srcCommon 'TL_СозданиеДокументов.bsl'
+        Target = Join-Path $XmlPath 'CommonModules\TL_СозданиеДокументов\Ext\Module.bsl'
+        Label = 'TL_СозданиеДокументов.bsl'
+    },
+    @{
+        Source = Join-Path $srcCommon 'TL_HTMLГенератор.bsl'
+        Target = Join-Path $XmlPath 'CommonModules\TL_HTMLГенератор\Ext\Module.bsl'
+        Label = 'TL_HTMLГенератор.bsl'
+    },
+    @{
+        Source = Join-Path $srcCommon 'TL_Маппинг.bsl'
+        Target = Join-Path $XmlPath 'CommonModules\TL_Маппинг\Ext\Module.bsl'
+        Label = 'TL_Маппинг.bsl'
+    },
+    @{
+        Source = Join-Path $srcCommon 'TL_РегистрСтатусов.bsl'
+        Target = Join-Path $XmlPath 'CommonModules\TL_РегистрСтатусов\Ext\Module.bsl'
+        Label = 'TL_РегистрСтатусов.bsl'
+    },
+    @{
+        Source = Join-Path $srcDP 'TL_Загрузка\Forms\Форма\Module.bsl'
+        Target = Join-Path $XmlPath 'DataProcessors\TL_Загрузка\Forms\Форма\Ext\Form\Module.bsl'
+        Label = 'TL_Загрузка форма'
+    },
+    @{
+        Source = Join-Path $srcDP 'TL_НастройкаРасширения\Forms\Форма\Module.bsl'
+        Target = Join-Path $XmlPath 'DataProcessors\TL_НастройкаРасширения\Forms\Форма\Ext\Form\Module.bsl'
+        Label = 'TL_НастройкаРасширения форма'
+    }
+)
+
+foreach ($Item in $CopyMap) {
+    if (-not (Test-Path $Item.Source)) {
+        Write-Warning "  Исходник не найден: $($Item.Source)"
+        continue
+    }
+
+    $TargetDir = Split-Path -Parent $Item.Target
+    if (-not (Test-Path $TargetDir)) {
+        Write-Warning "  Целевая папка не найдена: $TargetDir"
+        continue
+    }
+
+    Copy-Item $Item.Source $Item.Target -Force
+    Write-Host "  $($Item.Label) -> OK"
 }
 
 # === Проверка строки подключения ===

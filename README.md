@@ -1,4 +1,4 @@
-# НефтеУчёт — расширение для 1С:Бухгалтерия 3.0
+# TradeLedger — расширение для 1С:Бухгалтерия 3.0
 
 Расширение конфигурации (.cfe) для автоматизации учёта нефтепродуктов на сетях АЗС.
 
@@ -22,23 +22,30 @@
 
 ```
 NefteUchet/
-├── xml/                    # XML-выгрузка расширения (исходники для 1С)
-├── src/                    # .bsl модули (копируются в xml/ при сборке)
-│   ├── НУ_ApiКлиент.bsl       # HTTP-клиент к API
-│   ├── НУ_СозданиеДокументов.bsl  # Создание типовых документов 1С
-│   └── НУ_Загрузка_Форма.bsl  # Модуль формы обработки
+├── xml-v4/                 # актуальная XML-выгрузка расширения TradeLedger (TL_)
+├── xml/                    # архивный placeholder, legacy XML-контур удалён
+├── src/                    # .bsl модули, копируются в XML при сборке
+│   ├── CommonModules/
+│   │   ├── TL_ApiКлиент.bsl
+│   │   ├── TL_Маппинг.bsl
+│   │   ├── TL_Настройки.bsl
+│   │   ├── TL_СозданиеДокументов.bsl
+│   │   ├── TL_HTMLГенератор.bsl
+│   │   └── TL_РегистрСтатусов.bsl
+│   └── DataProcessors/
+│       ├── TL_Загрузка/Forms/Форма/Module.bsl
+│       └── TL_НастройкаРасширения/Forms/Форма/Module.bsl
 ├── scripts/
-│   └── build.ps1           # Сборка .cfe из XML
-├── docs/                   # Документация
-├── build/                  # Собранные .cfe (в .gitignore)
-├── .env.example            # Пример настроек
+│   └── build.ps1           # сборка .cfe из XML
+├── docs/                   # документация
+├── build/                  # собранные .cfe (в .gitignore)
 └── README.md
 ```
 
 ## Сборка
 
 ```powershell
-# Собрать .cfe из XML
+# Собрать актуальный TradeLedger (.cfe из xml-v4)
 .\scripts\build.ps1 -PlatformExe "C:\Program Files\1cv8\8.3.27.1508\bin\1cv8.exe"
 ```
 
@@ -46,13 +53,13 @@ NefteUchet/
 
 1. Открыть 1С в режиме Конфигуратора
 2. Конфигурация → Расширения конфигурации → Добавить из файла
-3. Выбрать `build/НефтеУчёт.cfe`
+3. Выбрать `build/TradeLedger.cfe`
 4. Обновить конфигурацию базы данных
 
 ## API
 
 Расширение получает данные из STS API (`pos.autooplata.ru/tms`):
-- `POST /v1/login` → JWT-токен
+- `POST /v2/login` → JWT-токен
 - `GET /v1/report/shift_report` → сменный отчёт
 - `GET /v1/report/receipts` → поступления (ТТН)
 

@@ -1,68 +1,78 @@
 # -*- coding: utf-8 -*-
-"""Verify all init chain docs and stock. Run: py -3.13-32 scripts/verify_all.py"""
-import pythoncom, io
-pythoncom.CoInitialize()
-import win32com.client
+"""Полная проверка проведённых документов TradeLedger."""
+import sys, win32com.client
+sys.stdout.reconfigure(encoding='utf-8')
 
-conn = win32com.client.Dispatch("V83.COMConnector")
-ib = conn.Connect(r'File="D:\Users\magsp\GIG Base2";Usr="Гайворонская Татьяна";Pwd="12345"')
+connector = win32com.client.Dispatch('V83.COMConnector')
+conn = connector.Connect('File="D:\\Users\\magsp\\GIG Base2";Usr="Гайворонская Татьяна";Pwd="12345";')
 
-out = io.open(r"D:\Users\magsp\ELSYPLUS\NefteUchet\build\verify.txt", "w", encoding="utf-8")
+print('=' * 80)
+print('ПОЛНАЯ ПРОВЕРКА ПРОВЕДЁННЫХ ДОКУМЕНТОВ')
+print('=' * 80)
 
-# 1. Find INIT documents
-out.write("=== Документы TL|INIT ===\n")
-q = ib.NewObject("Query")
-q.Text = """ВЫБРАТЬ Ссылка, Номер, Дата, Проведен, Комментарий
-ИЗ Документ.ПоступлениеТоваровУслуг
-ГДЕ Комментарий ПОДОБНО &М И НЕ ПометкаУдаления
-УПОРЯДОЧИТЬ ПО Дата УБЫВ"""
-q.УстановитьПараметр("М", "%TL|INIT%")
-r = q.Выполнить().Выбрать()
-while r.Следующий():
-    out.write(f"  Поступление: {r.Номер} {r.Дата} Проведен={r.Проведен} [{r.Комментарий}]\n")
+# === 1. Все проведённые TL| документы ===
+all_refs = []
+for doc_type in ['ОтчетОРозничныхПродажах', 'ПеремещениеТоваров', 'КомплектацияНоменклатуры']:
+    q = conn.NewObject('Query')
+    q.Text = 'SELECT Ссылка, Номер, Дата, Комментарий FROM Документ.' + doc_type + ' WHERE Комментарий LIKE "%TL|%" AND Проведен = TRUE ORDER BY Дата DESC'
+    r = q.Execute().Choose()
+    docs = []
+    while r.Next():
+        docs.append((r.Ссылка, str(r.Номер).strip(), str(r.Дата)[:10], str(r.Комментарий)[:70], doc_type))
+        all_refs.append((r.Ссылка, str(r.Комментарий)[:60], doc_type))
+    if docs:
+        print(f'\n[{doc_type}] — {len(docs)} проведён(о):')
+        for _, num, dt, komm, _ in docs:
+            print(f'  №{num} {dt} | {komm}')
 
-q2 = ib.NewObject("Query")
-q2.Text = """ВЫБРАТЬ Ссылка, Номер, Дата, Проведен, Комментарий
-ИЗ Документ.ПеремещениеТоваров
-ГДЕ Комментарий ПОДОБНО &М И НЕ ПометкаУдаления
-УПОРЯДОЧИТЬ ПО Дата УБЫВ"""
-q2.УстановитьПараметр("М", "%TL|INIT%")
-r2 = q2.Выполнить().Выбрать()
-while r2.Следующий():
-    out.write(f"  Перемещение: {r2.Номер} {r2.Дата} Проведен={r2.Проведен} [{r2.Комментарий}]\n")
+# === 2. Проводки ===
+print()
+print('=' * 80)
+print('ПРОВОДКИ')
+print('=' * 80)
 
-q3 = ib.NewObject("Query")
-q3.Text = """ВЫБРАТЬ Ссылка, Номер, Дата, Проведен, Комментарий
-ИЗ Документ.КомплектацияНоменклатуры
-ГДЕ Комментарий ПОДОБНО &М И НЕ ПометкаУдаления
-УПОРЯДОЧИТЬ ПО Дата УБЫВ"""
-q3.УстановитьПараметр("М", "%TL|INIT%")
-r3 = q3.Выполнить().Выбрать()
-while r3.Следующий():
-    out.write(f"  Комплектация: {r3.Номер} {r3.Дата} Проведен={r3.Проведен} [{r3.Комментарий}]\n")
+total_docs = 0
+no_postings = []
 
-# 2. Stock on warehouses
-out.write("\n=== Остатки на складах ===\n")
-for wh_name in ["Основной склад", "АКЗС Витебский"]:
-    out.write(f"\n  Склад: {wh_name}\n")
-    q4 = ib.NewObject("Query")
-    q4.Text = """ВЫБРАТЬ
-        Номенклатура.Наименование КАК Наим,
-        КоличествоОстаток КАК Кол,
-        СтоимостьОстаток КАК Стоимость
-    ИЗ РегистрНакопления.ТоварыНаСкладах.Остатки(, Склад.Наименование = &С)
-    ГДЕ КоличествоОстаток <> 0"""
-    q4.УстановитьПараметр("С", wh_name)
-    try:
-        r4 = q4.Выполнить().Выбрать()
-        found = False
-        while r4.Следующий():
-            found = True
-            out.write(f"    {r4.Наим}: {r4.Кол} (стоимость: {r4.Стоимость})\n")
-        if not found:
-            out.write("    ПУСТО\n")
-    except Exception as e:
-        out.write(f"    Ошибка: {e}\n")
+for ref, komm, dtype in all_refs:
+    q2 = conn.NewObject('Query')
+    q2.Text = 'SELECT СчетДт.Код AS Дт, СчетКт.Код AS Кт, Сумма AS С, КоличествоДт AS КД, КоличествоКт AS КК FROM РегистрБухгалтерии.Хозрасчетный WHERE Регистратор = &Рег ORDER BY НомерСтроки'
+    q2.SetParameter('Рег', ref)
+    r2 = q2.Execute().Choose()
+    lines = []
+    doc_sum = 0
+    while r2.Next():
+        dt = str(r2.Дт).strip()
+        kt = str(r2.Кт).strip()
+        s = float(r2.С) if r2.С else 0
+        kd = float(r2.КД) if r2.КД else 0
+        kk = float(r2.КК) if r2.КК else 0
+        doc_sum += s
+        kol = ''
+        if kd: kol += f' Дт={kd:,.3f}'
+        if kk: kol += f' Кт={kk:,.3f}'
+        lines.append(f'    Дт {dt:8s} Кт {kt:8s} | {s:>12,.2f}{kol}')
 
-out.close()
-print("Results saved to build/verify.txt")
+    if lines:
+        print(f'\n  [{komm}]')
+        for l in lines:
+            print(l)
+        print(f'  ИТОГО: {doc_sum:>14,.2f} р ({len(lines)} проводок)')
+        total_docs += 1
+    else:
+        no_postings.append(f'  {komm} ({dtype})')
+
+print(f'\nВсего документов с проводками: {total_docs}')
+
+# === 3. Проведённые без проводок ===
+if no_postings:
+    print()
+    print('=' * 80)
+    print(f'ПРОВЕДЁННЫЕ БЕЗ ПРОВОДОК ({len(no_postings)}):')
+    for np in no_postings:
+        print(np)
+else:
+    print('Все проведённые документы имеют проводки.')
+
+print()
+print('=' * 80)

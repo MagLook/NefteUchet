@@ -73,21 +73,14 @@
 			<CommonModule>TL_Маппинг</CommonModule>
 			<CommonModule>TL_РегистрСтатусов</CommonModule>
 			<CommonModule>TL_HTMLГенератор</CommonModule>
-			<Catalog>TL_АЗС</Catalog>
 			<Catalog>Склады</Catalog>
 			<Catalog>Номенклатура</Catalog>
 			<Catalog>Контрагенты</Catalog>
 			<Catalog>Организации</Catalog>
-			<Catalog>TL_ВидыТоплива</Catalog>
-			<Catalog>TL_ВидыОплат</Catalog>
-			<Enum>TL_ТипыСтанций</Enum>
-			<Enum>TL_ТипыОплат</Enum>
 			<DataProcessor>TL_Загрузка</DataProcessor>
 			<DataProcessor>TL_НастройкаРасширения</DataProcessor>
 			<InformationRegister>TL_Настройки</InformationRegister>
 			<InformationRegister>TL_СтатусыЗагрузки</InformationRegister>
-			<InformationRegister>TL_ПлотностьПартий</InformationRegister>
-			<InformationRegister>TL_МаппингОплат</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

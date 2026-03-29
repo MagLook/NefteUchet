@@ -1,26 +1,17 @@
 ﻿[Console]::InputEncoding = [System.Text.Encoding]::UTF8
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
 
-$platform = "C:\Program Files (x86)\1cv8\8.3.27.2074\bin\1cv8.exe"
-$base = "D:\Users\magsp\GIG Base2"
-$xml = "D:\Users\magsp\ELSYPLUS\NefteUchet\xml-v4"
-$ext = "TradeLedger"
-$user = "Гайворонская Татьяна"
-$pwd = "12345"
+# === Совместимость: делегирует в dev.ps1 ===
+Write-Host "update_gig.ps1 -> dev.ps1" -ForegroundColor Yellow
 
-Write-Host "Загрузка XML в расширение $ext..." -ForegroundColor Cyan
-Write-Host "База: $base"
-Write-Host "XML:  $xml"
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$devScript = Join-Path $scriptDir 'dev.ps1'
 
-$args = @(
-    "DESIGNER",
-    "/F", $base,
-    "/N", $user,
-    "/P", $pwd,
-    "/LoadConfigFromFiles", $xml,
-    "-Extension", $ext,
-    "/UpdateDBCfg"
-)
+if (-not (Test-Path $devScript)) {
+    Write-Error "Не найден dev.ps1: $devScript"
+    exit 1
+}
 
-$proc = Start-Process -FilePath $platform -ArgumentList $args -Wait -PassThru -NoNewWindow
-Write-Host "Код возврата: $($proc.ExitCode)" -ForegroundColor $(if ($proc.ExitCode -eq 0) {"Green"} else {"Red"})
+& $devScript
+exit $LASTEXITCODE

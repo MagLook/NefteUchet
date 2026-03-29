@@ -17,9 +17,6 @@
 			<Picture/>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.TL_Загрузка</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Catalog.TL_АЗС</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Catalog.TL_ВидыТоплива</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Catalog.TL_ВидыОплат</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.TL_НастройкаРасширения</xr:Item>
 			</Content>
 		</Properties>

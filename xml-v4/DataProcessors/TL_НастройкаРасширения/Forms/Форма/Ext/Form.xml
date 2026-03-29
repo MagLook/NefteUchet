@@ -50,6 +50,11 @@
 							<CommandName>Form.Command.КомандаГотово</CommandName>
 							<ExtendedTooltip name="КомандаГотовоРасширеннаяПодсказка" id="153"/>
 						</Button>
+						<Button name="КомандаЗаполнитьПоУмолчанию" id="250">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.КомандаЗаполнитьПоУмолчанию</CommandName>
+							<ExtendedTooltip name="КомандаЗаполнитьПоУмолчаниюПодсказка" id="251"/>
+						</Button>
 					</ChildItems>
 				</UsualGroup>
 				<Pages name="СтраницаШаг1" id="3">
@@ -206,6 +211,16 @@
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.КомандаДобавитьСтанцию</CommandName>
 					<ExtendedTooltip name="КомандаДобавитьСтанциюРасширеннаяПодсказка" id="64"/>
+				</Button>
+				<Button name="КомандаЗагрузитьСтанцииИзAPI" id="200">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.КомандаЗагрузитьСтанцииИзAPI</CommandName>
+					<ExtendedTooltip name="КомандаЗагрузитьСтанцииИзAPIРасширеннаяПодсказка" id="201"/>
+				</Button>
+				<Button name="КомандаСоздатьНачальныеОстатки" id="202">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.КомандаСоздатьНачальныеОстатки</CommandName>
+					<ExtendedTooltip name="КомандаСоздатьНачальныеОстаткиРасширеннаяПодсказка" id="203"/>
 				</Button>
 				<Pages name="СтраницаШаг3" id="65">
 					<Title>
@@ -923,6 +938,51 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ДобавитьСтанцию</Action>
+		</Command>
+		<Command name="КомандаЗагрузитьСтанцииИзAPI" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить станции из API</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить доступные станции из API</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьСтанцииИзAPI</Action>
+		</Command>
+		<Command name="КомандаСоздатьНачальныеОстатки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать начальные остатки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поступление + Перемещение + Комплектация для тестирования</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьНачальныеОстатки</Action>
+		</Command>
+		<Command name="КомандаЗаполнитьПоУмолчанию" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить все поля из настроек расширения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоУмолчанию</Action>
 		</Command>
 		<Command name="КомандаДобавитьТопливо" id="6">
 			<Title>

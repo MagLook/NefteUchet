@@ -7,7 +7,7 @@
 	<ChildItems>
 		<HTMLDocumentField name="HTMLДашборд" id="222">
 			<DataPath>HTMLДашборд</DataPath>
-			<Height>5</Height>
+			<Height>3</Height>
 			<ContextMenu name="HTMLДашбордКонтекстноеМеню" id="223"/>
 			<ExtendedTooltip name="HTMLДашбордРасширеннаяПодсказка" id="224"/>
 		</HTMLDocumentField>
@@ -130,7 +130,6 @@
 						</UsualGroup>
 						<Table name="ВнутренниеДанные1" id="130">
 							<Representation>List</Representation>
-							<ReadOnly>true</ReadOnly>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
@@ -166,6 +165,7 @@
 							</SearchControlAddition>
 							<Events>
 								<Event name="OnActivateRow">ВнутренниеДанныеПриАктивизацииСтроки</Event>
+								<Event name="Selection">ВнутренниеДанныеВыбор</Event>
 							</Events>
 							<ChildItems>
 								<CheckBoxField name="ВнутренниеДанные1Отметка" id="143">
@@ -319,6 +319,7 @@
 							</SearchControlAddition>
 							<Events>
 								<Event name="OnActivateRow">ВнешниеДанныеПриАктивизацииСтроки</Event>
+								<Event name="Selection">ВнешниеДанныеВыбор</Event>
 							</Events>
 							<ChildItems>
 								<CheckBoxField name="ВнешниеДанные1Отметка" id="183">

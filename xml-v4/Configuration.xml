@@ -87,6 +87,7 @@
 			<InformationRegister>TL_Настройки</InformationRegister>
 			<InformationRegister>TL_СтатусыЗагрузки</InformationRegister>
 			<InformationRegister>TL_ПлотностьПартий</InformationRegister>
+			<InformationRegister>TL_МаппингОплат</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

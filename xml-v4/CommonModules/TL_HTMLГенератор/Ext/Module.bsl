@@ -406,15 +406,7 @@
 	// --- ЦЕПОЧКА ДОКУМЕНТОВ ---
 	HTML = HTML + "<div class=""section"">Документы для создания</div><div>";
 
-	// Шаг 1: Поступление
-	HTML = HTML + "<div class=""doc-row checked"">"
-		+ "<div class=""doc-check"">&#10003;</div>"
-		+ "<div class=""doc-name""><b>Поступление</b> &rarr; Основной склад</div>"
-		+ "<div class=""doc-detail"">Дт 41.01 Кт 60.01 &middot; " + Экр(ИмяТоплива) + " (т) "
-		+ Формат(МассаТонн, "ЧДЦ=3") + " т &middot; НДС 22%</div>"
-		+ "<div class=""doc-amount"">" + Формат(МассаТонн, "ЧДЦ=3") + " т</div></div>";
-
-	// Шаг 2: Перемещение
+	// Шаг 1: Перемещение
 	HTML = HTML + "<div class=""doc-row checked"">"
 		+ "<div class=""doc-check"">&#10003;</div>"
 		+ "<div class=""doc-name""><b>Перемещение</b> Осн.склад &rarr; АЗС</div>"
@@ -422,7 +414,7 @@
 		+ Экр(ИмяТоплива) + " (т) " + Формат(МассаТонн, "ЧДЦ=3") + " т</div>"
 		+ "<div class=""doc-amount"">" + Формат(МассаТонн, "ЧДЦ=3") + " т</div></div>";
 
-	// Шаг 3: Комплектация
+	// Шаг 2: Комплектация
 	HTML = HTML + "<div class=""doc-row checked"">"
 		+ "<div class=""doc-check"">&#10003;</div>"
 		+ "<div class=""doc-name""><b>Комплектация</b> тонны &rarr; литры</div>"
@@ -716,112 +708,6 @@
 		+ " background:#F0F5FA;"">"
 		+ Содержимое
 		+ "</body></html>";
-КонецФункции
-
-// Модальное окно (полноэкранный overlay) для деталей смены/ТТН.
-//
-// Параметры:
-//   Заголовок        - Строка - текст в шапке модала
-//   Содержимое       - Строка - HTML-тело модала
-//   КлючЗагрузки    - Строка - ключ для кнопок действий
-//   ПоказатьЗагрузить - Булево - показать кнопку "Загрузить в 1С"
-//   ПоказатьПровести  - Булево - показать кнопку "Провести"
-//
-Функция МодальнаяОбёртка(Заголовок, Содержимое, КлючЗагрузки = "", ПоказатьЗагрузить = Ложь, ПоказатьПровести = Ложь)
-
-	КлючЭкр = Экр(КлючЗагрузки);
-
-	КнопкиHTML = "<button class=""mbtn mbtn-close"" id=""btnAction"" data-action=""close"" data-key="""
-		+ КлючЭкр + """ onclick=""action('close','" + КлючЭкр + "')"">Закрыть</button>";
-
-	Если ПоказатьПровести Тогда
-		КнопкиHTML = "<button class=""mbtn mbtn-success"" id=""btnAction"" data-action=""post"" data-key="""
-			+ КлючЭкр + """ onclick=""action('post','" + КлючЭкр + "')"">Провести</button>" + КнопкиHTML;
-	КонецЕсли;
-
-	Если ПоказатьЗагрузить Тогда
-		КнопкиHTML = "<button class=""mbtn mbtn-primary"" id=""btnAction"" data-action=""load"" data-key="""
-			+ КлючЭкр + """ onclick=""action('load','" + КлючЭкр + "')"">Загрузить в 1С</button>" + КнопкиHTML;
-	КонецЕсли;
-
-	HTML = "<!DOCTYPE html><html><head><meta charset=""utf-8"">
-	|<style>
-	|* { margin:0; padding:0; box-sizing:border-box; }
-	|body { margin:0; font-family:-apple-system,'Segoe UI',sans-serif; font-size:13px; }
-	|.overlay { position:fixed; top:0; left:0; right:0; bottom:0;
-	|  background:rgba(15,23,42,0.5); display:flex; align-items:center;
-	|  justify-content:center; z-index:1000; }
-	|.modal { background:#fff; border-radius:16px; width:92%; max-width:820px;
-	|  max-height:92vh; display:flex; flex-direction:column;
-	|  box-shadow:0 8px 32px rgba(0,0,0,0.18); }
-	|.mheader { padding:16px 24px; border-bottom:1px solid #D9DFE7;
-	|  display:flex; justify-content:space-between; align-items:center;
-	|  position:sticky; top:0; background:#fff; border-radius:16px 16px 0 0; z-index:10; }
-	|.mheader h2 { font-size:15px; color:#1F2937; font-weight:700; }
-	|.mclose { background:none; border:none; font-size:22px; color:#9CA3AF;
-	|  cursor:pointer; padding:4px 8px; border-radius:6px; }
-	|.mclose:hover { background:#F3F4F6; color:#374151; }
-	|.mbody { padding:24px; overflow-y:auto; flex:1; }
-	|.mfooter { padding:16px 24px; border-top:1px solid #D9DFE7;
-	|  display:flex; gap:12px; justify-content:flex-end;
-	|  position:sticky; bottom:0; background:#fff; border-radius:0 0 16px 16px; }
-	|.section { margin-bottom:20px; }
-	|.stitle { font-size:11px; color:#6B7280; text-transform:uppercase;
-	|  letter-spacing:1px; margin-bottom:8px; font-weight:600; }
-	|table { width:100%; border-collapse:collapse; font-size:13px; }
-	|th { text-align:left; font-size:11px; color:#6B7280; padding:6px 8px;
-	|  border-bottom:2px solid #E5E7EB; text-transform:uppercase; }
-	|td { padding:6px 8px; border-bottom:1px solid #F3F4F6; }
-	|tr.total { font-weight:700; border-top:2px solid #1F2937; }
-	|tr.total td { border-bottom:none; padding-top:8px; }
-	|.tr { text-align:right; }
-	|.tag { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; }
-	|.tag-blue { background:#EFF6FF; color:#3B82F6; }
-	|.tag-green { background:#F0FDF4; color:#16A34A; }
-	|.tag-yellow { background:#FFFBEB; color:#EAB308; }
-	|.tag-purple { background:#F5F3FF; color:#7C3AED; }
-	|.tag-gray { background:#F3F4F6; color:#6B7280; }
-	|.doc-card { padding:8px 12px; margin:4px 0; border-radius:8px; font-size:13px;
-	|  display:flex; align-items:center; gap:8px; }
-	|.chain { display:flex; gap:8px; align-items:center; margin:12px 0; }
-	|.chain-step { flex:1; padding:12px; border-radius:12px; text-align:center;
-	|  border:1px solid #E5E7EB; }
-	|.chain-arrow { font-size:20px; color:#D1D5DB; }
-	|.kv { display:flex; gap:8px; margin:4px 0; }
-	|.kv-label { color:#6B7280; min-width:120px; }
-	|.kv-value { font-weight:600; color:#1F2937; }
-	|.mbtn { padding:8px 20px; border:none; border-radius:8px; font-size:13px;
-	|  font-weight:600; cursor:pointer; }
-	|.mbtn-primary { background:#3B82F6; color:#fff; }
-	|.mbtn-primary:hover { background:#2563EB; }
-	|.mbtn-success { background:#16A34A; color:#fff; }
-	|.mbtn-success:hover { background:#15803D; }
-	|.mbtn-close { background:#E5E7EB; color:#374151; }
-	|.mbtn-close:hover { background:#D1D5DB; }
-	|</style></head><body>
-	|<div class=""overlay"" onclick=""if(event.target===this)action('close','" + КлючЭкр + "')"">
-	|<div class=""modal"">
-	|<div class=""mheader"">
-	|  <h2>" + Экр(Заголовок) + "</h2>
-	|  <button class=""mclose"" onclick=""action('close','" + КлючЭкр + "')"">x</button>
-	|</div>
-	|<div class=""mbody"">" + Содержимое + "</div>
-	|<div class=""mfooter"">" + КнопкиHTML + "</div>
-	|</div></div>
-	|<script>
-	|window.modalAction = null;
-	|function action(name, key) {
-	|  window.modalAction = { action: name, key: key };
-	|  setTimeout(function() {
-	|    var el = document.getElementById('btnAction');
-	|    if (el) el.click();
-	|  }, 1);
-	|}
-	|</script>
-	|</body></html>";
-
-	Возврат СтрЗаменить(HTML, Символы.ПС + "|", Символы.ПС);
-
 КонецФункции
 
 // Карточка дашборда.

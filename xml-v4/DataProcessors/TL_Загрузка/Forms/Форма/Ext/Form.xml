@@ -31,6 +31,20 @@
 				<InputField name="ТипДокументаФильтр" id="6">
 					<DataPath>ТипДокументаФильтр</DataPath>
 					<ListChoiceMode>true</ListChoiceMode>
+					<ChoiceList xmlns:dl="http://v8.1c.ru/8.1/data/core">
+						<dl:item>
+							<dl:presentation>Все</dl:presentation>
+							<dl:value xsi:type="xs:string">Все</dl:value>
+						</dl:item>
+						<dl:item>
+							<dl:presentation>Смены</dl:presentation>
+							<dl:value xsi:type="xs:string">Смены</dl:value>
+						</dl:item>
+						<dl:item>
+							<dl:presentation>ТТН</dl:presentation>
+							<dl:value xsi:type="xs:string">ТТН</dl:value>
+						</dl:item>
+					</ChoiceList>
 					<ContextMenu name="ТипДокументаФильтрКонтекстноеМеню" id="7"/>
 					<ExtendedTooltip name="ТипДокументаФильтрРасширеннаяПодсказка" id="8"/>
 				</InputField>
@@ -131,8 +145,8 @@
 						<Table name="ВнутренниеДанные1" id="130">
 							<Representation>List</Representation>
 							<AutoMaxWidth>false</AutoMaxWidth>
-							<EnableStartDrag>true</EnableStartDrag>
-							<EnableDrag>true</EnableDrag>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
 							<DataPath>ВнутренниеДанные</DataPath>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ВнутренниеДанные1КонтекстноеМеню" id="131"/>
@@ -285,9 +299,8 @@
 						<Table name="ВнешниеДанные1" id="170">
 							<Representation>List</Representation>
 							<AutoMaxWidth>false</AutoMaxWidth>
-							<AutoInsertNewRow>true</AutoInsertNewRow>
-							<EnableStartDrag>true</EnableStartDrag>
-							<EnableDrag>true</EnableDrag>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
 							<DataPath>ВнешниеДанные</DataPath>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ВнешниеДанные1КонтекстноеМеню" id="171"/>
@@ -397,6 +410,7 @@
 		</UsualGroup>
 		<InputField name="ТекстЛога" id="111">
 			<DataPath>ТекстЛога</DataPath>
+			<Visible>false</Visible>
 			<ReadOnly>true</ReadOnly>
 			<Height>2</Height>
 			<MultiLine>true</MultiLine>
@@ -413,6 +427,7 @@
 					<v8:content>URLСервера</v8:content>
 				</v8:item>
 			</Title>
+			<Use>ForModuleOnly</Use>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -428,6 +443,7 @@
 					<v8:content>Логин</v8:content>
 				</v8:item>
 			</Title>
+			<Use>ForModuleOnly</Use>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -443,6 +459,7 @@
 					<v8:content>Пароль</v8:content>
 				</v8:item>
 			</Title>
+			<Use>ForModuleOnly</Use>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -458,6 +475,7 @@
 					<v8:content>Код системы</v8:content>
 				</v8:item>
 			</Title>
+			<Use>ForModuleOnly</Use>
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
 				<v8:NumberQualifiers>
@@ -533,6 +551,7 @@
 					<v8:content>Текст лога</v8:content>
 				</v8:item>
 			</Title>
+			<Use>ForModuleOnly</Use>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -885,6 +904,7 @@
 					<v8:content>Токен API</v8:content>
 				</v8:item>
 			</Title>
+			<Use>ForModuleOnly</Use>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>

@@ -31,32 +31,81 @@
 // Возвращаемое значение:
 //   Строка - полный HTML документ
 //
-Функция СформироватьДашборд(ВсегоСмен, Загружено, Новых, Ошибок, СуммаЗаПериод, СтатусSTS = "", ПоследнийЛог = "") Экспорт
+Функция СформироватьДашборд(ВсегоСмен, Загружено, Новых, Ошибок, СуммаЗаПериод,
+	СтатусSTS = "", ТекстЛога = "", КоличествоТТН = 0, ИнфоСтанция = "", ИнфоОстатки = "") Экспорт
 
 	СуммаТекст = ФорматСуммы(СуммаЗаПериод);
 
+	// === Контейнер: 4 колонки в одну строку ===
+	СтильПанели = "background:#fff; border:1px solid #E2E8F0; border-radius:6px; padding:6px 10px; overflow:hidden;";
+
 	HTML = "<!DOCTYPE html><html><head><meta charset=""utf-8""></head>"
-		+ "<body style=""margin:0; padding:4px 8px; font-family:-apple-system,'Segoe UI',sans-serif;"
-		+ " background:#F8FAFC; font-size:13px;"">"
-		// --- KPI карточки (одна строка) ---
-		+ "<div style=""display:flex; gap:8px; margin-bottom:6px;"">"
-		+ МиниКарточка(XMLСтрока(ВсегоСмен), "Смен", "#3B82F6")
-		+ МиниКарточка(XMLСтрока(Загружено), "В 1С", "#16A34A")
-		+ МиниКарточка(XMLСтрока(Новых), "Новых", "#EAB308")
-		+ МиниКарточка(XMLСтрока(Ошибок), "Ошибок", "#EF4444")
-		+ МиниКарточка(СуммаТекст, "Выручка", "#6B7280")
-		+ "</div>"
-		// --- Статус STS + последний лог ---
-		+ "<div style=""display:flex; gap:12px; font-size:12px; color:#6B7280;"">";
+		+ "<body style=""margin:0; padding:6px 8px; font-family:-apple-system,'Segoe UI',sans-serif;"
+		+ " background:#F0F4F8; font-size:12px;"">"
+		+ "<div style=""display:flex; gap:6px; height:100%;"">";
 
+	// === КОЛОНКА 1: KPI (25%) — сетка 3x2, растянуть на всю область ===
+	HTML = HTML + "<div style=""width:25%; " + СтильПанели + " display:flex; flex-direction:column;"">"
+		+ "<div style=""font-size:10px; color:#94A3B8; font-weight:600; margin-bottom:5px; text-transform:uppercase; letter-spacing:0.5px;"">KPI</div>"
+		+ "<div style=""display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows:1fr 1fr; gap:4px; flex:1;"">"
+		+ МиниКарточкаКомпакт(XMLСтрока(ВсегоСмен), "Смен", "#3B82F6")
+		+ МиниКарточкаКомпакт(XMLСтрока(Загружено), "В 1С", "#16A34A")
+		+ МиниКарточкаКомпакт(XMLСтрока(Новых), "Новых", "#EAB308")
+		+ МиниКарточкаКомпакт(XMLСтрока(КоличествоТТН), "ТТН", "#8B5CF6")
+		+ МиниКарточкаКомпакт(XMLСтрока(Ошибок), "Ошибок", "#EF4444")
+		+ МиниКарточкаКомпакт(СуммаТекст, "Выруч.", "#6B7280")
+		+ "</div></div>";
+
+	// === КОЛОНКА 2: STS (20%) ===
+	ЦветSTS = ?(СтрНайти(НРег(СтатусSTS), "подключен") > 0, "#16A34A", "#EF4444");
+	HTML = HTML + "<div style=""width:20%; " + СтильПанели + """>"
+		+ "<div style=""font-size:10px; color:#94A3B8; font-weight:600; margin-bottom:4px; text-transform:uppercase; letter-spacing:0.5px;"">STS API</div>";
 	Если ЗначениеЗаполнено(СтатусSTS) Тогда
-		HTML = HTML + "<span>" + Экр(СтатусSTS) + "</span>";
+		HTML = HTML + "<div style=""margin-bottom:3px;"">"
+			+ "<span style=""color:" + ЦветSTS + "; font-size:14px;"">&#9679;</span> "
+			+ "<span style=""color:#475569; font-size:11px;"">" + Экр(СтатусSTS) + "</span></div>";
 	КонецЕсли;
+	Если ЗначениеЗаполнено(ИнфоСтанция) Тогда
+		HTML = HTML + "<div style=""color:#64748B; font-size:10px; line-height:1.4;"">" + Экр(ИнфоСтанция) + "</div>";
+	КонецЕсли;
+	HTML = HTML + "</div>";
 
-	Если ЗначениеЗаполнено(ПоследнийЛог) Тогда
-		HTML = HTML + "<span style=""flex:1; text-align:right; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;"">"
-			+ Экр(ПоследнийЛог) + "</span>";
+	// === КОЛОНКА 3: 1С (25%) ===
+	HTML = HTML + "<div style=""width:25%; " + СтильПанели + """>"
+		+ "<div style=""font-size:10px; color:#94A3B8; font-weight:600; margin-bottom:5px; text-transform:uppercase; letter-spacing:0.5px;"">Остатки 41.02</div>";
+	Если ЗначениеЗаполнено(ИнфоОстатки) Тогда
+		HTML = HTML + "<div style=""font-size:11px; line-height:1.6;"">" + ИнфоОстатки + "</div>";
+	Иначе
+		HTML = HTML + "<div style=""color:#CBD5E1; font-size:11px;"">Нажмите Обновить</div>";
 	КонецЕсли;
+	HTML = HTML + "</div>";
+
+	// === КОЛОНКА 4: Лог (30%) ===
+	HTML = HTML + "<div style=""width:30%; " + СтильПанели
+		+ " font-family:Consolas,'Courier New',monospace; font-size:10px;"">"
+		+ "<div style=""font-size:10px; color:#94A3B8; font-weight:600; margin-bottom:4px;"
+		+ " text-transform:uppercase; letter-spacing:0.5px; font-family:-apple-system,'Segoe UI',sans-serif;"">Лог</div>";
+	Если ЗначениеЗаполнено(ТекстЛога) Тогда
+		Строки = СтрРазделить(ТекстЛога, Символы.ПС);
+		МаксСтрок = ?(Строки.Количество() > 6, 6, Строки.Количество());
+		Для Инд = 0 По МаксСтрок - 1 Цикл
+			Стр = Строки[Инд];
+			Если Не ЗначениеЗаполнено(Стр) Тогда Продолжить; КонецЕсли;
+			Если СтрНайти(НРег(Стр), "ошибка") > 0 ИЛИ СтрНайти(НРег(Стр), "error") > 0 Тогда
+				ЦветЛог = "#EF4444";
+			ИначеЕсли СтрНайти(НРег(Стр), "ok") > 0 ИЛИ СтрНайти(НРег(Стр), "загружен") > 0
+				ИЛИ СтрНайти(НРег(Стр), "проведен") > 0 Тогда
+				ЦветЛог = "#16A34A";
+			Иначе
+				ЦветЛог = "#94A3B8";
+			КонецЕсли;
+			HTML = HTML + "<div style=""color:#475569; line-height:1.4; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"">"
+				+ "<span style=""color:" + ЦветЛог + ";"">&#9679;</span> " + Экр(Стр) + "</div>";
+		КонецЦикла;
+	Иначе
+		HTML = HTML + "<div style=""color:#CBD5E1;"">Нет записей</div>";
+	КонецЕсли;
+	HTML = HTML + "</div>";
 
 	HTML = HTML + "</div></body></html>";
 
@@ -728,10 +777,20 @@
 // Мини-карточка дашборда (компактная, одна строка).
 //
 Функция МиниКарточка(Значение, Подпись, Цвет)
-	Возврат "<div style=""flex:1; background:#fff; border-left:3px solid " + Цвет + ";"
+	Возврат "<div style=""width:120px; background:#fff; border-left:3px solid " + Цвет + ";"
 		+ " padding:6px 10px; border-radius:8px; box-shadow:0 1px 2px rgba(0,0,0,0.06);"">"
 		+ "<span style=""font-size:18px; font-weight:700; color:" + Цвет + ";"">" + Значение + "</span>"
 		+ " <span style=""font-size:11px; color:#9CA3AF;"">" + Подпись + "</span>"
+		+ "</div>";
+КонецФункции
+
+// Компактная карточка KPI для 4-колоночного дашборда.
+//
+Функция МиниКарточкаКомпакт(Значение, Подпись, Цвет)
+	Возврат "<div style=""background:#F8FAFC; border-left:2px solid " + Цвет + ";"
+		+ " padding:4px 8px; border-radius:4px; display:flex; align-items:center; gap:4px;"">"
+		+ "<span style=""font-size:16px; font-weight:700; color:" + Цвет + ";"">" + Значение + "</span>"
+		+ "<span style=""font-size:10px; color:#9CA3AF;"">" + Подпись + "</span>"
 		+ "</div>";
 КонецФункции
 

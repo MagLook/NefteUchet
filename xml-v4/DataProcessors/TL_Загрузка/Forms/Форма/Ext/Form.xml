@@ -7,7 +7,8 @@
 	<ChildItems>
 		<HTMLDocumentField name="HTMLДашборд" id="222">
 			<DataPath>HTMLДашборд</DataPath>
-			<Height>3</Height>
+			<Height>2</Height>
+			<TitleLocation>None</TitleLocation>
 			<ContextMenu name="HTMLДашбордКонтекстноеМеню" id="223"/>
 			<ExtendedTooltip name="HTMLДашбордРасширеннаяПодсказка" id="224"/>
 		</HTMLDocumentField>
@@ -30,13 +31,27 @@
 			<ChildItems>
 				<InputField name="ТипДокументаФильтр" id="6">
 					<DataPath>ТипДокументаФильтр</DataPath>
-					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChoiceList>
+						<v8:item>
+							<v8:Value xsi:type="xs:string">Все</v8:Value>
+							<v8:Presentation>Все</v8:Presentation>
+						</v8:item>
+						<v8:item>
+							<v8:Value xsi:type="xs:string">Смены</v8:Value>
+							<v8:Presentation>Смены</v8:Presentation>
+						</v8:item>
+						<v8:item>
+							<v8:Value xsi:type="xs:string">ТТН</v8:Value>
+							<v8:Presentation>ТТН</v8:Presentation>
+						</v8:item>
+					</ChoiceList>
 					<ContextMenu name="ТипДокументаФильтрКонтекстноеМеню" id="7"/>
 					<ExtendedTooltip name="ТипДокументаФильтрРасширеннаяПодсказка" id="8"/>
 				</InputField>
 				<InputField name="КодСтанции" id="3">
 					<DataPath>КодСтанции</DataPath>
-					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<InputHint>0 = все</InputHint>
 					<ContextMenu name="КодСтанцииКонтекстноеМеню" id="4"/>
 					<ExtendedTooltip name="КодСтанцииРасширеннаяПодсказка" id="5"/>
 				</InputField>

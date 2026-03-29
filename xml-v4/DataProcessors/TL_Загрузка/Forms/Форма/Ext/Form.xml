@@ -182,6 +182,13 @@
 									<ContextMenu name="ВнутренниеДанные1ТипДокументаКонтекстноеМеню" id="147"/>
 									<ExtendedTooltip name="ВнутренниеДанные1ТипДокументаРасширеннаяПодсказка" id="148"/>
 								</InputField>
+								<InputField name="ВнутренниеДанные1Статус" id="164">
+									<DataPath>ВнутренниеДанные.Статус</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ВнутренниеДанные1СтатусКонтекстноеМеню" id="165"/>
+									<ExtendedTooltip name="ВнутренниеДанные1СтатусРасширеннаяПодсказка" id="166"/>
+								</InputField>
 								<InputField name="ВнутренниеДанные1Дата" id="149">
 									<DataPath>ВнутренниеДанные.Дата</DataPath>
 									<EditMode>EnterOnInput</EditMode>
@@ -217,15 +224,9 @@
 									<ContextMenu name="ВнутренниеДанные1СуммаКонтекстноеМеню" id="162"/>
 									<ExtendedTooltip name="ВнутренниеДанные1СуммаРасширеннаяПодсказка" id="163"/>
 								</InputField>
-								<InputField name="ВнутренниеДанные1Статус" id="164">
-									<DataPath>ВнутренниеДанные.Статус</DataPath>
-									<EditMode>EnterOnInput</EditMode>
-									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-									<ContextMenu name="ВнутренниеДанные1СтатусКонтекстноеМеню" id="165"/>
-									<ExtendedTooltip name="ВнутренниеДанные1СтатусРасширеннаяПодсказка" id="166"/>
-								</InputField>
 								<InputField name="ВнутренниеДанные1КлючЗагрузки" id="167">
 									<DataPath>ВнутренниеДанные.КлючЗагрузки</DataPath>
+									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ВнутренниеДанные1КлючЗагрузкиКонтекстноеМеню" id="168"/>
@@ -366,6 +367,7 @@
 								</InputField>
 								<InputField name="ВнешниеДанные1Сумма" id="201">
 									<DataPath>ВнешниеДанные.Сумма</DataPath>
+									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ВнешниеДанные1СуммаКонтекстноеМеню" id="202"/>
@@ -373,6 +375,7 @@
 								</InputField>
 								<InputField name="ВнешниеДанные1КлючЗагрузки" id="204">
 									<DataPath>ВнешниеДанные.КлючЗагрузки</DataPath>
+									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ВнешниеДанные1КлючЗагрузкиКонтекстноеМеню" id="205"/>
@@ -380,6 +383,7 @@
 								</InputField>
 								<InputField name="ВнешниеДанные1ДанныеJSON" id="207">
 									<DataPath>ВнешниеДанные.ДанныеJSON</DataPath>
+									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ВнешниеДанные1ДанныеJSONКонтекстноеМеню" id="208"/>

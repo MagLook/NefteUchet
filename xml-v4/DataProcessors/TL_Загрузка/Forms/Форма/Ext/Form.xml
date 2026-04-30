@@ -7,6 +7,7 @@
 	<ChildItems>
 		<HTMLDocumentField name="HTMLДашборд" id="222">
 			<DataPath>HTMLДашборд</DataPath>
+			<TitleLocation>None</TitleLocation>
 			<Height>3</Height>
 			<ContextMenu name="HTMLДашбордКонтекстноеМеню" id="223"/>
 			<ExtendedTooltip name="HTMLДашбордРасширеннаяПодсказка" id="224"/>
@@ -24,7 +25,7 @@
 					<v8:content>Группа фильтры</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Representation>None</Representation>
+			<Representation>StrongSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаФильтрыРасширеннаяПодсказка" id="2"/>
 			<ChildItems>
@@ -104,6 +105,7 @@
 							<v8:content>Группа левая</v8:content>
 						</v8:item>
 					</ToolTip>
+					<Representation>NormalSeparation</Representation>
 					<Group>Vertical</Group>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаЛеваяРасширеннаяПодсказка" id="235"/>
@@ -125,6 +127,11 @@
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаКнопокВнутренниеРасширеннаяПодсказка" id="231"/>
 							<ChildItems>
+								<Button name="КомандаВыбратьВсеВнутренние" id="214">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.КомандаВыбратьВсеВнутренние</CommandName>
+									<ExtendedTooltip name="КомандаВыбратьВсеВнутренниеРасширеннаяПодсказка" id="215"/>
+								</Button>
 								<Button name="КомандаУдалить" id="212">
 									<Type>UsualButton</Type>
 									<CommandName>Form.Command.КомандаУдалить</CommandName>
@@ -134,11 +141,6 @@
 									<Type>UsualButton</Type>
 									<CommandName>Form.Command.КомандаПровести</CommandName>
 									<ExtendedTooltip name="КомандаПровестиРасширеннаяПодсказка" id="217"/>
-								</Button>
-								<Button name="КомандаВыбратьВсеВнутренние" id="214">
-									<Type>UsualButton</Type>
-									<CommandName>Form.Command.КомандаВыбратьВсеВнутренние</CommandName>
-									<ExtendedTooltip name="КомандаВыбратьВсеВнутренниеРасширеннаяПодсказка" id="215"/>
 								</Button>
 							</ChildItems>
 						</UsualGroup>
@@ -212,6 +214,9 @@
 								</InputField>
 								<InputField name="ВнутренниеДанные1Станция" id="152">
 									<DataPath>ВнутренниеДанные.Станция</DataPath>
+									<Width>4</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>6</MaxWidth>
 									<EditMode>EnterOnInput</EditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ВнутренниеДанные1СтанцияКонтекстноеМеню" id="153"/>
@@ -219,6 +224,9 @@
 								</InputField>
 								<InputField name="ВнутренниеДанные1НомерСмены" id="155">
 									<DataPath>ВнутренниеДанные.НомерСмены</DataPath>
+									<Width>3</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>5</MaxWidth>
 									<EditMode>EnterOnInput</EditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ВнутренниеДанные1НомерСменыКонтекстноеМеню" id="156"/>
@@ -233,6 +241,7 @@
 								</InputField>
 								<InputField name="ВнутренниеДанные1Сумма" id="161">
 									<DataPath>ВнутренниеДанные.Сумма</DataPath>
+									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ВнутренниеДанные1СуммаКонтекстноеМеню" id="162"/>
@@ -263,6 +272,7 @@
 							<v8:content>Группа правая</v8:content>
 						</v8:item>
 					</ToolTip>
+					<Representation>NormalSeparation</Representation>
 					<Group>Vertical</Group>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаПраваяРасширеннаяПодсказка" id="237"/>
@@ -359,6 +369,9 @@
 								</InputField>
 								<InputField name="ВнешниеДанные1Станция" id="192">
 									<DataPath>ВнешниеДанные.Станция</DataPath>
+									<Width>4</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>6</MaxWidth>
 									<EditMode>EnterOnInput</EditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ВнешниеДанные1СтанцияКонтекстноеМеню" id="193"/>
@@ -366,6 +379,9 @@
 								</InputField>
 								<InputField name="ВнешниеДанные1НомерСмены" id="195">
 									<DataPath>ВнешниеДанные.НомерСмены</DataPath>
+									<Width>3</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>5</MaxWidth>
 									<EditMode>EnterOnInput</EditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ВнешниеДанные1НомерСменыКонтекстноеМеню" id="196"/>

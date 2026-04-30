@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Общий модуль TL_HTMLГенератор
-// Расширение TradeLedger для 1С:БП 3.0
+// Расширение ElsyPlus Ledger для 1С:БП 3.0
 // Контекст: Сервер, ВызовСервера
 // Формирование HTML для дашборда и панели деталей.
 //
@@ -206,7 +206,7 @@
 		+ "<div class=""header-station"">" + Экр(Заголовок) + "</div>"
 		+ "</div><div>"
 		+ "<div class=""header-total"">" + Формат(ИтогоВсеСумма, "ЧДЦ=2; ЧРД=,; ЧГ=' '") + " &#8381;</div>"
-		+ "<div class=""header-sub"">" + Формат(ИтогоВсеЛитры, "ЧДЦ=1") + " л &middot; "
+		+ "<div class=""header-sub"">" + Формат(ИтогоВсеЛитры, "ЧДЦ=2") + " л &middot; "
 		+ XMLСтрока(КолТоплива) + " вида топлива</div>"
 		+ "</div></div>";
 
@@ -248,12 +248,12 @@
 			ЭтоРозница = Истина;
 		ИначеЕсли СтрНайти(ИмяНРег, "мобил") > 0 ИЛИ СтрНайти(ИмяНРег, "яндекс") > 0 Тогда
 			Маршрут = "<span class=""route-tag route-transfer"">ЯНДЕКС</span>";
-			Проводка = "Дт 41.02(ЯНДЕКС) Кт 41.02(АЗС)";
+			Проводка = "Кт 41.02(АЗС) Дт 41.01(ЯНДЕКС)";
 			ЭтоРозница = Ложь;
 		ИначеЕсли СтрНайти(ИмяНРег, "корп") > 0 ИЛИ СтрНайти(ИмяНРег, "агора") > 0
 			ИЛИ ИмяНРег = "кр" Тогда
 			Маршрут = "<span class=""route-tag route-transfer"">Карты</span>";
-			Проводка = "Дт 41.02(Карты) Кт 41.02(АЗС)";
+			Проводка = "Кт 41.02(АЗС) Дт 41.01(Карты)";
 			ЭтоРозница = Ложь;
 		Иначе
 			Маршрут = Экр(ИмяОпл);
@@ -268,8 +268,8 @@
 		Для Каждого КодТ Из КодыТоплива Цикл
 			Яч = ДанныеОпл.Получить(КодТ);
 			Если Яч <> Неопределено И Яч.Литры > 0 Тогда
-				СтрокаHTML = СтрокаHTML + "<td class=""num"">" + Формат(Яч.Литры, "ЧДЦ=1")
-					+ "</td><td class=""num"">" + Формат(Яч.Сумма, "ЧДЦ=0") + "</td>";
+				СтрокаHTML = СтрокаHTML + "<td class=""num"">" + Формат(Яч.Литры, "ЧДЦ=2")
+					+ "</td><td class=""num"">" + Формат(Яч.Сумма, "ЧДЦ=2") + "</td>";
 				ИтогоСтроки = ИтогоСтроки + Яч.Сумма;
 				Если ЭтоРозница Тогда
 					Р = РозницаПоТопливу.Получить(КодТ);
@@ -280,7 +280,7 @@
 				СтрокаHTML = СтрокаHTML + "<td class=""num"">&mdash;</td><td class=""num"">&mdash;</td>";
 			КонецЕсли;
 		КонецЦикла;
-		СтрокаHTML = СтрокаHTML + "<td class=""num""><b>" + Формат(ИтогоСтроки, "ЧДЦ=0") + "</b></td></tr>";
+		СтрокаHTML = СтрокаHTML + "<td class=""num""><b>" + Формат(ИтогоСтроки, "ЧДЦ=2") + "</b></td></tr>";
 
 		Если ЭтоРозница Тогда
 			HTML = HTML + СтрокаHTML;
@@ -294,10 +294,10 @@
 	HTML = HTML + "<tr class=""total-row""><td colspan=""3"">ИТОГО розница</td>";
 	Для Каждого КодТ Из КодыТоплива Цикл
 		Р = РозницаПоТопливу.Получить(КодТ);
-		HTML = HTML + "<td class=""num"">" + Формат(Р.Литры, "ЧДЦ=1") + "</td>"
-			+ "<td class=""num"">" + Формат(Р.Сумма, "ЧДЦ=0") + "</td>";
+		HTML = HTML + "<td class=""num"">" + Формат(Р.Литры, "ЧДЦ=2") + "</td>"
+			+ "<td class=""num"">" + Формат(Р.Сумма, "ЧДЦ=2") + "</td>";
 	КонецЦикла;
-	HTML = HTML + "<td class=""num""><b>" + Формат(РозницаИтого, "ЧДЦ=0") + "</b></td></tr>";
+	HTML = HTML + "<td class=""num""><b>" + Формат(РозницаИтого, "ЧДЦ=2") + "</b></td></tr>";
 
 	// Перемещения
 	Если ЗначениеЗаполнено(ПеремещенияHTML) Тогда
@@ -308,17 +308,17 @@
 	HTML = HTML + "<tr class=""total-row""><td colspan=""3"">ИТОГО за смену</td>";
 	Для Каждого КодТ Из КодыТоплива Цикл
 		Итог = ИтогиПоТопливу.Получить(КодТ);
-		HTML = HTML + "<td class=""num"">" + Формат(Итог.Литры, "ЧДЦ=1") + "</td>"
-			+ "<td class=""num"">" + Формат(Итог.Сумма, "ЧДЦ=0") + "</td>";
+		HTML = HTML + "<td class=""num"">" + Формат(Итог.Литры, "ЧДЦ=2") + "</td>"
+			+ "<td class=""num"">" + Формат(Итог.Сумма, "ЧДЦ=2") + "</td>";
 	КонецЦикла;
-	HTML = HTML + "<td class=""num""><b>" + Формат(ИтогоВсеСумма, "ЧДЦ=0") + "</b></td></tr></table>";
+	HTML = HTML + "<td class=""num""><b>" + Формат(ИтогоВсеСумма, "ЧДЦ=2") + "</b></td></tr></table>";
 
 	// --- ПРОВОДКИ ---
 	HTML = HTML + "<table style=""margin-bottom:2px"">"
 		+ "<tr><th colspan=""3"" style=""text-align:left"">Проводки при проведении</th></tr>"
 		+ "<tr><td class=""provodka"" style=""width:220px"">Дт 62.Р Кт 90.01.1</td>"
 		+ "<td>Выручка (по каждому виду топлива)</td>"
-		+ "<td class=""num"">" + Формат(РозницаИтого, "ЧДЦ=0") + "</td></tr>"
+		+ "<td class=""num"">" + Формат(РозницаИтого, "ЧДЦ=2") + "</td></tr>"
 		+ "<tr><td class=""provodka"">Дт 90.02.1 Кт 41.02</td>"
 		+ "<td>Списание себестоимости с розничного склада</td>"
 		+ "<td class=""num"">по учётной цене</td></tr>"
@@ -328,7 +328,7 @@
 		+ "<td>Оплата картой (эквайринг)</td><td class=""num""></td></tr>"
 		+ "<tr><td class=""provodka"">Дт 90.03 Кт 68.02</td>"
 		+ "<td>НДС 22%</td>"
-		+ "<td class=""num"">" + Формат(Окр(РозницаИтого * 22 / 122, 0), "ЧДЦ=0") + "</td></tr>"
+		+ "<td class=""num"">" + Формат(Окр(РозницаИтого * 22 / 122, 2), "ЧДЦ=2") + "</td></tr>"
 		+ "</table>";
 
 	// --- РЕЗЕРВУАРЫ ---
@@ -377,12 +377,12 @@
 				+ "<div class=""tank-bar"">"
 				+ "<div class=""tank-bar-used " + КлассЦвета + """ style=""width:" + XMLСтрока(ПроцНач) + "%""></div>"
 				+ "<div class=""tank-bar-remain " + КлассЦвета + """ style=""width:" + XMLСтрока(ПроцОст) + "%""></div>"
-				+ "<span class=""tank-bar-label lbl-left"" style=""color:#fff"">" + Формат(ОстатокЛ, "ЧДЦ=0") + " л</span>"
-				+ "<span class=""tank-bar-label lbl-right"">" + Формат(НачалоЛ, "ЧДЦ=0") + " л</span>"
+				+ "<span class=""tank-bar-label lbl-left"" style=""color:#fff"">" + Формат(ОстатокЛ, "ЧДЦ=2") + " л</span>"
+				+ "<span class=""tank-bar-label lbl-right"">" + Формат(НачалоЛ, "ЧДЦ=2") + " л</span>"
 				+ "</div>"
 				+ "<table class=""tank-stats""><tr>"
-				+ "<td>Отпущено</td><td class=""num negative"">&minus;" + Формат(РасходЛ, "ЧДЦ=0") + " л</td>"
-				+ "<td>&rho;</td><td class=""num"">" + ?(ПлотнКон > 0, Формат(ПлотнКон, "ЧДЦ=3"), "-") + "</td>"
+				+ "<td>Отпущено</td><td class=""num negative"">&minus;" + Формат(РасходЛ, "ЧДЦ=2") + " л</td>"
+				+ "<td>&rho;</td><td class=""num"">" + ?(ПлотнКон > 0, Формат(ПлотнКон, "ЧДЦ=4"), "-") + "</td>"
 				+ "<td>t</td><td class=""num"">" + ?(ТемпКон > 0, Формат(ТемпКон, "ЧДЦ=1") + "&deg;C", "-") + "</td>"
 				+ "</tr></table></div>";
 		КонецЦикла;
@@ -462,8 +462,8 @@
 	HTML = HTML + "<div class=""section"">Данные ТТН</div>"
 		+ "<table><tr><th>Параметр</th><th>Значение</th></tr>"
 		+ "<tr><td>Топливо</td><td><b>" + Экр(ИмяТоплива) + "</b></td></tr>"
-		+ "<tr><td>Масса</td><td class=""num""><b>" + Формат(МассаТонн, "ЧДЦ=3") + " т</b> (" + Формат(МассаКг, "ЧДЦ=0") + " кг)</td></tr>"
-		+ "<tr><td>Объём (книжный)</td><td class=""num""><b>" + Формат(Литры, "ЧДЦ=0") + " л</b></td></tr>"
+		+ "<tr><td>Масса</td><td class=""num""><b>" + Формат(МассаТонн, "ЧДЦ=3") + " т</b> (" + Формат(МассаКг, "ЧДЦ=2") + " кг)</td></tr>"
+		+ "<tr><td>Объём (книжный)</td><td class=""num""><b>" + Формат(Литры, "ЧДЦ=2") + " л</b></td></tr>"
 		+ "<tr><td>Плотность</td><td class=""num"">" + ?(Плотность > 0, Формат(Плотность, "ЧДЦ=4") + " кг/л", "&mdash;") + "</td></tr>"
 		+ "</table>";
 
@@ -482,11 +482,11 @@
 	HTML = HTML + "<div class=""doc-row checked"">"
 		+ "<div class=""doc-check"">&#10003;</div>"
 		+ "<div class=""doc-name""><b>Комплектация</b> тонны &rarr; литры</div>"
-		+ "<div class=""doc-detail"">Дт 41.02 Кт 41.01 &middot; " + Экр(ИмяТоплива) + " (т) "
+		+ "<div class=""doc-detail"">Кт 41.01(тонны) &rarr; Дт 41.02(литры) &middot; " + Экр(ИмяТоплива) + " (т) "
 		+ Формат(МассаТонн, "ЧДЦ=3") + " т &rarr; " + Экр(ИмяТоплива) + " (л) "
-		+ Формат(Литры, "ЧДЦ=0") + " л &middot; &rho;="
+		+ Формат(Литры, "ЧДЦ=2") + " л &middot; &rho;="
 		+ ?(Плотность > 0, Формат(Плотность, "ЧДЦ=4"), "-") + "</div>"
-		+ "<div class=""doc-amount"">" + Формат(Литры, "ЧДЦ=0") + " л</div></div>";
+		+ "<div class=""doc-amount"">" + Формат(Литры, "ЧДЦ=2") + " л</div></div>";
 
 	HTML = HTML + "</div></body></html>";
 
@@ -511,151 +511,163 @@
 	|* { margin:0; padding:0; box-sizing:border-box; }
 	|body { font-family:-apple-system,'Segoe UI',sans-serif; background:#F0F5FA; padding:16px; font-size:13px; }
 	|h2 { color:#1F2937; font-size:16px; margin-bottom:12px; }
-	|h3 { color:#3B82F6; font-size:13px; text-transform:uppercase; letter-spacing:1px; margin:16px 0 8px; }
+	|h3 { color:#3B82F6; font-size:13px; text-transform:uppercase; letter-spacing:1px; margin:0 0 10px; }
 	|.card { background:#fff; border-radius:12px; padding:16px; margin-bottom:12px;
 	|  box-shadow:0 1px 3px rgba(0,0,0,0.08); }
-	|.row { display:flex; gap:12px; margin-bottom:8px; align-items:center; }
-	|.row label { min-width:140px; color:#6B7280; font-size:12px; }
-	|.row input, .row select { flex:1; padding:6px 10px; border:1px solid #D9DFE7;
+	|.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; }
+	|.row { display:flex; gap:8px; margin-bottom:6px; align-items:center; }
+	|.row label { min-width:120px; color:#6B7280; font-size:12px; }
+	|.row input, .row select { flex:1; padding:5px 8px; border:1px solid #D9DFE7;
 	|  border-radius:6px; font-size:13px; }
 	|.row input:focus { outline:none; border-color:#3B82F6; box-shadow:0 0 0 2px rgba(59,130,246,0.15); }
 	|table { width:100%; border-collapse:collapse; }
 	|th { text-align:left; font-size:11px; color:#6B7280; text-transform:uppercase;
-	|  padding:4px 8px; border-bottom:2px solid #D9DFE7; }
-	|td { padding:4px 8px; border-bottom:1px solid #D9DFE7; }
-	|td input { width:100%; padding:4px 6px; border:1px solid #D9DFE7; border-radius:4px; font-size:12px; }
-	|.btn { padding:8px 24px; border:none; border-radius:8px; font-size:13px;
+	|  padding:4px 6px; border-bottom:2px solid #D9DFE7; }
+	|td { padding:4px 6px; border-bottom:1px solid #E5E7EB; }
+	|td input, td select { width:100%; padding:3px 6px; border:1px solid #D9DFE7; border-radius:4px; font-size:12px; }
+	|.badge { display:inline-block; padding:1px 6px; border-radius:10px; font-size:11px; font-weight:500; }
+	|.badge-ok { background:#DCFCE7; color:#16A34A; }
+	|.badge-warn { background:#FEF3C7; color:#D97706; }
+	|.badge-fuel { background:#EFF6FF; color:#3B82F6; margin:1px 2px; }
+	|.btn { padding:7px 20px; border:none; border-radius:8px; font-size:13px;
 	|  font-weight:600; cursor:pointer; }
 	|.btn-primary { background:#3B82F6; color:#fff; }
 	|.btn-primary:hover { background:#2563EB; }
+	|.btn-sm { padding:4px 12px; font-size:12px; border-radius:6px; }
 	|.btn-secondary { background:#E5E7EB; color:#374151; }
-	|.status { margin-top:8px; padding:8px; border-radius:6px; display:none; }
-	|.status.ok { display:block; background:#F0FDF4; color:#16A34A; }
-	|.status.err { display:block; background:#FEF2F2; color:#EF4444; }
+	|.sep { border-top:1px solid #E5E7EB; margin:12px 0; }
 	|</style></head><body>
-	|<h2>Настройки TradeLedger</h2>
+	|<h2>Настройки ElsyPlus Ledger</h2>
 	|
 	|<div class=""card"">
-	|<h3>Подключение к API</h3>
-	|<div class=""row""><label>URL сервера</label><input id=""s_url"" value=""""></div>
+	|<h3>Подключение</h3>
+	|<div class=""grid2"">
+	|<div class=""row""><label>URL API</label><input id=""s_url"" value=""""></div>
+	|<div class=""row""><label>Код системы</label><input id=""s_system"" value="""" style=""max-width:80px;""></div>
 	|<div class=""row""><label>Логин</label><input id=""s_login"" value=""""></div>
 	|<div class=""row""><label>Пароль</label><input id=""s_password"" type=""password"" value=""""></div>
-	|<div class=""row""><label>Код системы</label><input id=""s_system"" value="""" style=""max-width:100px;""></div>
 	|</div>
-	|
-	|<div class=""card"">
-	|<h3>Организация</h3>
+	|<div class=""sep""></div>
+	|<div class=""grid2"">
 	|<div class=""row""><label>Организация</label><input id=""s_org"" value=""""></div>
 	|<div class=""row""><label>Основной склад</label><input id=""s_warehouse"" value=""""></div>
-	|<div class=""row""><label>Поставщик</label><input id=""s_supplier"" value=""""></div>
+	|</div>
 	|</div>
 	|
 	|<div class=""card"">
 	|<h3>Станции</h3>
 	|<table>
-	|<tr><th>Код</th><th>Наименование</th><th>Склад 1С</th><th>Закр.смены</th></tr>
+	|<tr><th style=""width:55px"">Код</th><th>Наименование</th><th>Склад 1С</th><th style=""width:75px"">Закр.</th><th>Виды топлива</th></tr>
 	|<tbody id=""tblStations""></tbody>
 	|</table>
-	|<button class=""btn btn-secondary"" onclick=""addStation()"" style=""margin-top:8px;"">+ Станция</button>
-	|</div>
-	|
-	|<div class=""card"">
-	|<h3>Топливо</h3>
-	|<table>
-	|<tr><th>Код</th><th>Название</th><th>Номенклатура (т)</th><th>Номенклатура (л)</th><th>Плотность</th></tr>
-	|<tbody id=""tblFuel""></tbody>
-	|</table>
-	|<button class=""btn btn-secondary"" onclick=""addFuel()"" style=""margin-top:8px;"">+ Топливо</button>
+	|<button class=""btn btn-secondary btn-sm"" onclick=""addStation()"" style=""margin-top:8px;"">+ Станция</button>
 	|</div>
 	|
 	|<div class=""card"">
 	|<h3>Каналы оплат</h3>
 	|<table>
-	|<tr><th>Ключ</th><th>Наименование</th><th>Склад</th><th>Перемещение</th></tr>
+	|<tr><th style=""width:70px"">Канал</th><th>Наименование</th><th>Склад</th><th style=""width:80px"">Перемещ.</th></tr>
 	|<tbody id=""tblPayments""></tbody>
 	|</table>
+	|<div class=""sep""></div>
+	|<h3>Номенклатура топлива</h3>
+	|<table>
+	|<tr><th style=""width:55px"">Код</th><th>Название</th><th>Номенклатура (т)</th><th>Номенклатура (л)</th><th style=""width:80px"">Плотность</th></tr>
+	|<tbody id=""tblFuel""></tbody>
+	|</table>
+	|<button class=""btn btn-secondary btn-sm"" onclick=""addFuel()"" style=""margin-top:8px;"">+ Топливо</button>
 	|</div>
 	|
-	|<div style=""display:flex; gap:12px; margin-top:16px;"">
+	|<div style=""display:flex; gap:12px; margin-top:12px;"">
 	|<button class=""btn btn-primary"" id=""btnSave"">Сохранить</button>
-	|<div id=""statusMsg"" class=""status""></div>
 	|</div>
 	|
 	|<script>
 	|var cfg = {};
 	|try { cfg = JSON.parse('" + Экр(ТекущиеНастройки) + "'); } catch(e) { cfg = {}; }
-	|
 	|function v(key, def) { return cfg[key] || def || ''; }
+	|var fuelNames = {'2':'АИ-92','3':'АИ-95','5':'ДТ','100':'АИ-100','98':'АИ-98'};
 	|
+	|// Подключение
 	|document.getElementById('s_url').value = v('URLСервера');
 	|document.getElementById('s_login').value = v('Логин');
 	|document.getElementById('s_password').value = v('Пароль');
 	|document.getElementById('s_system').value = v('КодСистемы');
 	|document.getElementById('s_org').value = v('Организация');
 	|document.getElementById('s_warehouse').value = v('ОсновнойСклад');
-	|document.getElementById('s_supplier').value = v('Поставщик');
 	|
-	|// Станции
+	|// Собрать виды топлива (для колонки в таблице станций)
+	|var fuelCodes = [];
+	|Object.keys(cfg).forEach(function(k) {
+	|  var m = k.match(/^Топливо_(\w+)_Тонны$/);
+	|  if (m) fuelCodes.push(m[1]);
+	|});
+	|function fuelBadges() {
+	|  return fuelCodes.map(function(c) {
+	|    return '<span class=""badge badge-fuel"">' + (fuelNames[c] || c) + '</span>';
+	|  }).join('');
+	|}
+	|
+	|// Станции — динамический скан
 	|var stations = [];
 	|Object.keys(cfg).forEach(function(k) {
 	|  var m = k.match(/^Станция_(\d+)_Наименование$/);
 	|  if (m) stations.push(m[1]);
 	|});
 	|if (stations.length === 0) stations = ['5'];
+	|stations.sort(function(a,b) { return Number(a)-Number(b); });
 	|stations.forEach(function(code) { addStation(code); });
 	|
 	|function addStation(code) {
 	|  code = code || '';
 	|  var tb = document.getElementById('tblStations');
 	|  var tr = document.createElement('tr');
-	|  tr.innerHTML = '<td><input class=""st_code"" value=""'+code+'"" style=""width:60px;""></td>'
+	|  var wh = v('Станция_'+code+'_Склад');
+	|  var whStyle = wh ? '' : 'background:#FEF2F2;';
+	|  var whBadge = wh ? '<span class=""badge badge-ok"">OK</span>' : '<span class=""badge badge-warn"">нет</span>';
+	|  tr.innerHTML = '<td><input class=""st_code"" value=""'+code+'"" style=""width:50px;text-align:center""></td>'
 	|    + '<td><input class=""st_name"" value=""'+v('Станция_'+code+'_Наименование')+'""></td>'
-	|    + '<td><input class=""st_wh"" value=""'+v('Станция_'+code+'_Склад')+'""></td>'
-	|    + '<td><input class=""st_close"" value=""'+v('Станция_'+code+'_ВремяЗакрытия','00:00')+'"" style=""width:70px;""></td>';
+	|    + '<td style=""'+whStyle+'""><input class=""st_wh"" value=""'+wh+'"" placeholder=""Имя склада в 1С""></td>'
+	|    + '<td><input type=""time"" class=""st_close"" value=""'+v('Станция_'+code+'_ВремяЗакрытия','00:00')+'""></td>'
+	|    + '<td style=""white-space:nowrap"">'+fuelBadges()+'</td>';
 	|  tb.appendChild(tr);
 	|}
 	|
 	|// Топливо
-	|var fuels = [];
-	|Object.keys(cfg).forEach(function(k) {
-	|  var m = k.match(/^Топливо_(\w+)_Тонны$/);
-	|  if (m) fuels.push(m[1]);
-	|});
-	|if (fuels.length === 0) fuels = ['2','3','5'];
-	|var fuelNames = {'2':'АИ-92','3':'АИ-95','5':'ДТ','100':'АИ-100','98':'АИ-98'};
-	|fuels.forEach(function(code) { addFuel(code); });
+	|if (fuelCodes.length === 0) fuelCodes = ['2','3','5'];
+	|fuelCodes.forEach(function(code) { addFuel(code); });
 	|
 	|function addFuel(code) {
 	|  code = code || '';
 	|  var tb = document.getElementById('tblFuel');
 	|  var tr = document.createElement('tr');
-	|  tr.innerHTML = '<td><input class=""f_code"" value=""'+code+'"" style=""width:60px;""></td>'
-	|    + '<td><input class=""f_name"" value=""'+(fuelNames[code]||'')+'""></td>'
+	|  tr.innerHTML = '<td><input class=""f_code"" value=""'+code+'"" style=""width:50px;text-align:center""></td>'
+	|    + '<td><input class=""f_name"" value=""'+(fuelNames[code]||'')+'"" readonly style=""background:#F9FAFB;color:#6B7280""></td>'
 	|    + '<td><input class=""f_tons"" value=""'+v('Топливо_'+code+'_Тонны')+'""></td>'
 	|    + '<td><input class=""f_litres"" value=""'+v('Топливо_'+code+'_Литры')+'""></td>'
-	|    + '<td><input class=""f_density"" value=""'+v('Топливо_'+code+'_Плотность')+'"" style=""width:70px;""></td>';
+	|    + '<td><input class=""f_density"" value=""'+v('Топливо_'+code+'_Плотность')+'"" style=""width:75px;text-align:center""></td>';
 	|  tb.appendChild(tr);
 	|}
 	|
-	|// Оплаты
+	|// Каналы оплат
 	|var payments = [
-	|  {key:'retail', name:v('Оплата_retail_Наименование','Розница')},
-	|  {key:'cards', name:v('Оплата_cards_Наименование','Карты')},
-	|  {key:'online', name:v('Оплата_online_Наименование','Онлайн')},
+	|  {key:'retail', name:v('Оплата_retail_Наименование','Розница (наличные + эквайринг)')},
+	|  {key:'cards', name:v('Оплата_cards_Наименование','Топливные/корп. карты')},
+	|  {key:'online', name:v('Оплата_online_Наименование','Онлайн (Яндекс, МобилПр.)')},
 	|  {key:'ledger', name:v('Оплата_ledger_Наименование','Ведомости')}
 	|];
 	|var ptb = document.getElementById('tblPayments');
 	|payments.forEach(function(p) {
 	|  var tr = document.createElement('tr');
 	|  var req = v('Оплата_'+p.key+'_ТребуетПеремещения','Нет');
-	|  tr.innerHTML = '<td>'+p.key+'</td>'
+	|  tr.innerHTML = '<td style=""font-weight:600;color:#374151"">'+p.key+'</td>'
 	|    + '<td><input class=""p_name"" data-key=""'+p.key+'"" value=""'+p.name+'""></td>'
-	|    + '<td><input class=""p_wh"" data-key=""'+p.key+'"" value=""'+v('Оплата_'+p.key+'_Склад')+'""></td>'
+	|    + '<td><input class=""p_wh"" data-key=""'+p.key+'"" value=""'+v('Оплата_'+p.key+'_Склад')+'"" placeholder=""—""></td>'
 	|    + '<td><select class=""p_move"" data-key=""'+p.key+'""><option'+(req==='Да'?' selected':'')+'>Да</option><option'+(req!=='Да'?' selected':'')+'>Нет</option></select></td>';
 	|  ptb.appendChild(tr);
 	|});
 	|
-	|// Сбор данных и сохранение
+	|// Сохранение
 	|document.getElementById('btnSave').addEventListener('click', function() {
 	|  var result = {};
 	|  result['URLСервера'] = document.getElementById('s_url').value;
@@ -664,9 +676,7 @@
 	|  result['КодСистемы'] = document.getElementById('s_system').value;
 	|  result['Организация'] = document.getElementById('s_org').value;
 	|  result['ОсновнойСклад'] = document.getElementById('s_warehouse').value;
-	|  result['Поставщик'] = document.getElementById('s_supplier').value;
 	|
-	|  // Станции
 	|  var rows = document.getElementById('tblStations').rows;
 	|  for (var i = 0; i < rows.length; i++) {
 	|    var code = rows[i].querySelector('.st_code').value;
@@ -676,7 +686,6 @@
 	|    result['Станция_'+code+'_ВремяЗакрытия'] = rows[i].querySelector('.st_close').value;
 	|  }
 	|
-	|  // Топливо
 	|  rows = document.getElementById('tblFuel').rows;
 	|  for (var i = 0; i < rows.length; i++) {
 	|    var code = rows[i].querySelector('.f_code').value;
@@ -686,10 +695,8 @@
 	|    result['Топливо_'+code+'_Плотность'] = rows[i].querySelector('.f_density').value;
 	|  }
 	|
-	|  // Оплаты
 	|  document.querySelectorAll('.p_name').forEach(function(el) {
-	|    var key = el.dataset.key;
-	|    result['Оплата_'+key+'_Наименование'] = el.value;
+	|    result['Оплата_'+el.dataset.key+'_Наименование'] = el.value;
 	|  });
 	|  document.querySelectorAll('.p_wh').forEach(function(el) {
 	|    result['Оплата_'+el.dataset.key+'_Склад'] = el.value;

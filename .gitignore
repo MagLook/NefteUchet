@@ -25,3 +25,7 @@ Thumbs.db
 
 # Secrets
 .env
+
+# Diagnostic output (тестовые выводы Python COM-скриптов)
+scripts/_out_*.txt
+scripts/_out_*.log

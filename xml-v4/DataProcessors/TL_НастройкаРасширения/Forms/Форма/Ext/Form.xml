@@ -205,20 +205,10 @@
 						</InputField>
 					</ChildItems>
 				</Table>
-				<Button name="КомандаДобавитьСтанцию" id="63">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.КомандаДобавитьСтанцию</CommandName>
-					<ExtendedTooltip name="КомандаДобавитьСтанциюРасширеннаяПодсказка" id="64"/>
-				</Button>
 				<Button name="КомандаЗагрузитьСтанцииИзAPI" id="200">
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.КомандаЗагрузитьСтанцииИзAPI</CommandName>
 					<ExtendedTooltip name="КомандаЗагрузитьСтанцииИзAPIРасширеннаяПодсказка" id="201"/>
-				</Button>
-				<Button name="КомандаСоздатьНачальныеОстатки" id="202">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.КомандаСоздатьНачальныеОстатки</CommandName>
-					<ExtendedTooltip name="КомандаСоздатьНачальныеОстаткиРасширеннаяПодсказка" id="203"/>
 				</Button>
 				<Pages name="СтраницаШаг3" id="65">
 					<Title>
@@ -358,11 +348,6 @@
 						</InputField>
 					</ChildItems>
 				</Table>
-				<Button name="КомандаДобавитьТопливо" id="114">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.КомандаДобавитьТопливо</CommandName>
-					<ExtendedTooltip name="КомандаДобавитьТопливоРасширеннаяПодсказка" id="115"/>
-				</Button>
 				<Pages name="СтраницаШаг4" id="116">
 					<Title>
 						<v8:item>
@@ -870,13 +855,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда далее</v8:content>
+					<v8:content>Далее</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда далее</v8:content>
+					<v8:content>Далее</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>Далее</Action>
@@ -885,13 +870,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда назад</v8:content>
+					<v8:content>Назад</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда назад</v8:content>
+					<v8:content>Назад</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>Назад</Action>
@@ -900,13 +885,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда готово</v8:content>
+					<v8:content>Сохранить</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда готово</v8:content>
+					<v8:content>Сохранить</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>Готово</Action>
@@ -915,13 +900,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда проверить подключение</v8:content>
+					<v8:content>Проверить подключение</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда проверить подключение</v8:content>
+					<v8:content>Проверить подключение</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ПроверитьПодключение</Action>
@@ -930,13 +915,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда добавить станцию</v8:content>
+					<v8:content>Добавить станцию</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда добавить станцию</v8:content>
+					<v8:content>Добавить станцию</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ДобавитьСтанцию</Action>
@@ -975,13 +960,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда добавить топливо</v8:content>
+					<v8:content>Добавить топливо</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Команда добавить топливо</v8:content>
+					<v8:content>Добавить топливо</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ДобавитьТопливо</Action>

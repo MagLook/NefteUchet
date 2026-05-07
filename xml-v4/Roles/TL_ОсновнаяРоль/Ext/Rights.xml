@@ -29,6 +29,9 @@
 		<name>CommonModule.TL_HTMLГенератор</name>
 	</object>
 	<object>
+		<name>CommonModule.TL_HTTPКлиентЦБ</name>
+	</object>
+	<object>
 		<name>DataProcessor.TL_Загрузка</name>
 		<right>
 			<name>Use</name>

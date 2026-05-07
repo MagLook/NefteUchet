@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Enum uuid="e220d41d-c1b5-4063-a6ee-65cf9e131c5b">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.TL_СтатусПакета" category="Ref">
+				<xr:TypeId>32fb8e26-321a-4385-9659-681fa49151da</xr:TypeId>
+				<xr:ValueId>c9ce623f-fc9d-46dc-b7d4-67631de584db</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.TL_СтатусПакета" category="Manager">
+				<xr:TypeId>f36f6c8d-6933-496a-a480-1d0dcfea5146</xr:TypeId>
+				<xr:ValueId>52abf804-e4b6-4fdb-9d22-dbfbacd98093</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.TL_СтатусПакета" category="List">
+				<xr:TypeId>bcd3b6ac-ca42-4b40-9c9c-134e35dd2e4a</xr:TypeId>
+				<xr:ValueId>b68ed219-03b4-4cf5-bb56-8235771b6ea9</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>TL_СтатусПакета</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус пакета</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="bd9aff75-4b2b-4dde-ab91-51cee011df60">
+				<Properties>
+					<Name>Получен</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Получен</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="c894ab97-7e62-46bb-881a-c399a3f1f4d0">
+				<Properties>
+					<Name>Валидирован</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валидирован</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="98ee0577-ab93-4484-bdc7-29c3712831ba">
+				<Properties>
+					<Name>ПринятоЦеликом</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Принято целиком</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="7dcf348c-6d9e-4812-9bb0-a64624f3ebc2">
+				<Properties>
+					<Name>ПринятоЧастично</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Принято частично</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="9512e688-eab6-47ae-bdde-4c367ce46c1a">
+				<Properties>
+					<Name>Отклонено</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отклонено</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

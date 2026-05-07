@@ -40,6 +40,10 @@ if (-not $NoCopy) {
         @{ Src = (Join-Path $srcCommon 'TL_HTMLГенератор.bsl');       Dst = (Join-Path $xmlPath 'CommonModules\TL_HTMLГенератор\Ext\Module.bsl');       Name = 'TL_HTMLГенератор' },
         @{ Src = (Join-Path $srcCommon 'TL_Маппинг.bsl');             Dst = (Join-Path $xmlPath 'CommonModules\TL_Маппинг\Ext\Module.bsl');             Name = 'TL_Маппинг' },
         @{ Src = (Join-Path $srcCommon 'TL_РегистрСтатусов.bsl');     Dst = (Join-Path $xmlPath 'CommonModules\TL_РегистрСтатусов\Ext\Module.bsl');     Name = 'TL_РегистрСтатусов' },
+        @{ Src = (Join-Path $srcCommon 'TL_HTTPКлиентЦБ.bsl');         Dst = (Join-Path $xmlPath 'CommonModules\TL_HTTPКлиентЦБ\Ext\Module.bsl');         Name = 'TL_HTTPКлиентЦБ' },
+        @{ Src = (Join-Path $srcCommon 'TL_МаппингЦБ.bsl');            Dst = (Join-Path $xmlPath 'CommonModules\TL_МаппингЦБ\Ext\Module.bsl');            Name = 'TL_МаппингЦБ' },
+        @{ Src = (Join-Path $srcCommon 'TL_Сверка.bsl');               Dst = (Join-Path $xmlPath 'CommonModules\TL_Сверка\Ext\Module.bsl');               Name = 'TL_Сверка' },
+        @{ Src = (Join-Path $srcCommon 'TL_СопуткаСервис.bsl');        Dst = (Join-Path $xmlPath 'CommonModules\TL_СопуткаСервис\Ext\Module.bsl');        Name = 'TL_СопуткаСервис' },
         @{ Src = (Join-Path $srcDP 'TL_Загрузка\Forms\Форма\Module.bsl');              Dst = (Join-Path $xmlPath 'DataProcessors\TL_Загрузка\Forms\Форма\Ext\Form\Module.bsl');              Name = 'TL_Загрузка форма' },
         @{ Src = (Join-Path $srcDP 'TL_НастройкаРасширения\Forms\Форма\Module.bsl');   Dst = (Join-Path $xmlPath 'DataProcessors\TL_НастройкаРасширения\Forms\Форма\Ext\Form\Module.bsl');   Name = 'TL_НастройкаРасширения форма' }
     )

@@ -53,8 +53,8 @@
 			<DefaultRoles>
 				<xr:Item xsi:type="xr:MDObjectRef">Role.TL_ОсновнаяРоль</xr:Item>
 			</DefaultRoles>
-			<Vendor/>
-			<Version/>
+			<Vendor>ELSY+</Vendor>
+			<Version>6.0.0-alpha</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -73,14 +73,25 @@
 			<CommonModule>TL_Маппинг</CommonModule>
 			<CommonModule>TL_РегистрСтатусов</CommonModule>
 			<CommonModule>TL_HTMLГенератор</CommonModule>
+			<CommonModule>TL_HTTPКлиентЦБ</CommonModule>
+			<CommonModule>TL_МаппингЦБ</CommonModule>
+			<CommonModule>TL_Сверка</CommonModule>
+			<CommonModule>TL_СопуткаСервис</CommonModule>
 			<Catalog>Склады</Catalog>
 			<Catalog>Номенклатура</Catalog>
 			<Catalog>Контрагенты</Catalog>
 			<Catalog>Организации</Catalog>
+			<Enum>TL_ТипОбъектаИсточника</Enum>
+			<Enum>TL_ПолеОшибки</Enum>
+			<Enum>TL_КодОшибкиЗагрузки</Enum>
+			<Enum>TL_СтатусПакета</Enum>
 			<DataProcessor>TL_Загрузка</DataProcessor>
 			<DataProcessor>TL_НастройкаРасширения</DataProcessor>
 			<InformationRegister>TL_Настройки</InformationRegister>
 			<InformationRegister>TL_СтатусыЗагрузки</InformationRegister>
+			<InformationRegister>TL_СоответствиеИсточников</InformationRegister>
+			<InformationRegister>TL_ОшибкиЗагрузки</InformationRegister>
+			<InformationRegister>TL_СверкаПакета</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

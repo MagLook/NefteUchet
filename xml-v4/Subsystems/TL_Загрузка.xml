@@ -18,6 +18,7 @@
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.TL_Загрузка</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.TL_НастройкаРасширения</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.TL_МаппингОплат</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

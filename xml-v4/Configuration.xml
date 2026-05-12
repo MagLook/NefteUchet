@@ -88,6 +88,7 @@
 			<DataProcessor>TL_Загрузка</DataProcessor>
 			<DataProcessor>TL_НастройкаРасширения</DataProcessor>
 			<InformationRegister>TL_Настройки</InformationRegister>
+			<InformationRegister>TL_МаппингОплат</InformationRegister>
 			<InformationRegister>TL_СтатусыЗагрузки</InformationRegister>
 			<InformationRegister>TL_СоответствиеИсточников</InformationRegister>
 			<InformationRegister>TL_ОшибкиЗагрузки</InformationRegister>

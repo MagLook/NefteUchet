@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 """Регрессия TradeLedger v6.0 — все сценарии маршрутизации после фикса."""
 import sys, io, json, urllib.request, datetime, win32com.client
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _tl_config import BASE_PATH, USER, PWD
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
-
-BASE_PATH = r"D:\Users\magsp\GIG Base2"
-USER = "Гайворонская Татьяна"; PWD = "12345"
-
 com = win32com.client.Dispatch("V83.COMConnector")
 conn = com.Connect(f'File="{BASE_PATH}";Usr="{USER}";Pwd="{PWD}";')
 

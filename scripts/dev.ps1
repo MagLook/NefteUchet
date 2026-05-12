@@ -8,12 +8,12 @@
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
-# === Пути ===
-$platform = "C:\Program Files (x86)\1cv8\8.3.27.2074\bin\1cv8.exe"
-$base     = "D:\Users\magsp\GIG Base2"
-$ext      = "TradeLedger"
-$user     = "Гайворонская Татьяна"
-$pwd      = "12345"
+# === Пути (можно переопределить через env: TL_PLATFORM_EXE, TL_BASE, TL_EXT, TL_USER, TL_PWD) ===
+$platform = if ($env:TL_PLATFORM_EXE) { $env:TL_PLATFORM_EXE } else { "C:\Program Files (x86)\1cv8\8.3.27.2074\bin\1cv8.exe" }
+$base     = if ($env:TL_BASE)         { $env:TL_BASE }         else { "D:\Users\magsp\GIG Base2" }
+$ext      = if ($env:TL_EXT)          { $env:TL_EXT }          else { "TradeLedger" }
+$user     = if ($env:TL_USER)         { $env:TL_USER }         else { "Гайворонская Татьяна" }
+$pwd      = if ($env:TL_PWD)          { $env:TL_PWD }          else { "12345" }
 
 $ScriptDir   = Split-Path -Parent $MyInvocation.MyCommand.Path
 $ProjectRoot = Split-Path -Parent $ScriptDir

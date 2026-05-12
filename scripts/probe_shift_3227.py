@@ -1,3 +1,6 @@
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _tl_config import BASE_PATH, USER, PWD
 # -*- coding: utf-8 -*-
 """
 Разведка смены 3227 АЗС 210 за 29.04.2026 через STS API.
@@ -9,11 +12,6 @@ import urllib.request
 import urllib.error
 from datetime import date
 import win32com.client
-
-BASE_PATH = r"D:\Users\magsp\GIG Base2"
-USER = "Гайворонская Татьяна"
-PWD = "12345"
-
 STATION = 210
 SHIFT = 3227
 SHIFT_DATE_FROM = "2026-04-29"

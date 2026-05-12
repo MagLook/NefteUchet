@@ -2,10 +2,10 @@
 """v3: добираем coupons / pos/coupons / pos/transactions для смены 3227"""
 import sys, json, urllib.request, urllib.error, io
 import win32com.client
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _tl_config import BASE_PATH, USER, PWD
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
-
-BASE_PATH = r"D:\Users\magsp\GIG Base2"
-USER = "Гайворонская Татьяна"; PWD = "12345"
 STATION = 210; SHIFT = 3227
 DF, DT_ = "2026-04-29", "2026-04-30"
 

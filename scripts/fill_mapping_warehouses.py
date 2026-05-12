@@ -1,12 +1,11 @@
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _tl_config import BASE_PATH, USER, PWD
 # -*- coding: utf-8 -*-
 """Дозаливка складов в существующие записи TL_МаппингОплат:
 для канала cards/online/ledger/voucher проставляем склад из настроек канала."""
 import sys, io, win32com.client
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
-
-BASE_PATH = r"D:\Users\magsp\GIG Base2"
-USER = "Гайворонская Татьяна"; PWD = "12345"
-
 com = win32com.client.Dispatch("V83.COMConnector")
 conn = com.Connect(f'File="{BASE_PATH}";Usr="{USER}";Pwd="{PWD}";')
 

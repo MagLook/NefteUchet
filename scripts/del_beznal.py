@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 """Удалить запись 'безнал' из TL_МаппингОплат (опасный шаблон, ловит и корп-имена)."""
 import sys, io, win32com.client
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _tl_config import BASE_PATH, USER, PWD
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 com = win32com.client.Dispatch("V83.COMConnector")
-conn = com.Connect('File="D:\\Users\\magsp\\GIG Base2";Usr="Гайворонская Татьяна";Pwd="12345";')
+conn = com.Connect(f'File="{BASE_PATH}";Usr="{USER}";Pwd="{PWD}";')
 
 мн = conn.РегистрыСведений.TL_МаппингОплат.СоздатьМенеджерЗаписи()
 мн.ОбразецИмени = "безнал"

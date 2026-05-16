@@ -34,7 +34,8 @@ except ImportError:
     sys.exit(1)
 
 # ---------------------------------------------------------------------------
-PACKAGE_FILE = r'D:\TL_BP_Export\cf2cd842-6522-4258-960b-70e13e9ef0c3.json'
+# Можно передать другой пакет первым аргументом: py -3-32 run_a3_real.py <path>
+PACKAGE_FILE = sys.argv[1] if len(sys.argv) > 1 else r'D:\TL_BP_Export\cf2cd842-6522-4258-960b-70e13e9ef0c3.json'
 BASE = r'D:\Users\magsp\GIG Base2'
 USER = 'Гайворонская Татьяна'
 PWD = '12345'

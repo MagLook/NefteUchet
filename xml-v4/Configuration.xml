@@ -54,7 +54,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Role.TL_ОсновнаяРоль</xr:Item>
 			</DefaultRoles>
 			<Vendor>ELSY+</Vendor>
-			<Version>6.0.0-alpha</Version>
+			<Version>6.0.1</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>

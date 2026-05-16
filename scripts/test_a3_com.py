@@ -73,7 +73,6 @@ except Exception as e:
 print()
 print('Шаг 2. Поиск существующих объектов БП ГИГ для маппинга...')
 
-
 def find_one(query_text, params):
     q = conn.NewObject('Запрос')
     q.Текст = query_text
@@ -83,7 +82,6 @@ def find_one(query_text, params):
     if sel.Следующий():
         return sel.Ссылка
     return None
-
 
 # Организация ГАЗИНВЕСТГРУПП по ИНН
 org = find_one(
@@ -164,7 +162,6 @@ src_doc_uuid = str(uuid.uuid4())  # UUID самого документа purchas
 
 ENUM = conn.Перечисления.TL_ТипОбъектаИсточника
 
-
 def write_match(тип_перечисление, src_uuid, обj_ссылка):
     мз = conn.РегистрыСведений.TL_СоответствиеИсточников.СоздатьМенеджерЗаписи()
     мз.Тип = тип_перечисление
@@ -172,7 +169,6 @@ def write_match(тип_перечисление, src_uuid, обj_ссылка):
     мз.СсылкаОбъект = обj_ссылка
     мз.ДатаПоследнейЗагрузки = datetime.datetime.now()
     мз.Записать()
-
 
 write_match(ENUM.Организация, src_org_uuid, org)
 print(f'  Организация:  {src_org_uuid[:8]}... → {org}')

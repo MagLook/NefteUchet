@@ -65,7 +65,6 @@ print(f'      OK. Конфа {conn.Метаданные.Версия}')
 
 ENUM = conn.Перечисления.TL_ТипОбъектаИсточника
 
-
 def find_one(text, params):
     q = conn.NewObject('Запрос')
     q.Текст = text
@@ -76,7 +75,6 @@ def find_one(text, params):
         return sel.Ссылка
     return None
 
-
 def write_match(тип, uuid, ref):
     мз = conn.РегистрыСведений.TL_СоответствиеИсточников.СоздатьМенеджерЗаписи()
     мз.Тип = тип
@@ -85,7 +83,6 @@ def write_match(тип, uuid, ref):
     мз.ДатаПоследнейЗагрузки = datetime.datetime.now()
     мз.ИдентификаторПоследнегоПакета = package_id
     мз.Записать()
-
 
 def existing_match(тип, uuid):
     return conn.TL_МаппингЦБ.НайтиСоответствие(тип, uuid)

@@ -41,7 +41,6 @@ print(f'\nПодключение OK. Конфигурация: {conn.Метад�
 
 ENUM = conn.Перечисления.TL_ТипОбъектаИсточника
 
-
 def find_one(text, params):
     q = conn.NewObject('Запрос')
     q.Текст = text
@@ -52,7 +51,6 @@ def find_one(text, params):
         return sel.Ссылка
     return None
 
-
 def write_match(тип, src_uuid, ref):
     мз = conn.РегистрыСведений.TL_СоответствиеИсточников.СоздатьМенеджерЗаписи()
     мз.Тип = тип
@@ -60,7 +58,6 @@ def write_match(тип, src_uuid, ref):
     мз.СсылкаОбъект = ref
     мз.ДатаПоследнейЗагрузки = datetime.datetime.now()
     мз.Записать()
-
 
 # Базовая инфраструктура: организация, контрагент, склад, номенклатура
 print('Подготовка базовой инфраструктуры...')
@@ -88,7 +85,6 @@ print(f'  Организация:  {org}')
 print(f'  Контрагент:   {contr}')
 print(f'  Склад:        {warehouse}')
 print(f'  Номенклатура: {nom}')
-
 
 def make_package(doc_uuid, package_id, *, vat_amount=166.67, sum_amount=1000.00,
                  quantity=10, price=100.00, проведен=True, пометка_удаления=False,
@@ -169,7 +165,6 @@ def make_package(doc_uuid, package_id, *, vat_amount=166.67, sum_amount=1000.00,
         'Документы': [doc],
     }
 
-
 # Простой кэш чтобы не писать одни и те же соответствия несколько раз
 _match_done = set()
 def _get_done(uid):
@@ -188,7 +183,6 @@ def _wrap(тип, src_uuid, ref):
 write_match = _wrap
 write_match.get_done = _get_done
 
-
 def run_package(pkg, label):
     """Записать пакет во временный файл и прогнать через ОбработатьПакет."""
     tmp = os.path.join(tempfile.gettempdir(), f'test_{label}_{pkg["ИдентификаторПакета"]}.json')
@@ -200,7 +194,6 @@ def run_package(pkg, label):
     proc = conn.TL_СопуткаСервис.ОбработатьПакет(rr.Пакет, True)
     return proc, None, tmp
 
-
 def find_doc_by_comment(package_id):
     q = conn.NewObject('Запрос')
     q.Текст = (
@@ -210,7 +203,6 @@ def find_doc_by_comment(package_id):
     q.УстановитьПараметр('Шаблон', f'TL|ЦБ|{package_id}|%')
     sel = q.Выполнить().Выбрать()
     return sel.Ссылка if sel.Следующий() else None
-
 
 # ============================================================================
 # T3: пакет с неизвестной номенклатурой

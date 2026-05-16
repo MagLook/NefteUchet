@@ -13,12 +13,10 @@ PORT = 8099
 TARGET = "https://pos.autooplata.ru/tms"
 LOG = open("D:/Users/magsp/ELSYPLUS/NefteUchet/scripts/proxy.log", "w", encoding="utf-8")
 
-
 def log(msg):
     print(msg, flush=True)
     LOG.write(msg + "\n")
     LOG.flush()
-
 
 class Handler(http.server.BaseHTTPRequestHandler):
 
@@ -100,10 +98,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
     def log_message(self, fmt, *args):
         pass
 
-
 class ThreadedServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
     daemon_threads = True
-
 
 if __name__ == "__main__":
     log(f"STS Proxy (curl): http://127.0.0.1:{PORT} -> {TARGET}")

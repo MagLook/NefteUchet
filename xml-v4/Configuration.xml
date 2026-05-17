@@ -87,6 +87,10 @@
 			<Enum>TL_СтатусПакета</Enum>
 			<DataProcessor>TL_Загрузка</DataProcessor>
 			<DataProcessor>TL_НастройкаРасширения</DataProcessor>
+			<DataProcessor>TL_НастройкаОбменаСопутка</DataProcessor>
+			<DataProcessor>TL_НастройкаОбменаОбщепит</DataProcessor>
+			<DataProcessor>TL_ПросмотрОшибок</DataProcessor>
+			<DataProcessor>TL_ПросмотрСверки</DataProcessor>
 			<InformationRegister>TL_Настройки</InformationRegister>
 			<InformationRegister>TL_МаппингОплат</InformationRegister>
 			<InformationRegister>TL_СтатусыЗагрузки</InformationRegister>

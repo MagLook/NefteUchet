@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОткрытьПакет" id="31">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОткрытьПакет</CommandName>
+				<ExtendedTooltip name="ФормаОткрытьПакетРасширеннаяПодсказка" id="32"/>
+			</Button>
+			<Button name="ФормаОчиститьФильтры" id="33">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОчиститьФильтры</CommandName>
+				<ExtendedTooltip name="ФормаОчиститьФильтрыРасширеннаяПодсказка" id="34"/>
+			</Button>
+			<Button name="ФормаОбновитьСписок" id="35">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОбновитьСписок</CommandName>
+				<ExtendedTooltip name="ФормаОбновитьСписокРасширеннаяПодсказка" id="36"/>
+			</Button>
+			<Button name="ФормаПерезагрузитьПакет" id="68">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПерезагрузитьПакет</CommandName>
+				<ExtendedTooltip name="ФормаПерезагрузитьПакетРасширеннаяПодсказка" id="69"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<InputField name="ДатаНачала" id="37">
+			<DataPath>ДатаНачала</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="38"/>
+			<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="39"/>
+		</InputField>
+		<InputField name="ДатаОкончания" id="40">
+			<DataPath>ДатаОкончания</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="41"/>
+			<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="42"/>
+		</InputField>
+		<InputField name="ФильтрИдентификаторПакета" id="43">
+			<DataPath>ФильтрИдентификаторПакета</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ФильтрИдентификаторПакетаКонтекстноеМеню" id="44"/>
+			<ExtendedTooltip name="ФильтрИдентификаторПакетаРасширеннаяПодсказка" id="45"/>
+		</InputField>
+		<InputField name="ФильтрКодОшибки" id="46">
+			<DataPath>ФильтрКодОшибки</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ФильтрКодОшибкиКонтекстноеМеню" id="47"/>
+			<ExtendedTooltip name="ФильтрКодОшибкиРасширеннаяПодсказка" id="48"/>
+		</InputField>
+		<InputField name="ФильтрТипОбъекта" id="49">
+			<DataPath>ФильтрТипОбъекта</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ФильтрТипОбъектаКонтекстноеМеню" id="50"/>
+			<ExtendedTooltip name="ФильтрТипОбъектаРасширеннаяПодсказка" id="51"/>
+		</InputField>
+		<LabelDecoration name="КоличествоОшибок" id="65">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество ошибок</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="КоличествоОшибокКонтекстноеМеню" id="66"/>
+			<ExtendedTooltip name="КоличествоОшибокРасширеннаяПодсказка" id="67"/>
+		</LabelDecoration>
+		<Table name="Результат" id="52">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Результат</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="РезультатКонтекстноеМеню" id="53"/>
+			<AutoCommandBar name="РезультатКоманднаяПанель" id="54"/>
+			<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="55"/>
+			<SearchStringAddition name="РезультатСтрокаПоиска" id="56">
+				<AdditionSource>
+					<Item>Результат</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="РезультатСтрокаПоискаКонтекстноеМеню" id="57"/>
+				<ExtendedTooltip name="РезультатСтрокаПоискаРасширеннаяПодсказка" id="58"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="РезультатСостояниеПросмотра" id="59">
+				<AdditionSource>
+					<Item>Результат</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="РезультатСостояниеПросмотраКонтекстноеМеню" id="60"/>
+				<ExtendedTooltip name="РезультатСостояниеПросмотраРасширеннаяПодсказка" id="61"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="РезультатУправлениеПоиском" id="62">
+				<AdditionSource>
+					<Item>Результат</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="РезультатУправлениеПоискомКонтекстноеМеню" id="63"/>
+				<ExtendedTooltip name="РезультатУправлениеПоискомРасширеннаяПодсказка" id="64"/>
+			</SearchControlAddition>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.TL_ПросмотрОшибок</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДатаНачала" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата начала</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаОкончания" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата окончания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ФильтрТипОбъекта" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фильтр тип объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.TL_ТипОбъектаИсточника</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФильтрКодОшибки" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фильтр код ошибки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.TL_КодОшибкиЗагрузки</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФильтрИдентификаторПакета" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фильтр идентификатор пакета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>36</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Результат" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ВремяРегистрации" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время регистрации</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторПакета" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор пакета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НомерЗаписи" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер записи</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИсточникUUID" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Источник UUID</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипОбъекта" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип объекта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.TL_ТипОбъектаИсточника</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Поле" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поле</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.TL_ПолеОшибки</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КодОшибки" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.TL_КодОшибкиЗагрузки</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЗначениеИсточника" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение источника</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СообщениеОшибки" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сообщение ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Документ" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОбновитьСписок" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить список</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить список</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьСписок</Action>
+		</Command>
+		<Command name="ОчиститьФильтры" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить фильтры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить фильтры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОчиститьФильтры</Action>
+		</Command>
+		<Command name="ОткрытьПакет" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть пакет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть пакет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьПакет</Action>
+		</Command>
+		<Command name="ПерезагрузитьПакет" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перезагрузить пакет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перезагрузить пакет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПерезагрузитьПакет</Action>
+		</Command>
+	</Commands>
+</Form>

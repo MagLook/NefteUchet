@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаполнитьПоУмолчанию" id="25">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаполнитьПоУмолчанию</CommandName>
+				<ExtendedTooltip name="ФормаЗаполнитьПоУмолчаниюРасширеннаяПодсказка" id="26"/>
+			</Button>
+			<Button name="ФормаПроверитьКаталог" id="27">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПроверитьКаталог</CommandName>
+				<ExtendedTooltip name="ФормаПроверитьКаталогРасширеннаяПодсказка" id="28"/>
+			</Button>
+			<Button name="ФормаСохранитьНастройки" id="29">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СохранитьНастройки</CommandName>
+				<ExtendedTooltip name="ФормаСохранитьНастройкиРасширеннаяПодсказка" id="30"/>
+			</Button>
+			<Button name="ФормаЗагрузитьНастройки" id="31">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗагрузитьНастройки</CommandName>
+				<ExtendedTooltip name="ФормаЗагрузитьНастройкиРасширеннаяПодсказка" id="32"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<InputField name="КаталогOwnCloud" id="33">
+			<DataPath>КаталогOwnCloud</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КаталогOwnCloudКонтекстноеМеню" id="34"/>
+			<ExtendedTooltip name="КаталогOwnCloudРасширеннаяПодсказка" id="35"/>
+		</InputField>
+		<InputField name="КонтрагентИсточник" id="1">
+			<DataPath>КонтрагентИсточник</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КонтрагентИсточникКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КонтрагентИсточникРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Организация" id="4">
+			<DataPath>Организация</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="СкладПоУмолчанию" id="13">
+			<DataPath>СкладПоУмолчанию</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="СкладПоУмолчаниюКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="СкладПоУмолчаниюРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="Подразделение" id="7">
+			<DataPath>Подразделение</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ПодразделениеКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="СтатьяДДСНаличные" id="16">
+			<DataPath>СтатьяДДСНаличные</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="СтатьяДДСНаличныеКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="СтатьяДДСНаличныеРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<InputField name="ВидОплатыБезнал" id="22">
+			<DataPath>ВидОплатыБезнал</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ВидОплатыБезналКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="ВидОплатыБезналРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<CheckBoxField name="ПроводитьАвтоматически" id="10">
+			<DataPath>ПроводитьАвтоматически</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ПроводитьАвтоматическиКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ПроводитьАвтоматическиРасширеннаяПодсказка" id="12"/>
+		</CheckBoxField>
+		<InputField name="ТекстЛога" id="19">
+			<DataPath>ТекстЛога</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<Height>8</Height>
+			<MultiLine>true</MultiLine>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ТекстЛогаКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="ТекстЛогаРасширеннаяПодсказка" id="21"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.TL_НастройкаОбменаСопутка</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="КонтрагентИсточник" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент источник</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СкладПоУмолчанию" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склад по умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeId>0574ee81-9dda-4853-85ec-236415303af5</v8:TypeId>
+			</Type>
+		</Attribute>
+		<Attribute name="Подразделение" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeId>7c6a7e8d-9204-47b1-8619-ea42fa2be95b</v8:TypeId>
+			</Type>
+		</Attribute>
+		<Attribute name="СтатьяДДСНаличные" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статья ДДСНаличные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeId>f4a797e0-21b2-4be7-9fa4-eb3aa4db7e22</v8:TypeId>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидОплатыБезнал" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид оплаты безнал</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeId>1c9a35c5-e2fb-46d9-a1f3-8846f72321d0</v8:TypeId>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроводитьАвтоматически" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проводить автоматически</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстЛога" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст лога</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>500</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КаталогOwnCloud" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Каталог own cloud</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>255</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьНастройки</Action>
+		</Command>
+		<Command name="СохранитьНастройки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьНастройки</Action>
+		</Command>
+		<Command name="ЗаполнитьПоУмолчанию" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по умолчанию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоУмолчанию</Action>
+		</Command>
+		<Command name="ПроверитьКаталог" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить каталог</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить каталог</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьКаталог</Action>
+		</Command>
+	</Commands>
+</Form>

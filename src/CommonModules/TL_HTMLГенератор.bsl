@@ -1014,17 +1014,13 @@
 	СверкаЗапись = _ДетПак_НайтиСверку(ИдПакета);
 	СписокОшибок = _ДетПак_НайтиОшибки(ИдПакета);
 
-	// Флаг режима Общепит читается один раз — нужен для блока легенды:
-	// при ВЫКЛ статьи о production_release / ingredients_writeoff помечаются как пропускаемые.
-	ОбщепитАктивен = TL_Настройки.ОбщепитВключён();
-
 	HTML = _ДетПак_HTMLШаблон();
 	HTML = HTML + _ДетПак_HTMLШапка(Заголовок, КодАЗС, НомерСмены, Открытие, Закрытие, ОСЭНомер, Версия, СуммаПакета, Счёт);
 	HTML = HTML + _ДетПак_HTMLКарточкаСмены(КодАЗС, НомерСмены, Открытие, Закрытие, Оператор, Касса, ОСЭНомер, ОрганизацияUUID, СкладUUID, НСИКэш);
 	HTML = HTML + _ДетПак_HTMLСверка(СверкаЗапись, СуммаПакета);
 	HTML = HTML + _ДетПак_HTMLОшибки(СписокОшибок);
 	HTML = HTML + _ДетПак_HTMLДокументы(ДокМассив, НСИКэш, СопостBP);
-	HTML = HTML + _ДетПак_HTMLЛегендаПроводок(Счёт, ОбщепитАктивен);
+	HTML = HTML + _ДетПак_HTMLЛегендаПроводок(Счёт);
 	HTML = HTML + "</div></body></html>";
 
 	Возврат HTML;
@@ -1035,9 +1031,8 @@
 // Для каждого kind, который присутствует в пакете (Счёт.<kind> > 0):
 //   - тип создаваемого документа БП
 //   - типовые бухгалтерские проводки
-//   - примечание о режиме Общепит, если он выключен
 //
-Функция _ДетПак_HTMLЛегендаПроводок(Счёт, ОбщепитАктивен)
+Функция _ДетПак_HTMLЛегендаПроводок(Счёт)
 
 	HTML = "<div style='background:#ffffff;border:1px solid #d8dee7;border-radius:8px;padding:18px;margin-top:14px;'>"
 		+ "<div style='font-size:13px;font-weight:700;color:#1a1f36;letter-spacing:0.4px;text-transform:uppercase;margin-bottom:12px;'>"
@@ -1064,10 +1059,7 @@
 	HTML = HTML + _ДетПак_ЛегендаСтрока("production_release",
 		"Отчёт производства за смену",
 		"Дт 41.02 Кт 44.01 (выпуск)<br>Дт 44.01 Кт 41.02 (списание сырья)",
-		Счёт.production_release,
-		?(ОбщепитАктивен, "",
-			"<span style='color:#dc2626;font-weight:600;'>Режим Общепит ВЫКЛ — документ будет пропущен</span>"),
-		Счёт);
+		Счёт.production_release, "", Счёт);
 
 	HTML = HTML + _ДетПак_ЛегендаСтрока("return_purchase", "Корректировка поступления",
 		"Дт 41.02 Кт 60.01 СТОРНО<br>Дт 19.03 Кт 60.01 СТОРНО",
@@ -1090,18 +1082,6 @@
 		Счёт.transfer, "", Счёт);
 
 	HTML = HTML + "</table>";
-
-	// Подсказка про режим Общепит
-	Если Не ОбщепитАктивен И Счёт.production_release > 0 Тогда
-		HTML = HTML + "<div style='margin-top:12px;padding:10px 12px;background:#fff7ed;border-left:4px solid #f59e0b;font-size:12px;color:#7c2d12;'>"
-			+ "<b>Режим Общепит выключен</b> — документы kind=production_release ("
-			+ Формат(Счёт.production_release, "ЧГ=' '; ЧН=0") + " шт.) при проведении пакета "
-			+ "будут пропущены. Это штатный режим миграции: документы остаются в ЦБ, "
-			+ "при включении режима через настройку «Включить режим Общепит» "
-			+ "и повторной загрузке пакета они будут созданы. "
-			+ "См. Catalog.MSN_СтатьиПомощи, ключ «выгрузка_настройки»."
-			+ "</div>";
-	КонецЕсли;
 
 	HTML = HTML + "</div>";
 	Возврат HTML;
@@ -1203,7 +1183,24 @@
 		+ ".warn{background:#FEF3C7;color:#92400E;padding:8px 10px;border-radius:4px;border-left:4px solid #EAB308;margin-bottom:10px;}"
 		+ ".err{background:#FEE2E2;color:#991B1B;padding:8px 10px;border-radius:4px;border-left:4px solid #EF4444;margin-bottom:10px;}"
 		+ ".ok-pill{display:inline-block;background:#DCFCE7;color:#15803D;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600;}"
-		+ ".ko-pill{display:inline-block;background:#FEE2E2;color:#991B1B;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600;}";
+		+ ".ko-pill{display:inline-block;background:#FEE2E2;color:#991B1B;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600;}"
+		+ "details.doc{background:#fff;border:1px solid #E2E8F0;border-left:4px solid;border-radius:6px;padding:0;margin-bottom:6px;overflow:hidden;}"
+		+ "details.doc>summary{cursor:pointer;padding:8px 12px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px;user-select:none;}"
+		+ "details.doc>summary::-webkit-details-marker{display:none;}"
+		+ "details.doc>summary::before{content:'▶';font-size:9px;color:#9CA3AF;margin-right:6px;transition:transform .15s;}"
+		+ "details.doc[open]>summary::before{transform:rotate(90deg);}"
+		+ "details.doc>summary:hover{background:#F8FAFC;}"
+		+ "details.doc>.body{padding:6px 12px 10px 30px;border-top:1px solid #F1F5F9;}"
+		+ "details.docs-list{background:transparent;border:none;padding:0;margin:0;}"
+		+ "details.docs-list>summary{cursor:pointer;padding:8px 0;font-size:13px;font-weight:600;color:#374151;text-transform:uppercase;letter-spacing:0.5px;list-style:none;}"
+		+ "details.docs-list>summary::-webkit-details-marker{display:none;}"
+		+ "details.docs-list>summary::before{content:'▶';font-size:9px;color:#9CA3AF;margin-right:6px;transition:transform .15s;display:inline-block;}"
+		+ "details.docs-list[open]>summary::before{transform:rotate(90deg);}"
+		+ "details.tch{margin-top:6px;}"
+		+ "details.tch>summary{cursor:pointer;font-size:11px;font-weight:600;color:#374151;padding:4px 0;list-style:none;user-select:none;}"
+		+ "details.tch>summary::-webkit-details-marker{display:none;}"
+		+ "details.tch>summary::before{content:'▶';font-size:8px;color:#9CA3AF;margin-right:5px;transition:transform .15s;display:inline-block;}"
+		+ "details.tch[open]>summary::before{transform:rotate(90deg);}";
 	Возврат "<!DOCTYPE html><html><head><meta charset=""utf-8""><style>" + Стиль + "</style></head><body><div class=""wrap"">";
 КонецФункции
 
@@ -1302,12 +1299,17 @@
 	Если ТипЗнч(ДокМассив) <> Тип("Массив") И ТипЗнч(ДокМассив) <> Тип("ФиксированныйМассив") Тогда
 		Возврат "";
 	КонецЕсли;
-	HTML = "<div class=""section""><h2>Документы пакета (" + ДокМассив.Количество() + ")</h2></div>";
+	// Внешний блок с документами раскрыт по умолчанию (виден список),
+	// каждый документ внутри — свёрнут (раскрытие по клику).
+	HTML = "<div class=""section""><details class=""docs-list"" open>"
+		+ "<summary>Документы пакета (" + ДокМассив.Количество() + ") — кликните для свёртки списка</summary>"
+		+ "<div style=""margin-top:6px;"">";
 	НомерДок = 0;
 	Для Каждого Д Из ДокМассив Цикл
 		НомерДок = НомерДок + 1;
 		HTML = HTML + _ДетПак_ОдинДок(Д, НомерДок, НСИКэш, СопостBP);
 	КонецЦикла;
+	HTML = HTML + "</div></details></div>";
 	Возврат HTML;
 КонецФункции
 
@@ -1334,17 +1336,22 @@
 		СтатусСтр = "<span class=""ko-pill"">не создан</span>";
 	КонецЕсли;
 
-	HTML = "<div class=""doc"" style=""border-left-color:" + Цвет + ";"">";
-	HTML = HTML + "<div class=""doc-hdr"">"
-		+ "<div class=""left""><span class=""badge"" style=""background:" + Цвет + ";"">"
-		+ ИмяТип + "</span> #" + Формат(НомерДок, "ЧГ=0")
-		+ ?(ЗначениеЗаполнено(Номер), " · " + Номер, "") + "</div>"
-		+ "<div class=""right"">"
-		+ "<div style=""font-size:11px;color:#6B7280;"">" + Формат(Дата, "ДФ='dd.MM HH:mm:ss'") + "</div>"
-		+ "<div style=""font-weight:600;"">" + _ДетПак_ФорматСуммы(Сумма) + "</div>"
-		+ "</div></div>";
-
-	HTML = HTML + "<div class=""doc-meta"">" + _ДетПак_МетаДок(Док, НСИКэш) + СтатусСтр + "</div>";
+	// Каждый документ — свёрнутый по умолчанию <details>. В заголовке (summary) —
+	// тип, номер, статус, сумма (видно при свёрнутом состоянии). При раскрытии —
+	// полная мета и ТЧ.
+	HTML = "<details class=""doc"" style=""border-left-color:" + Цвет + ";"">";
+	HTML = HTML + "<summary>"
+		+ "<div class=""left"" style=""display:flex;align-items:center;gap:8px;flex:1;"">"
+		+ "<span class=""badge"" style=""background:" + Цвет + ";"">" + ИмяТип + "</span>"
+		+ "<span style=""font-weight:600;font-size:13px;"">#" + Формат(НомерДок, "ЧГ=0")
+		+ ?(ЗначениеЗаполнено(Номер), " · " + Номер, "") + "</span>"
+		+ "<span style=""font-size:11px;color:#6B7280;"">" + Формат(Дата, "ДФ='dd.MM HH:mm:ss'") + "</span>"
+		+ СтатусСтр + "</div>"
+		+ "<div class=""right"" style=""font-weight:600;font-size:13px;text-align:right;"">"
+		+ _ДетПак_ФорматСуммы(Сумма) + "</div>"
+		+ "</summary>";
+	HTML = HTML + "<div class=""body"">";
+	HTML = HTML + "<div class=""doc-meta"">" + _ДетПак_МетаДок(Док, НСИКэш) + "</div>";
 	HTML = HTML + _ДетПак_ТЧТовары(Док, НСИКэш);
 
 	Если Тип = "production_release" Тогда
@@ -1354,7 +1361,7 @@
 		HTML = HTML + _ДетПак_ТЧОплаты(Док);
 	КонецЕсли;
 
-	HTML = HTML + "</div>";
+	HTML = HTML + "</div></details>";
 	Возврат HTML;
 КонецФункции
 
@@ -1393,12 +1400,14 @@
 		Возврат "";
 	КонецЕсли;
 	Если Массив.Количество() = 0 Тогда
-		Возврат "<div style=""font-size:11px;color:#6B7280;font-style:italic;"">ТЧ Товары пуста</div>";
+		Возврат "<div style=""font-size:11px;color:#6B7280;font-style:italic;"">ТЧ " + ИмяТЧ + " пуста</div>";
 	КонецЕсли;
 
 	ЕстьУчетКол = (Тип = "inventory");
 
-	HTML = "<table class=""tbl""><thead><tr>"
+	HTML = "<details class=""tch"" open><summary>"
+		+ ИмяТЧ + " (" + Массив.Количество() + ")</summary>";
+	HTML = HTML + "<table class=""tbl""><thead><tr>"
 		+ "<th style=""width:30px;"">#</th>"
 		+ "<th>Номенклатура</th>"
 		+ "<th style=""text-align:right;width:70px;"">Кол</th>"
@@ -1440,7 +1449,7 @@
 			+ "<td>" + НДС + "</td>"
 			+ "<td class=""num"">" + Формат(СумНДС, "ЧДЦ=2") + "</td></tr>";
 	КонецЦикла;
-	HTML = HTML + "</tbody></table>";
+	HTML = HTML + "</tbody></table></details>";
 	Возврат HTML;
 КонецФункции
 
@@ -1451,7 +1460,7 @@
 	КонецЕсли;
 	Если Массив.Количество() = 0 Тогда Возврат ""; КонецЕсли;
 
-	HTML = "<div style=""margin-top:8px;font-size:11px;font-weight:600;color:#374151;"">Ингредиенты (" + Массив.Количество() + ")</div>";
+	HTML = "<details class=""tch""><summary>Ингредиенты (" + Массив.Количество() + ")</summary>";
 	HTML = HTML + "<table class=""tbl""><thead><tr>"
 		+ "<th style=""width:30px;"">#</th>"
 		+ "<th>Номенклатура</th>"
@@ -1473,7 +1482,7 @@
 			+ "<td class=""num"">" + Формат(Кол, "ЧДЦ=3") + "</td>"
 			+ "<td>" + Ед + "</td></tr>";
 	КонецЦикла;
-	HTML = HTML + "</tbody></table>";
+	HTML = HTML + "</tbody></table></details>";
 	Возврат HTML;
 КонецФункции
 
@@ -1484,7 +1493,7 @@
 	КонецЕсли;
 	Если Массив.Количество() = 0 Тогда Возврат ""; КонецЕсли;
 
-	HTML = "<div style=""margin-top:8px;font-size:11px;font-weight:600;color:#374151;"">Оплаты</div>";
+	HTML = "<details class=""tch""><summary>Оплаты (" + Массив.Количество() + ")</summary>";
 	HTML = HTML + "<table class=""tbl""><thead><tr>"
 		+ "<th>Вид оплаты</th>"
 		+ "<th style=""text-align:right;width:120px;"">Сумма</th>"
@@ -1494,7 +1503,7 @@
 		Сум = TL_HTTPКлиентЦБ.ПолучитьЗначениеИзJSON(Стр, "Сумма", 0);
 		HTML = HTML + "<tr><td>" + Вид + "</td><td class=""num""><b>" + _ДетПак_ФорматСуммы(Сум) + "</b></td></tr>";
 	КонецЦикла;
-	HTML = HTML + "</tbody></table>";
+	HTML = HTML + "</tbody></table></details>";
 	Возврат HTML;
 КонецФункции
 

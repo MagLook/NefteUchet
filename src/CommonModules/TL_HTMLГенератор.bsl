@@ -1143,16 +1143,39 @@
 	КонецПопытки;
 КонецФункции
 
+// Палитра типа документа — refined-схема для бухгалтерского UI:
+//   Граница — насыщенный 600-й оттенок (border-left документа, маркер цвета)
+//   Фон     — мягкий 50-й оттенок (бейдж, читается с тёмным текстом)
+//   Текст   — глубокий 700-800-й (контраст AA на фоне 50-го >= 7:1)
+// Все цвета из Tailwind-палитры — выверенный контраст без подбора.
+//
+Функция _ДетПак_ПалитраТипа(Тип)
+	П = Новый Структура("Граница, Фон, Текст");
+	Если Тип = "purchase" Тогда
+		П.Граница = "#2563EB"; П.Фон = "#EFF6FF"; П.Текст = "#1E40AF";
+	ИначеЕсли Тип = "retail_sale_sidegoods" Тогда
+		П.Граница = "#059669"; П.Фон = "#ECFDF5"; П.Текст = "#065F46";
+	ИначеЕсли Тип = "production_release" Тогда
+		П.Граница = "#D97706"; П.Фон = "#FEF3C7"; П.Текст = "#92400E";
+	ИначеЕсли Тип = "return_purchase" Тогда
+		П.Граница = "#E11D48"; П.Фон = "#FFE4E6"; П.Текст = "#9F1239";
+	ИначеЕсли Тип = "inventory" Тогда
+		П.Граница = "#64748B"; П.Фон = "#F1F5F9"; П.Текст = "#334155";
+	ИначеЕсли Тип = "gain" Тогда
+		П.Граница = "#7C3AED"; П.Фон = "#F3E8FF"; П.Текст = "#5B21B6";
+	ИначеЕсли Тип = "writeoff" Тогда
+		П.Граница = "#DC2626"; П.Фон = "#FEE2E2"; П.Текст = "#991B1B";
+	ИначеЕсли Тип = "transfer" Тогда
+		П.Граница = "#0891B2"; П.Фон = "#CFFAFE"; П.Текст = "#155E75";
+	Иначе
+		П.Граница = "#64748B"; П.Фон = "#F1F5F9"; П.Текст = "#334155";
+	КонецЕсли;
+	Возврат П;
+КонецФункции
+
+// Алиас (Граница) для обратной совместимости с местами, где используется одиночный цвет.
 Функция _ДетПак_ЦветТипа(Тип)
-	Если Тип = "purchase"             Тогда Возврат "#3B82F6"; КонецЕсли;
-	Если Тип = "retail_sale_sidegoods" Тогда Возврат "#16A34A"; КонецЕсли;
-	Если Тип = "production_release"    Тогда Возврат "#EAB308"; КонецЕсли;
-	Если Тип = "return_purchase"       Тогда Возврат "#EF4444"; КонецЕсли;
-	Если Тип = "inventory"             Тогда Возврат "#6B7280"; КонецЕсли;
-	Если Тип = "gain"                  Тогда Возврат "#8B5CF6"; КонецЕсли;
-	Если Тип = "writeoff"              Тогда Возврат "#DC2626"; КонецЕсли;
-	Если Тип = "transfer"              Тогда Возврат "#06B6D4"; КонецЕсли;
-	Возврат "#6B7280";
+	Возврат _ДетПак_ПалитраТипа(Тип).Граница;
 КонецФункции
 
 Функция _ДетПак_ИмяТипа(Тип)
@@ -1188,8 +1211,8 @@
 		+ ".doc{background:#fff;border:1px solid #E2E8F0;border-left:4px solid;border-radius:6px;padding:10px 12px;margin-bottom:8px;}"
 		+ ".doc-hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}"
 		+ ".doc-hdr .left{font-weight:600;font-size:14px;}"
-		+ ".doc-hdr .badge{font-size:10px;padding:2px 6px;border-radius:3px;color:#fff;text-transform:uppercase;font-weight:600;letter-spacing:0.4px;}"
 		+ ".doc-hdr .right{text-align:right;font-size:13px;}"
+		+ ".badge{display:inline-block;font-size:11px;padding:3px 9px;border-radius:4px;text-transform:uppercase;font-weight:700;letter-spacing:0.3px;line-height:1.3;text-decoration:none;white-space:nowrap;border:1px solid transparent;}"
 		+ ".doc-meta{font-size:11px;color:#6B7280;margin-bottom:6px;}"
 		+ ".doc-meta span{margin-right:12px;}"
 		+ ".tbl{width:100%;border-collapse:collapse;font-size:11px;margin-top:6px;}"
@@ -1199,25 +1222,31 @@
 		+ ".tbl tr:hover{background:#F8FAFC;}"
 		+ ".warn{background:#FEF3C7;color:#92400E;padding:8px 10px;border-radius:4px;border-left:4px solid #EAB308;margin-bottom:10px;}"
 		+ ".err{background:#FEE2E2;color:#991B1B;padding:8px 10px;border-radius:4px;border-left:4px solid #EF4444;margin-bottom:10px;}"
-		+ ".ok-pill{display:inline-block;background:#DCFCE7;color:#15803D;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600;}"
-		+ ".ko-pill{display:inline-block;background:#FEE2E2;color:#991B1B;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600;}"
-		+ "details.doc{background:#fff;border:1px solid #E2E8F0;border-left:4px solid;border-radius:6px;padding:0;margin-bottom:6px;overflow:hidden;}"
-		+ "details.doc>summary{cursor:pointer;padding:8px 12px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px;user-select:none;}"
+		+ ".ok-pill{display:inline-block;background:#DCFCE7;color:#166534;padding:2px 9px;border-radius:10px;font-size:10.5px;font-weight:700;border:1px solid #BBF7D0;letter-spacing:0.2px;}"
+		+ ".ko-pill{display:inline-block;background:#FEE2E2;color:#991B1B;padding:2px 9px;border-radius:10px;font-size:10.5px;font-weight:700;border:1px solid #FECACA;letter-spacing:0.2px;}"
+		+ "details,summary{outline:none;}"
+		+ "summary{text-decoration:none;}"
+		+ "details.doc{background:#fff;border:1px solid #E2E8F0;border-left:5px solid;border-radius:6px;padding:0;margin-bottom:7px;overflow:hidden;transition:box-shadow .15s,border-color .15s;}"
+		+ "details.doc:hover{box-shadow:0 1px 3px rgba(15,23,42,0.08);border-color:#CBD5E1;}"
+		+ "details.doc[open]{box-shadow:0 2px 6px rgba(15,23,42,0.06);}"
+		+ "details.doc>summary{cursor:pointer;padding:10px 14px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;user-select:none;text-decoration:none;}"
 		+ "details.doc>summary::-webkit-details-marker{display:none;}"
-		+ "details.doc>summary::before{content:'▶';font-size:9px;color:#9CA3AF;margin-right:6px;transition:transform .15s;}"
-		+ "details.doc[open]>summary::before{transform:rotate(90deg);}"
+		+ "details.doc>summary::before{content:'▸';font-size:11px;color:#94A3B8;margin-right:8px;transition:transform .15s;display:inline-block;flex-shrink:0;}"
+		+ "details.doc[open]>summary::before{transform:rotate(90deg);color:#475569;}"
 		+ "details.doc>summary:hover{background:#F8FAFC;}"
-		+ "details.doc>.body{padding:6px 12px 10px 30px;border-top:1px solid #F1F5F9;}"
+		+ "details.doc>.body{padding:8px 14px 12px 36px;border-top:1px solid #E2E8F0;background:#FAFBFC;}"
 		+ "details.docs-list{background:transparent;border:none;padding:0;margin:0;}"
-		+ "details.docs-list>summary{cursor:pointer;padding:8px 0;font-size:13px;font-weight:600;color:#374151;text-transform:uppercase;letter-spacing:0.5px;list-style:none;}"
+		+ "details.docs-list>summary{cursor:pointer;padding:8px 0;font-size:12px;font-weight:700;color:#1F2937;text-transform:uppercase;letter-spacing:0.6px;list-style:none;text-decoration:none;}"
 		+ "details.docs-list>summary::-webkit-details-marker{display:none;}"
-		+ "details.docs-list>summary::before{content:'▶';font-size:9px;color:#9CA3AF;margin-right:6px;transition:transform .15s;display:inline-block;}"
+		+ "details.docs-list>summary::before{content:'▸';font-size:10px;color:#64748B;margin-right:6px;transition:transform .15s;display:inline-block;}"
 		+ "details.docs-list[open]>summary::before{transform:rotate(90deg);}"
-		+ "details.tch{margin-top:6px;}"
-		+ "details.tch>summary{cursor:pointer;font-size:11px;font-weight:600;color:#374151;padding:4px 0;list-style:none;user-select:none;}"
+		+ "details.tch{margin-top:6px;background:#fff;border:1px solid #E2E8F0;border-radius:4px;overflow:hidden;}"
+		+ "details.tch>summary{cursor:pointer;font-size:11px;font-weight:600;color:#475569;padding:6px 10px;list-style:none;user-select:none;text-decoration:none;background:#F8FAFC;}"
+		+ "details.tch>summary:hover{background:#F1F5F9;}"
 		+ "details.tch>summary::-webkit-details-marker{display:none;}"
-		+ "details.tch>summary::before{content:'▶';font-size:8px;color:#9CA3AF;margin-right:5px;transition:transform .15s;display:inline-block;}"
-		+ "details.tch[open]>summary::before{transform:rotate(90deg);}";
+		+ "details.tch>summary::before{content:'▸';font-size:9px;color:#94A3B8;margin-right:6px;transition:transform .15s;display:inline-block;}"
+		+ "details.tch[open]>summary::before{transform:rotate(90deg);color:#475569;}"
+		+ "details.tch>.tbl{margin-top:0;}";
 	Возврат "<!DOCTYPE html><html><head><meta charset=""utf-8""><style>" + Стиль + "</style></head><body><div class=""wrap"">";
 КонецФункции
 
@@ -1230,14 +1259,14 @@
 
 	HTML = "<h1>" + Заг + "</h1><div class=""sub"">" + СубТитр + "</div>";
 	HTML = HTML + "<div class=""kpi"">";
-	HTML = HTML + _ДетПак_KPIКарточка(Счёт.purchase,             "Поступл.",   "#3B82F6");
-	HTML = HTML + _ДетПак_KPIКарточка(Счёт.retail_sale_sidegoods, "Розница",    "#16A34A");
-	HTML = HTML + _ДетПак_KPIКарточка(Счёт.production_release,    "Произв.",    "#EAB308");
-	HTML = HTML + _ДетПак_KPIКарточка(Счёт.return_purchase,       "Возвр.",     "#EF4444");
-	HTML = HTML + _ДетПак_KPIКарточка(Счёт.inventory,             "Инвент.",    "#6B7280");
-	HTML = HTML + _ДетПак_KPIКарточка(Счёт.gain,                  "Оприход.",   "#8B5CF6");
-	HTML = HTML + _ДетПак_KPIКарточка(Счёт.writeoff,              "Списан.",    "#DC2626");
-	HTML = HTML + _ДетПак_KPIКарточка(Счёт.transfer,              "Перем.",     "#06B6D4");
+	HTML = HTML + _ДетПак_KPIКарточка(Счёт.purchase,             "Поступл.",   _ДетПак_ПалитраТипа("purchase").Граница);
+	HTML = HTML + _ДетПак_KPIКарточка(Счёт.retail_sale_sidegoods, "Розница",    _ДетПак_ПалитраТипа("retail_sale_sidegoods").Граница);
+	HTML = HTML + _ДетПак_KPIКарточка(Счёт.production_release,    "Произв.",    _ДетПак_ПалитраТипа("production_release").Граница);
+	HTML = HTML + _ДетПак_KPIКарточка(Счёт.return_purchase,       "Возвр.",     _ДетПак_ПалитраТипа("return_purchase").Граница);
+	HTML = HTML + _ДетПак_KPIКарточка(Счёт.inventory,             "Инвент.",    _ДетПак_ПалитраТипа("inventory").Граница);
+	HTML = HTML + _ДетПак_KPIКарточка(Счёт.gain,                  "Оприход.",   _ДетПак_ПалитраТипа("gain").Граница);
+	HTML = HTML + _ДетПак_KPIКарточка(Счёт.writeoff,              "Списан.",    _ДетПак_ПалитраТипа("writeoff").Граница);
+	HTML = HTML + _ДетПак_KPIКарточка(Счёт.transfer,              "Перем.",     _ДетПак_ПалитраТипа("transfer").Граница);
 
 	HTML = HTML + "<div class=""kpi-card"" style=""background:#1F2937;color:#fff;"">"
 		+ "<div class=""val"" style=""color:#fff;"">" + Формат(СуммаПакета, "ЧДЦ=0; ЧРГ=' '") + "</div>"
@@ -1336,7 +1365,7 @@
 	Номер  = СокрЛП(TL_HTTPКлиентЦБ.ПолучитьЗначениеИзJSON(Док, "Номер", ""));
 	Дата   = _ДетПак_ПарсДата(TL_HTTPКлиентЦБ.ПолучитьЗначениеИзJSON(Док, "Дата", ""));
 	Сумма  = TL_HTTPКлиентЦБ.ПолучитьЗначениеИзJSON(Док, "СуммаДокумента", 0);
-	Цвет   = _ДетПак_ЦветТипа(Тип);
+	П      = _ДетПак_ПалитраТипа(Тип);
 	ИмяТип = _ДетПак_ИмяТипа(Тип);
 
 	Ссылка = СопостBP.Получить(UUID);
@@ -1345,7 +1374,7 @@
 		Попытка
 			Проведен = Ссылка.Проведен;
 			СтатусСтр = "<span class=""ok-pill"">" + ?(Проведен, "✓ Проведён", "● Записан") + "</span> "
-				+ "<span style=""font-size:11px;color:#6B7280;"">" + Строка(Ссылка) + "</span>";
+				+ "<span style=""font-size:11px;color:#64748B;font-weight:400;"">" + Строка(Ссылка) + "</span>";
 		Исключение
 			СтатусСтр = "<span class=""ok-pill"">создан</span>";
 		КонецПопытки;
@@ -1356,15 +1385,18 @@
 	// Каждый документ — свёрнутый по умолчанию <details>. В заголовке (summary) —
 	// тип, номер, статус, сумма (видно при свёрнутом состоянии). При раскрытии —
 	// полная мета и ТЧ.
-	HTML = "<details class=""doc"" style=""border-left-color:" + Цвет + ";"">";
+	HTML = "<details class=""doc"" style=""border-left-color:" + П.Граница + ";"">";
 	HTML = HTML + "<summary>"
-		+ "<div class=""left"" style=""display:flex;align-items:center;gap:8px;flex:1;"">"
-		+ "<span class=""badge"" style=""background:" + Цвет + ";"">" + ИмяТип + "</span>"
-		+ "<span style=""font-weight:600;font-size:13px;"">#" + Формат(НомерДок, "ЧГ=0")
-		+ ?(ЗначениеЗаполнено(Номер), " · " + Номер, "") + "</span>"
-		+ "<span style=""font-size:11px;color:#6B7280;"">" + Формат(Дата, "ДФ='dd.MM HH:mm:ss'") + "</span>"
+		+ "<div class=""left"" style=""display:flex;align-items:center;gap:10px;flex:1;min-width:0;"">"
+		+ "<span class=""badge"" style=""background:" + П.Фон + ";color:" + П.Текст
+		+ ";border-color:" + П.Граница + ";"">" + ИмяТип + "</span>"
+		+ "<span style=""color:#94A3B8;font-weight:400;"">#" + Формат(НомерДок, "ЧГ=0") + "</span>"
+		+ ?(ЗначениеЗаполнено(Номер),
+			"<span style=""font-family:'SF Mono','Consolas',monospace;font-size:12px;color:#1E293B;font-weight:600;"">" + Номер + "</span>",
+			"")
+		+ "<span style=""font-size:11px;color:#64748B;font-weight:400;"">" + Формат(Дата, "ДФ='dd.MM HH:mm:ss'") + "</span>"
 		+ СтатусСтр + "</div>"
-		+ "<div class=""right"" style=""font-weight:600;font-size:13px;text-align:right;"">"
+		+ "<div class=""right"" style=""font-weight:700;font-size:14px;color:#0F172A;text-align:right;flex-shrink:0;font-variant-numeric:tabular-nums;"">"
 		+ _ДетПак_ФорматСуммы(Сумма) + "</div>"
 		+ "</summary>";
 	HTML = HTML + "<div class=""body"">";

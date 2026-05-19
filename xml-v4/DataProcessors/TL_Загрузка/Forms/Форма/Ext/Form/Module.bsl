@@ -3050,37 +3050,37 @@
 
 &НаСервере
 Функция _ДетПак_HTMLШаблон()
-	Стиль = "
-		body{margin:0;padding:0;font-family:-apple-system,'Segoe UI',sans-serif;font-size:13px;background:#F0F4F8;color:#1F2937;}
-		.wrap{padding:12px 16px;}
-		h1{font-size:18px;margin:0 0 4px 0;color:#1F2937;}
-		.sub{font-size:11px;color:#6B7280;margin-bottom:12px;}
-		.kpi{display:grid;grid-template-columns:repeat(9,1fr);gap:6px;margin-bottom:12px;}
-		.kpi-card{background:#fff;border:1px solid #E2E8F0;border-radius:6px;padding:8px;text-align:center;}
-		.kpi-card .val{font-size:18px;font-weight:600;}
-		.kpi-card .lbl{font-size:10px;color:#6B7280;text-transform:uppercase;letter-spacing:0.4px;}
-		.section{background:#fff;border:1px solid #E2E8F0;border-radius:6px;padding:10px 12px;margin-bottom:10px;}
-		.section h2{font-size:13px;margin:0 0 8px 0;color:#374151;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;}
-		.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-size:12px;}
-		.meta .lbl{color:#6B7280;font-size:10px;text-transform:uppercase;letter-spacing:0.4px;}
-		.meta .val{font-weight:500;}
-		.doc{background:#fff;border:1px solid #E2E8F0;border-left:4px solid;border-radius:6px;padding:10px 12px;margin-bottom:8px;}
-		.doc-hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
-		.doc-hdr .left{font-weight:600;font-size:14px;}
-		.doc-hdr .badge{font-size:10px;padding:2px 6px;border-radius:3px;color:#fff;text-transform:uppercase;font-weight:600;letter-spacing:0.4px;}
-		.doc-hdr .right{text-align:right;font-size:13px;}
-		.doc-meta{font-size:11px;color:#6B7280;margin-bottom:6px;}
-		.doc-meta span{margin-right:12px;}
-		.tbl{width:100%;border-collapse:collapse;font-size:11px;margin-top:6px;}
-		.tbl th{background:#F8FAFC;color:#475569;font-weight:600;text-align:left;padding:4px 6px;border-bottom:1px solid #E2E8F0;}
-		.tbl td{padding:3px 6px;border-bottom:1px solid #F1F5F9;}
-		.tbl td.num{text-align:right;font-variant-numeric:tabular-nums;}
-		.tbl tr:hover{background:#F8FAFC;}
-		.warn{background:#FEF3C7;color:#92400E;padding:8px 10px;border-radius:4px;border-left:4px solid #EAB308;margin-bottom:10px;}
-		.err{background:#FEE2E2;color:#991B1B;padding:8px 10px;border-radius:4px;border-left:4px solid #EF4444;margin-bottom:10px;}
-		.ok-pill{display:inline-block;background:#DCFCE7;color:#15803D;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600;}
-		.ko-pill{display:inline-block;background:#FEE2E2;color:#991B1B;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600;}
-	";
+	// В 1С строковые литералы не могут содержать переносы строк (нужен синтаксис «|»
+	// или конкатенация). Здесь — конкатенация: каждый CSS-блок одной строкой.
+	Стиль = "body{margin:0;padding:0;font-family:-apple-system,'Segoe UI',sans-serif;font-size:13px;background:#F0F4F8;color:#1F2937;}"
+		+ ".wrap{padding:12px 16px;}"
+		+ "h1{font-size:18px;margin:0 0 4px 0;color:#1F2937;}"
+		+ ".sub{font-size:11px;color:#6B7280;margin-bottom:12px;}"
+		+ ".kpi{display:grid;grid-template-columns:repeat(9,1fr);gap:6px;margin-bottom:12px;}"
+		+ ".kpi-card{background:#fff;border:1px solid #E2E8F0;border-radius:6px;padding:8px;text-align:center;}"
+		+ ".kpi-card .val{font-size:18px;font-weight:600;}"
+		+ ".kpi-card .lbl{font-size:10px;color:#6B7280;text-transform:uppercase;letter-spacing:0.4px;}"
+		+ ".section{background:#fff;border:1px solid #E2E8F0;border-radius:6px;padding:10px 12px;margin-bottom:10px;}"
+		+ ".section h2{font-size:13px;margin:0 0 8px 0;color:#374151;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;}"
+		+ ".meta{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-size:12px;}"
+		+ ".meta .lbl{color:#6B7280;font-size:10px;text-transform:uppercase;letter-spacing:0.4px;}"
+		+ ".meta .val{font-weight:500;}"
+		+ ".doc{background:#fff;border:1px solid #E2E8F0;border-left:4px solid;border-radius:6px;padding:10px 12px;margin-bottom:8px;}"
+		+ ".doc-hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}"
+		+ ".doc-hdr .left{font-weight:600;font-size:14px;}"
+		+ ".doc-hdr .badge{font-size:10px;padding:2px 6px;border-radius:3px;color:#fff;text-transform:uppercase;font-weight:600;letter-spacing:0.4px;}"
+		+ ".doc-hdr .right{text-align:right;font-size:13px;}"
+		+ ".doc-meta{font-size:11px;color:#6B7280;margin-bottom:6px;}"
+		+ ".doc-meta span{margin-right:12px;}"
+		+ ".tbl{width:100%;border-collapse:collapse;font-size:11px;margin-top:6px;}"
+		+ ".tbl th{background:#F8FAFC;color:#475569;font-weight:600;text-align:left;padding:4px 6px;border-bottom:1px solid #E2E8F0;}"
+		+ ".tbl td{padding:3px 6px;border-bottom:1px solid #F1F5F9;}"
+		+ ".tbl td.num{text-align:right;font-variant-numeric:tabular-nums;}"
+		+ ".tbl tr:hover{background:#F8FAFC;}"
+		+ ".warn{background:#FEF3C7;color:#92400E;padding:8px 10px;border-radius:4px;border-left:4px solid #EAB308;margin-bottom:10px;}"
+		+ ".err{background:#FEE2E2;color:#991B1B;padding:8px 10px;border-radius:4px;border-left:4px solid #EF4444;margin-bottom:10px;}"
+		+ ".ok-pill{display:inline-block;background:#DCFCE7;color:#15803D;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600;}"
+		+ ".ko-pill{display:inline-block;background:#FEE2E2;color:#991B1B;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600;}";
 	Возврат "<!DOCTYPE html><html><head><meta charset=""utf-8""><style>" + Стиль + "</style></head><body><div class=""wrap"">";
 КонецФункции
 

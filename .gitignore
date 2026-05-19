@@ -1,31 +1,27 @@
+
 # 1C build artifacts
-*.cfe
+# 1C temp
+# Build
+# Diagnostic output (тестовые выводы Python COM-скриптов)
+# IDE
+# OS
+# Secrets
+*.bak
 *.cf
+*.cfe
+*.code-workspace
 *.dt
 *.log
-
-# Build
-build/
-
-# IDE
+*.tmp
+.DS_Store
+.env
 .idea/
 .vscode/
-*.code-workspace
-
-# OS
-desktop.ini
-Thumbs.db
-.DS_Store
-
-# 1C temp
-*.bak
-*.tmp
 1Cv8.1CD
 1Cv8tmp*
-
-# Secrets
-.env
-
-# Diagnostic output (тестовые выводы Python COM-скриптов)
-scripts/_out_*.txt
+Thumbs.db
+__pycache__/
+build/
+desktop.ini
 scripts/_out_*.log
+scripts/_out_*.txt

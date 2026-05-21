@@ -16,7 +16,7 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>TradeLedger — Настройки обмена сопутки (ЦБ → БП)</v8:content>
+					<v8:content>Настройки обмена сопутки (ЦБ → БП)</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment>Параметры приёма пакетов из ЦБ для контура Сопутки: каталог OwnCloud, контрагент, организация, склад, подразделение, статья ДДС</Comment>

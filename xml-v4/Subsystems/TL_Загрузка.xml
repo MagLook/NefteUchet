@@ -6,7 +6,7 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>ElsyPlus Ledger</v8:content>
+					<v8:content>TradeLedger</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -17,6 +17,7 @@
 			<Picture/>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.TL_Загрузка</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.TL_ЗагрузкаИзКаталога</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.TL_НастройкаРасширения</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.TL_НастройкаОбменаСопутка</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.TL_НастройкаОбменаОбщепит</xr:Item>

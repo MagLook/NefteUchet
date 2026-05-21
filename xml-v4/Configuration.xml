@@ -73,6 +73,7 @@
 			<CommonModule>TL_Маппинг</CommonModule>
 			<CommonModule>TL_РегистрСтатусов</CommonModule>
 			<CommonModule>TL_HTMLГенератор</CommonModule>
+			<CommonModule>TL_ПомощьКонтент</CommonModule>
 			<CommonModule>TL_HTTPКлиентЦБ</CommonModule>
 			<CommonModule>TL_МаппингЦБ</CommonModule>
 			<CommonModule>TL_Сверка</CommonModule>

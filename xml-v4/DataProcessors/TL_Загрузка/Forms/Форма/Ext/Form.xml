@@ -58,6 +58,27 @@
 					<CommandName>Form.Command.КомандаОбновить</CommandName>
 					<ExtendedTooltip name="Кнопка1РасширеннаяПодсказка" id="16"/>
 				</Button>
+				<Button name="КнопкаПерезагрузитьПериод" id="300">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПерезагрузитьПериод</CommandName>
+					<ExtendedTooltip name="КнопкаПерезагрузитьПериодРасширеннаяПодсказка" id="301"/>
+				</Button>
+				<Button name="КнопкаПодробныйОтчётОшибок" id="302">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПодробныйОтчётОшибок</CommandName>
+					<ExtendedTooltip name="КнопкаПодробныйОтчётОшибокРасширеннаяПодсказка" id="303"/>
+				</Button>
+				<Button name="КнопкаОткрытьПомощь" id="304">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ОткрытьПомощь</CommandName>
+					<ExtendedTooltip name="КнопкаОткрытьПомощьРасширеннаяПодсказка" id="305"/>
+				</Button>
+				<Button name="КнопкаСбросРегистрацииПериода" id="306">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.СбросРегистрацииПериода</CommandName>
+					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+					<ExtendedTooltip name="КнопкаСбросРегистрацииПериодаРасширеннаяПодсказка" id="307"/>
+				</Button>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаТаблицы" id="128">
@@ -1045,6 +1066,66 @@
 				</v8:item>
 			</ToolTip>
 			<Action>РаспровестиВыбранные</Action>
+		</Command>
+		<Command name="ПерезагрузитьПериод" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перезагрузить период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дозагрузить недостающее или перепровести существующие документы за выбранный период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПерезагрузитьПериод</Action>
+		</Command>
+		<Command name="СбросРегистрацииПериода" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сбросить регистрацию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить записи о загрузке из TL_СтатусыЗагрузки (документы БП не трогает)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СбросРегистрацииПериода</Action>
+		</Command>
+		<Command name="ПодробныйОтчётОшибок" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подробный отчёт ошибок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть HTML-отчёт ошибок загрузки с группировкой по категориям</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодробныйОтчётОшибок</Action>
+		</Command>
+		<Command name="ОткрытьПомощь" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Помощь</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть встроенную справку TradeLedger</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьПомощь</Action>
 		</Command>
 	</Commands>
 </Form>

@@ -1,0 +1,958 @@
+{
+  "_meta": {
+    "запуск": "2026-05-21T11:08:13.367945",
+    "период": [
+      "2026-05-01",
+      "2026-05-21"
+    ],
+    "settings_sysid": {
+      "5": "65",
+      "8": "15",
+      "208": "15",
+      "209": "15",
+      "210": "15"
+    }
+  },
+  "по_АЗС": {
+    "5": {
+      "sysid": "65",
+      "total_shifts_in_period": 21,
+      "shifts": [
+        {
+          "shift": 132,
+          "opened": "2026-05-01T00:01:01",
+          "closed": "2026-05-02T00:00:32",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 251059.27
+        },
+        {
+          "shift": 133,
+          "opened": "2026-05-02T00:00:54",
+          "closed": "2026-05-03T00:00:49",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 180590.33
+        },
+        {
+          "shift": 134,
+          "opened": "2026-05-03T00:01:11",
+          "closed": "2026-05-04T00:00:30",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 167873.93
+        },
+        {
+          "shift": 135,
+          "opened": "2026-05-04T00:00:52",
+          "closed": "2026-05-05T00:00:55",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 206733.97
+        },
+        {
+          "shift": 136,
+          "opened": "2026-05-05T00:01:40",
+          "closed": "2026-05-06T00:01:09",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 184393.24
+        },
+        {
+          "shift": 137,
+          "opened": "2026-05-06T00:01:32",
+          "closed": "2026-05-07T00:00:26",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 227530.46
+        },
+        {
+          "shift": 138,
+          "opened": "2026-05-07T00:00:50",
+          "closed": "2026-05-08T00:00:29",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 243594.18
+        },
+        {
+          "shift": 139,
+          "opened": "2026-05-08T00:00:55",
+          "closed": "2026-05-09T00:00:36",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 260635.24
+        },
+        {
+          "shift": 140,
+          "opened": "2026-05-09T00:00:57",
+          "closed": "2026-05-10T00:00:38",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 190099.95
+        },
+        {
+          "shift": 141,
+          "opened": "2026-05-10T00:00:59",
+          "closed": "2026-05-11T00:00:33",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 161109.27
+        },
+        {
+          "shift": 142,
+          "opened": "2026-05-11T00:00:53",
+          "closed": "2026-05-12T00:00:32",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 183028.92
+        },
+        {
+          "shift": 143,
+          "opened": "2026-05-12T00:00:53",
+          "closed": "2026-05-13T00:00:39",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 221066.93
+        },
+        {
+          "shift": 144,
+          "opened": "2026-05-13T00:01:01",
+          "closed": "2026-05-14T00:00:40",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 211996.47
+        },
+        {
+          "shift": 145,
+          "opened": "2026-05-14T00:01:03",
+          "closed": "2026-05-15T00:00:37",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 224013.03
+        },
+        {
+          "shift": 146,
+          "opened": "2026-05-15T00:01:01",
+          "closed": "2026-05-16T00:00:38",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 275856.07
+        },
+        {
+          "shift": 147,
+          "opened": "2026-05-16T00:01:03",
+          "closed": "2026-05-17T00:00:34",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 235143.5
+        },
+        {
+          "shift": 148,
+          "opened": "2026-05-17T00:00:59",
+          "closed": "2026-05-18T00:00:30",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 181326.53
+        },
+        {
+          "shift": 149,
+          "opened": "2026-05-18T00:00:50",
+          "closed": "2026-05-19T00:00:38",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 226162.19
+        },
+        {
+          "shift": 150,
+          "opened": "2026-05-19T00:00:59",
+          "closed": "2026-05-20T00:00:46",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 210243.96
+        },
+        {
+          "shift": 151,
+          "opened": "2026-05-20T00:01:07",
+          "closed": "2026-05-21T00:00:55",
+          "status": "ok",
+          "releases_count": 3,
+          "sum_amount": 242621.71
+        },
+        {
+          "shift": 152,
+          "opened": "2026-05-21T00:01:17",
+          "closed": "?",
+          "status": "ok",
+          "releases_count": 0,
+          "sum_amount": 0
+        }
+      ],
+      "status_summary": {
+        "ok": 21
+      }
+    },
+    "8": {
+      "sysid": "15",
+      "total_shifts_in_period": 24,
+      "shifts": [
+        {
+          "shift": 7292,
+          "opened": "2026-05-01T00:14:22",
+          "closed": "2026-05-01T07:59:39",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 9775.76
+        },
+        {
+          "shift": 7293,
+          "opened": "2026-05-01T08:08:15",
+          "closed": "2026-05-02T07:59:17",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 163105.83
+        },
+        {
+          "shift": 7294,
+          "opened": "2026-05-02T08:09:09",
+          "closed": "2026-05-03T08:02:29",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 180499.48
+        },
+        {
+          "shift": 7295,
+          "opened": "2026-05-03T08:16:21",
+          "closed": "2026-05-04T08:00:35",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 220660.08
+        },
+        {
+          "shift": 7296,
+          "opened": "2026-05-04T08:09:03",
+          "closed": "2026-05-05T07:59:23",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 262172.84
+        },
+        {
+          "shift": 7297,
+          "opened": "2026-05-05T07:57:44",
+          "closed": "2026-05-05T08:10:03",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 0.0
+        },
+        {
+          "shift": 7298,
+          "opened": "2026-05-05T08:11:26",
+          "closed": "2026-05-06T07:59:34",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 241004.08
+        },
+        {
+          "shift": 7299,
+          "opened": "2026-05-06T08:12:29",
+          "closed": "2026-05-07T08:01:44",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 324794.3
+        },
+        {
+          "shift": 7300,
+          "opened": "2026-05-07T08:08:45",
+          "closed": "2026-05-08T08:00:24",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 264440.49
+        },
+        {
+          "shift": 7301,
+          "opened": "2026-05-08T08:11:13",
+          "closed": "2026-05-09T08:03:41",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 362646.96
+        },
+        {
+          "shift": 7302,
+          "opened": "2026-05-09T08:15:19",
+          "closed": "2026-05-10T08:01:01",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 205681.69
+        },
+        {
+          "shift": 7303,
+          "opened": "2026-05-10T08:11:17",
+          "closed": "2026-05-11T08:00:41",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 195110.99
+        },
+        {
+          "shift": 7304,
+          "opened": "2026-05-11T08:08:28",
+          "closed": "2026-05-12T08:03:07",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 196378.88
+        },
+        {
+          "shift": 7305,
+          "opened": "2026-05-12T08:10:13",
+          "closed": "2026-05-12T08:16:34",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 0.0
+        },
+        {
+          "shift": 7306,
+          "opened": "2026-05-12T08:17:37",
+          "closed": "2026-05-13T07:58:13",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 319808.29
+        },
+        {
+          "shift": 7307,
+          "opened": "2026-05-13T08:14:19",
+          "closed": "2026-05-14T07:58:19",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 227228.39
+        },
+        {
+          "shift": 7308,
+          "opened": "2026-05-14T08:06:21",
+          "closed": "2026-05-15T08:00:36",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 211719.26
+        },
+        {
+          "shift": 7309,
+          "opened": "2026-05-15T08:13:53",
+          "closed": "2026-05-16T08:01:24",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 273910.69
+        },
+        {
+          "shift": 7310,
+          "opened": "2026-05-16T08:08:31",
+          "closed": "2026-05-17T07:55:27",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 194938.65
+        },
+        {
+          "shift": 7311,
+          "opened": "2026-05-17T08:11:30",
+          "closed": "2026-05-18T08:02:29",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 208201.28
+        },
+        {
+          "shift": 7312,
+          "opened": "2026-05-18T08:10:09",
+          "closed": "2026-05-19T07:54:55",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 253461.85
+        },
+        {
+          "shift": 7313,
+          "opened": "2026-05-19T07:56:37",
+          "closed": "2026-05-20T08:05:35",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 268985.4
+        },
+        {
+          "shift": 7314,
+          "opened": "2026-05-20T08:20:30",
+          "closed": "2026-05-21T08:05:33",
+          "status": "ok",
+          "releases_count": 7,
+          "sum_amount": 273703.03
+        },
+        {
+          "shift": 7315,
+          "opened": "2026-05-21T08:11:54",
+          "closed": "?",
+          "status": "ok",
+          "releases_count": 0,
+          "sum_amount": 0
+        }
+      ],
+      "status_summary": {
+        "ok": 24
+      }
+    },
+    "208": {
+      "sysid": "15",
+      "total_shifts_in_period": 23,
+      "shifts": [
+        {
+          "shift": 6962,
+          "opened": "2026-05-01T00:07:59",
+          "closed": "2026-05-01T07:11:48",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 23037.24
+        },
+        {
+          "shift": 6963,
+          "opened": "2026-05-01T07:24:55",
+          "closed": "2026-05-02T07:10:59",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 780050.82
+        },
+        {
+          "shift": 6964,
+          "opened": "2026-05-02T07:23:57",
+          "closed": "2026-05-03T07:05:19",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 668014.82
+        },
+        {
+          "shift": 6965,
+          "opened": "2026-05-03T07:21:57",
+          "closed": "2026-05-04T07:15:40",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 577603.26
+        },
+        {
+          "shift": 6966,
+          "opened": "2026-05-04T07:42:05",
+          "closed": "2026-05-05T07:10:00",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 815416.14
+        },
+        {
+          "shift": 6967,
+          "opened": "2026-05-05T07:26:00",
+          "closed": "2026-05-06T07:08:36",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 896164.06
+        },
+        {
+          "shift": 6968,
+          "opened": "2026-05-06T07:21:56",
+          "closed": "2026-05-07T07:11:14",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 927700.17
+        },
+        {
+          "shift": 6969,
+          "opened": "2026-05-07T07:25:15",
+          "closed": "2026-05-08T07:11:04",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 844141.25
+        },
+        {
+          "shift": 6970,
+          "opened": "2026-05-08T07:23:47",
+          "closed": "2026-05-08T10:47:23",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 158836.62
+        },
+        {
+          "shift": 6971,
+          "opened": "2026-05-08T10:54:42",
+          "closed": "2026-05-09T07:02:28",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 704038.66
+        },
+        {
+          "shift": 6972,
+          "opened": "2026-05-09T07:20:36",
+          "closed": "2026-05-10T07:10:33",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 435994.21
+        },
+        {
+          "shift": 6973,
+          "opened": "2026-05-10T07:25:49",
+          "closed": "2026-05-11T07:10:05",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 520312.3
+        },
+        {
+          "shift": 6974,
+          "opened": "2026-05-11T07:21:51",
+          "closed": "2026-05-12T07:04:53",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 747322.3
+        },
+        {
+          "shift": 6975,
+          "opened": "2026-05-12T07:26:16",
+          "closed": "2026-05-13T07:11:34",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 1030071.84
+        },
+        {
+          "shift": 6976,
+          "opened": "2026-05-13T07:24:39",
+          "closed": "2026-05-14T07:12:09",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 780323.42
+        },
+        {
+          "shift": 6977,
+          "opened": "2026-05-14T07:26:32",
+          "closed": "2026-05-15T07:06:41",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 834592.61
+        },
+        {
+          "shift": 6978,
+          "opened": "2026-05-15T07:22:11",
+          "closed": "2026-05-16T07:11:29",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 851603.73
+        },
+        {
+          "shift": 6979,
+          "opened": "2026-05-16T07:26:57",
+          "closed": "2026-05-17T07:10:28",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 605538.24
+        },
+        {
+          "shift": 6980,
+          "opened": "2026-05-17T07:29:12",
+          "closed": "2026-05-18T07:05:58",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 496033.92
+        },
+        {
+          "shift": 6981,
+          "opened": "2026-05-18T07:22:46",
+          "closed": "2026-05-19T07:06:45",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 812406.68
+        },
+        {
+          "shift": 6982,
+          "opened": "2026-05-19T07:17:37",
+          "closed": "2026-05-20T07:10:27",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 1014956.84
+        },
+        {
+          "shift": 6983,
+          "opened": "2026-05-20T07:29:48",
+          "closed": "2026-05-21T07:09:40",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 893948.86
+        },
+        {
+          "shift": 6984,
+          "opened": "2026-05-21T07:20:00",
+          "closed": "?",
+          "status": "ok",
+          "releases_count": 0,
+          "sum_amount": 0
+        }
+      ],
+      "status_summary": {
+        "ok": 23
+      }
+    },
+    "209": {
+      "sysid": "15",
+      "total_shifts_in_period": 22,
+      "shifts": [
+        {
+          "shift": 3860,
+          "opened": "2026-05-01T00:02:47",
+          "closed": "2026-05-01T07:30:55",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 9905.09
+        },
+        {
+          "shift": 3861,
+          "opened": "2026-05-01T08:03:01",
+          "closed": "2026-05-02T07:32:09",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 190779.15
+        },
+        {
+          "shift": 3862,
+          "opened": "2026-05-02T08:06:35",
+          "closed": "2026-05-03T07:32:20",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 142332.29
+        },
+        {
+          "shift": 3863,
+          "opened": "2026-05-03T07:53:40",
+          "closed": "2026-05-04T07:30:22",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 120860.53
+        },
+        {
+          "shift": 3864,
+          "opened": "2026-05-04T07:57:29",
+          "closed": "2026-05-05T07:29:38",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 125957.35
+        },
+        {
+          "shift": 3865,
+          "opened": "2026-05-05T07:49:44",
+          "closed": "2026-05-06T07:30:23",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 91609.7
+        },
+        {
+          "shift": 3866,
+          "opened": "2026-05-06T07:46:58",
+          "closed": "2026-05-07T07:31:54",
+          "status": "http_500",
+          "body_excerpt": "{\"code\":5000,\"message\":\"Internal server error\"}"
+        },
+        {
+          "shift": 3867,
+          "opened": "2026-05-07T07:52:52",
+          "closed": "2026-05-08T07:35:06",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 142183.71
+        },
+        {
+          "shift": 3868,
+          "opened": "2026-05-08T08:06:31",
+          "closed": "2026-05-09T07:29:48",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 359835.6
+        },
+        {
+          "shift": 3869,
+          "opened": "2026-05-09T07:54:59",
+          "closed": "2026-05-10T07:30:20",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 164854.23
+        },
+        {
+          "shift": 3870,
+          "opened": "2026-05-10T07:45:38",
+          "closed": "2026-05-11T07:30:44",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 136659.01
+        },
+        {
+          "shift": 3871,
+          "opened": "2026-05-11T07:52:02",
+          "closed": "2026-05-12T07:30:43",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 136746.0
+        },
+        {
+          "shift": 3872,
+          "opened": "2026-05-12T07:49:52",
+          "closed": "2026-05-13T07:30:18",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 110305.41
+        },
+        {
+          "shift": 3873,
+          "opened": "2026-05-13T07:54:45",
+          "closed": "2026-05-14T07:30:27",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 201755.28
+        },
+        {
+          "shift": 3874,
+          "opened": "2026-05-14T07:54:20",
+          "closed": "2026-05-15T07:30:26",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 130161.9
+        },
+        {
+          "shift": 3875,
+          "opened": "2026-05-15T07:59:51",
+          "closed": "2026-05-16T07:33:04",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 190730.7
+        },
+        {
+          "shift": 3876,
+          "opened": "2026-05-16T07:56:52",
+          "closed": "2026-05-17T07:29:27",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 92856.48
+        },
+        {
+          "shift": 3877,
+          "opened": "2026-05-17T08:06:21",
+          "closed": "2026-05-18T07:32:08",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 136066.07
+        },
+        {
+          "shift": 3878,
+          "opened": "2026-05-18T08:01:49",
+          "closed": "2026-05-19T07:32:13",
+          "status": "http_500",
+          "body_excerpt": "{\"code\":5000,\"message\":\"Internal server error\"}"
+        },
+        {
+          "shift": 3879,
+          "opened": "2026-05-19T07:51:49",
+          "closed": "2026-05-20T07:30:08",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 200077.5
+        },
+        {
+          "shift": 3880,
+          "opened": "2026-05-20T07:53:57",
+          "closed": "2026-05-21T07:30:28",
+          "status": "ok",
+          "releases_count": 6,
+          "sum_amount": 90935.62
+        },
+        {
+          "shift": 3881,
+          "opened": "2026-05-21T07:56:27",
+          "closed": "?",
+          "status": "ok",
+          "releases_count": 0,
+          "sum_amount": 0
+        }
+      ],
+      "status_summary": {
+        "ok": 20,
+        "http_500": 2
+      }
+    },
+    "210": {
+      "sysid": "15",
+      "total_shifts_in_period": 22,
+      "shifts": [
+        {
+          "shift": 3229,
+          "opened": "2026-05-01T00:04:43",
+          "closed": "2026-05-01T07:59:16",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 2307.61
+        },
+        {
+          "shift": 3230,
+          "opened": "2026-05-01T08:34:01",
+          "closed": "2026-05-02T08:00:45",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 203587.77
+        },
+        {
+          "shift": 3231,
+          "opened": "2026-05-02T08:37:32",
+          "closed": "2026-05-03T08:01:22",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 172285.55
+        },
+        {
+          "shift": 3232,
+          "opened": "2026-05-03T08:37:55",
+          "closed": "2026-05-04T08:00:24",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 159634.28
+        },
+        {
+          "shift": 3233,
+          "opened": "2026-05-04T08:34:57",
+          "closed": "2026-05-05T08:00:43",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 302768.95
+        },
+        {
+          "shift": 3234,
+          "opened": "2026-05-05T08:34:02",
+          "closed": "2026-05-06T08:01:20",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 260769.97
+        },
+        {
+          "shift": 3235,
+          "opened": "2026-05-06T08:36:19",
+          "closed": "2026-05-07T08:00:51",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 370250.91
+        },
+        {
+          "shift": 3236,
+          "opened": "2026-05-07T08:37:12",
+          "closed": "2026-05-08T08:02:14",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 212576.85
+        },
+        {
+          "shift": 3237,
+          "opened": "2026-05-08T08:39:31",
+          "closed": "2026-05-09T08:03:45",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 319789.31
+        },
+        {
+          "shift": 3238,
+          "opened": "2026-05-09T08:35:59",
+          "closed": "2026-05-10T08:02:20",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 184329.59
+        },
+        {
+          "shift": 3239,
+          "opened": "2026-05-10T08:33:05",
+          "closed": "2026-05-11T08:00:34",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 299012.24
+        },
+        {
+          "shift": 3240,
+          "opened": "2026-05-11T08:33:34",
+          "closed": "2026-05-12T08:00:46",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 198457.48
+        },
+        {
+          "shift": 3241,
+          "opened": "2026-05-12T08:40:41",
+          "closed": "2026-05-13T07:59:52",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 304797.02
+        },
+        {
+          "shift": 3242,
+          "opened": "2026-05-13T08:24:26",
+          "closed": "2026-05-14T08:01:06",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 219041.61
+        },
+        {
+          "shift": 3243,
+          "opened": "2026-05-14T08:37:11",
+          "closed": "2026-05-15T08:01:20",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 303420.73
+        },
+        {
+          "shift": 3244,
+          "opened": "2026-05-15T08:36:52",
+          "closed": "2026-05-16T08:01:02",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 286569.14
+        },
+        {
+          "shift": 3245,
+          "opened": "2026-05-16T08:39:52",
+          "closed": "2026-05-17T07:59:06",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 146771.88
+        },
+        {
+          "shift": 3246,
+          "opened": "2026-05-17T08:35:53",
+          "closed": "2026-05-18T08:01:47",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 205801.99
+        },
+        {
+          "shift": 3247,
+          "opened": "2026-05-18T08:33:13",
+          "closed": "2026-05-19T08:01:29",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 297123.45
+        },
+        {
+          "shift": 3248,
+          "opened": "2026-05-19T08:37:27",
+          "closed": "?",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 240984.07
+        },
+        {
+          "shift": 3249,
+          "opened": "2026-05-20T08:36:32",
+          "closed": "2026-05-21T07:59:39",
+          "status": "ok",
+          "releases_count": 5,
+          "sum_amount": 303950.08
+        },
+        {
+          "shift": 3250,
+          "opened": "2026-05-21T08:34:28",
+          "closed": "?",
+          "status": "ok",
+          "releases_count": 0,
+          "sum_amount": 0
+        }
+      ],
+      "status_summary": {
+        "ok": 22
+      }
+    }
+  }
+}

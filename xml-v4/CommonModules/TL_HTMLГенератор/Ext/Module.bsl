@@ -1055,7 +1055,7 @@
 		+ " .rep-page h2{font-size:18px;margin:24px 0 10px 0;color:#1a4d7a}"
 		+ " .rep-block{margin-bottom:24px}"
 		+ " .rep-empty{padding:20px;text-align:center;color:#888;background:#f5f5f5;border-radius:4px}"
-		+ " .rep-log{background:#1e1e1e;color:#d4d4d4;padding:14px 18px;border-radius:6px;font-family:'Consolas','Courier New',monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;word-wrap:break-word;max-height:600px;overflow-y:auto}";
+		+ " .rep-log{background:#fafaf5;color:#1a1a1a;padding:14px 18px;border:1px solid #d8d8d0;border-radius:4px;font-family:'Consolas','Courier New',monospace;font-size:13px;line-height:1.7;white-space:pre-wrap;word-wrap:break-word;max-height:600px;overflow-y:auto}";
 	Возврат "<style>" + CSS + "</style>";
 КонецФункции
 

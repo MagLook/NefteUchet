@@ -5,12 +5,6 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<Button name="КнопкаСбросРегистрацииПериода" id="320">
-			<Type>UsualButton</Type>
-			<CommandName>Form.Command.СбросРегистрацииПериода</CommandName>
-			<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-			<ExtendedTooltip name="КнопкаСбросРегистрацииПериодаРасширеннаяПодсказка" id="321"/>
-		</Button>
 		<HTMLDocumentField name="HTMLДашборд" id="222">
 			<DataPath>HTMLДашборд</DataPath>
 			<TitleLocation>None</TitleLocation>

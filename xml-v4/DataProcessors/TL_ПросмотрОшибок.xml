@@ -16,7 +16,7 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>TradeLedger — Просмотр ошибок загрузки</v8:content>
+					<v8:content>TradeLedger — Журнал ошибок загрузки</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment>Просмотр TL_ОшибкиЗагрузки с фильтрами по периоду, типу объекта, коду ошибки</Comment>

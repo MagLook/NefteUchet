@@ -16,7 +16,7 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>TradeLedger — Просмотр сверки пакетов</v8:content>
+					<v8:content>TradeLedger — Сверка пакетов с источником</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment>Просмотр TL_СверкаПакета с фильтрами по периоду и статусу; подсветка расхождений</Comment>

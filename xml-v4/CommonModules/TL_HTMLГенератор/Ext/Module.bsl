@@ -998,6 +998,67 @@
 
 КонецФункции
 
+// Полноэкранный отчёт = отчёт ошибок (даже если их нет) + крупный лог сессии.
+// Открывается через ФормаДетали с ТипДокумента="ОтчётОшибок".
+//
+Функция СформироватьПолноэкранныйОтчётОшибокИЛог(ТекстЛога = "") Экспорт
+
+	// Собираем HTML отчёта ошибок (внутренние стили + body)
+	HTMLОшибок = СформироватьДетальныйОтчётОшибок("", "Журнал ошибок загрузки за сегодня");
+	// Из обёртки <!DOCTYPE…><body>…</body></html> вытащим только тело
+	ТелоОшибок = ИзвлечьТелоИзHTML(HTMLОшибок);
+
+	HTML = СтильПолноэкранногоОтчёта();
+	HTML = HTML + "<div class=""rep-page"">";
+	HTML = HTML + "<h1>📊 Подробный отчёт ошибок и лог загрузки</h1>";
+	HTML = HTML + "<div class=""rep-block"">" + ТелоОшибок + "</div>";
+
+	HTML = HTML + "<h2>📜 Лог текущей сессии</h2>";
+	Если ПустаяСтрока(ТекстЛога) Тогда
+		HTML = HTML + "<div class=""rep-empty"">Лог пустой — действий в этой сессии ещё не было.</div>";
+	Иначе
+		HTML = HTML + "<pre class=""rep-log"">" + Экр(ТекстЛога) + "</pre>";
+	КонецЕсли;
+
+	HTML = HTML + "</div>";
+	Возврат ОбёрткаHTML(HTML);
+
+КонецФункции
+
+// Вытащить только то что внутри <body>…</body> из HTML-документа.
+Функция ИзвлечьТелоИзHTML(HTML)
+	НачBody = СтрНайти(НРег(HTML), "<body");
+	Если НачBody = 0 Тогда
+		Возврат HTML;
+	КонецЕсли;
+	НачКонца = СтрНайти(НРег(HTML), "</body");
+	Если НачКонца = 0 Тогда
+		НачКонца = СтрДлина(HTML);
+	КонецЕсли;
+	// Найти конец открывающего тега <body…>
+	НачКонтента = СтрНайти(Сред(HTML, НачBody), ">");
+	Если НачКонтента = 0 Тогда
+		Возврат HTML;
+	КонецЕсли;
+	Старт = НачBody + НачКонтента;
+	Длина = НачКонца - Старт;
+	Если Длина < 1 Тогда
+		Возврат HTML;
+	КонецЕсли;
+	Возврат Сред(HTML, Старт, Длина);
+КонецФункции
+
+// CSS для полноэкранного отчёта.
+Функция СтильПолноэкранногоОтчёта()
+	CSS = " .rep-page{padding:16px 24px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:13px;color:#1a1a1a}"
+		+ " .rep-page h1{font-size:22px;margin:0 0 14px 0;color:#0d4a8a;border-bottom:2px solid #d0d9e8;padding-bottom:8px}"
+		+ " .rep-page h2{font-size:18px;margin:24px 0 10px 0;color:#1a4d7a}"
+		+ " .rep-block{margin-bottom:24px}"
+		+ " .rep-empty{padding:20px;text-align:center;color:#888;background:#f5f5f5;border-radius:4px}"
+		+ " .rep-log{background:#1e1e1e;color:#d4d4d4;padding:14px 18px;border-radius:6px;font-family:'Consolas','Courier New',monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;word-wrap:break-word;max-height:600px;overflow-y:auto}";
+	Возврат "<style>" + CSS + "</style>";
+КонецФункции
+
 // Получить ключ статьи помощи по категории ошибки (H-связка с F).
 // Возвращает имя файла из docs/help/ (без .md) — клик на «📖 Подробнее»
 // в отчёте ошибок ведёт на соответствующую статью.

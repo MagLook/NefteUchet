@@ -53,32 +53,45 @@
 					<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="13"/>
 					<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="14"/>
 				</InputField>
-				<Button name="Кнопка1" id="15">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.КомандаОбновить</CommandName>
-					<ExtendedTooltip name="Кнопка1РасширеннаяПодсказка" id="16"/>
-				</Button>
-				<Button name="КнопкаПерезагрузитьПериод" id="300">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.ПерезагрузитьПериод</CommandName>
-					<ExtendedTooltip name="КнопкаПерезагрузитьПериодРасширеннаяПодсказка" id="301"/>
-				</Button>
-				<Button name="КнопкаПодробныйОтчётОшибок" id="302">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.ПодробныйОтчётОшибок</CommandName>
-					<ExtendedTooltip name="КнопкаПодробныйОтчётОшибокРасширеннаяПодсказка" id="303"/>
-				</Button>
-				<Button name="КнопкаОткрытьПомощь" id="304">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.ОткрытьПомощь</CommandName>
-					<ExtendedTooltip name="КнопкаОткрытьПомощьРасширеннаяПодсказка" id="305"/>
-				</Button>
-				<Button name="КнопкаСбросРегистрацииПериода" id="306">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.СбросРегистрацииПериода</CommandName>
-					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-					<ExtendedTooltip name="КнопкаСбросРегистрацииПериодаРасширеннаяПодсказка" id="307"/>
-				</Button>
+				<UsualGroup name="ГруппаКнопокДействий" id="310">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действия</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кнопки управления загрузкой</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКнопокДействийРасширеннаяПодсказка" id="311"/>
+					<ChildItems>
+						<Button name="Кнопка1" id="15">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.КомандаОбновить</CommandName>
+							<ExtendedTooltip name="Кнопка1РасширеннаяПодсказка" id="16"/>
+						</Button>
+						<Button name="КнопкаПерезагрузитьПериод" id="300">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ПерезагрузитьПериод</CommandName>
+							<ExtendedTooltip name="КнопкаПерезагрузитьПериодРасширеннаяПодсказка" id="301"/>
+						</Button>
+						<Button name="КнопкаПодробныйОтчётОшибок" id="302">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ПодробныйОтчётОшибок</CommandName>
+							<ExtendedTooltip name="КнопкаПодробныйОтчётОшибокРасширеннаяПодсказка" id="303"/>
+						</Button>
+						<Button name="КнопкаОткрытьПомощь" id="304">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ОткрытьПомощь</CommandName>
+							<ExtendedTooltip name="КнопкаОткрытьПомощьРасширеннаяПодсказка" id="305"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаТаблицы" id="128">

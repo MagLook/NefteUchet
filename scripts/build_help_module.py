@@ -44,20 +44,19 @@ def first_title(md: str) -> str:
     return "(без заголовка)"
 
 
-def escape_bsl(s: str) -> str:
-    """Экранирование строки для BSL-литерала: удвоить кавычки, разбить по строкам."""
-    # В BSL многострочные литералы — через | в начале каждой строки
-    # либо конкатенация. Используем массив строк + СтрСоединить.
+def escape_bsl_line(s: str) -> str:
+    """Экранировать ОДНУ строку без переноса для BSL-литерала: удвоить кавычки."""
     return s.replace('"', '""')
 
 
-def split_to_bsl_lines(s: str, max_len: int = 800) -> list[str]:
-    """Разбить длинную строку на куски ≤ max_len, чтобы не упереться в лимит BSL-литерала."""
+def split_long_line(s: str, max_len: int = 600) -> list[str]:
+    """Если одна строка длиннее max_len — разбить по пробелам на куски."""
+    if len(s) <= max_len:
+        return [s]
     out = []
     remaining = s
     while len(remaining) > max_len:
-        # Найти разрыв по \n как можно ближе к max_len
-        cut = remaining.rfind("\n", 0, max_len)
+        cut = remaining.rfind(" ", 0, max_len)
         if cut < max_len // 2:
             cut = max_len
         out.append(remaining[:cut])
@@ -65,6 +64,21 @@ def split_to_bsl_lines(s: str, max_len: int = 800) -> list[str]:
     if remaining:
         out.append(remaining)
     return out
+
+
+def md_to_bsl_expression(md: str) -> str:
+    """Преобразовать Markdown-текст в BSL-выражение конкатенации строк через Символы.ПС."""
+    if not md:
+        return '""'
+    lines = md.split("\n")
+    chunks = []
+    for ln in lines:
+        for piece in split_long_line(ln, max_len=600):
+            chunks.append(f'"{escape_bsl_line(piece)}"')
+    if len(chunks) == 1:
+        return chunks[0]
+    # Соединяем через + Символы.ПС +
+    return "\n\t\t+ Символы.ПС + ".join(chunks)
 
 
 def main():
@@ -114,24 +128,12 @@ def main():
         title = art["title"]
         group = art["group"]
         md = art["md"]
-        # Разбить md на части не длиннее ~800 символов для безопасных BSL-литералов
-        parts = split_to_bsl_lines(md, max_len=800)
-        # Сформировать конкатенацию строк
-        bsl_chunks = []
-        for p in parts:
-            escaped = escape_bsl(p)
-            bsl_chunks.append(f'"{escaped}"')
-        if len(bsl_chunks) == 1:
-            md_expr = bsl_chunks[0]
-        else:
-            # Многострочный литерал через " + СимвПС + " + ...
-            # Соединяем через + для конкатенации
-            md_expr = "\n\t\t+ ".join(bsl_chunks)
+        md_expr = md_to_bsl_expression(md)
 
         lines.append(f'\t// --- {key} ---')
         lines.append(f'\tСтатьи.Вставить("{key}", Новый Структура(')
         lines.append(f'\t\t"Заголовок, Группа, Markdown",')
-        lines.append(f'\t\t"{escape_bsl(title)}",')
+        lines.append(f'\t\t"{escape_bsl_line(title)}",')
         lines.append(f'\t\t"{group}",')
         lines.append(f'\t\t{md_expr}')
         lines.append(f'\t));')

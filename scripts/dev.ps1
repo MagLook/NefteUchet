@@ -46,6 +46,7 @@ if (-not $NoCopy) {
         @{ Src = (Join-Path $srcCommon 'TL_Сверка.bsl');               Dst = (Join-Path $xmlPath 'CommonModules\TL_Сверка\Ext\Module.bsl');               Name = 'TL_Сверка' },
         @{ Src = (Join-Path $srcCommon 'TL_СопуткаСервис.bsl');        Dst = (Join-Path $xmlPath 'CommonModules\TL_СопуткаСервис\Ext\Module.bsl');        Name = 'TL_СопуткаСервис' },
         @{ Src = (Join-Path $srcDP 'TL_Загрузка\Forms\Форма\Module.bsl');              Dst = (Join-Path $xmlPath 'DataProcessors\TL_Загрузка\Forms\Форма\Ext\Form\Module.bsl');              Name = 'TL_Загрузка форма' },
+        @{ Src = (Join-Path $srcDP 'TL_Загрузка\Forms\ФормаДетали\Module.bsl');         Dst = (Join-Path $xmlPath 'DataProcessors\TL_Загрузка\Forms\ФормаДетали\Ext\Form\Module.bsl');         Name = 'TL_Загрузка ФормаДетали' },
         @{ Src = (Join-Path $srcDP 'TL_НастройкаРасширения\Forms\Форма\Module.bsl');   Dst = (Join-Path $xmlPath 'DataProcessors\TL_НастройкаРасширения\Forms\Форма\Ext\Form\Module.bsl');   Name = 'TL_НастройкаРасширения форма' }
     )
 

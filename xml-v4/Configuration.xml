@@ -86,6 +86,7 @@
 			<Enum>TL_КодОшибкиЗагрузки</Enum>
 			<Enum>TL_СтатусПакета</Enum>
 			<DataProcessor>TL_Загрузка</DataProcessor>
+			<DataProcessor>TL_ЗагрузкаИзКаталога</DataProcessor>
 			<DataProcessor>TL_НастройкаРасширения</DataProcessor>
 			<DataProcessor>TL_НастройкаОбменаСопутка</DataProcessor>
 			<DataProcessor>TL_НастройкаОбменаОбщепит</DataProcessor>

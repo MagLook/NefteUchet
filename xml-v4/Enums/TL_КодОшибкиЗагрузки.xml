@@ -134,6 +134,54 @@
 					<Comment/>
 				</Properties>
 			</EnumValue>
+			<EnumValue uuid="1f0e8c47-3522-4c7d-bf42-7d9e2a6f5b41">
+				<Properties>
+					<Name>STS_ОшибкаСервера</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>STS: серверная ошибка (HTTP 5xx)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>HTTP 500/502/503 от pos.autooplata.ru/tms — не настройка БП, обращаться в техподдержку STS</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="2c8f5d62-9a4b-4e1c-b283-6c4f8e2d9a73">
+				<Properties>
+					<Name>STS_ОшибкаАвторизации</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>STS: ошибка авторизации (HTTP 401/403)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Проверьте логин/пароль в Настройках TradeLedger → Подключение</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="3a9d4e15-8c2f-4b7a-9d1e-7f8b4c5d6e8f">
+				<Properties>
+					<Name>STS_ОшибкаСети</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>STS: сетевая ошибка (нет связи)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Проверьте подключение к интернету / VPN на сервере 1С</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="4b8e7f23-5d61-4c9a-8e2f-6a4d5b7c8e9f">
+				<Properties>
+					<Name>МаппингОплат_НеНайден</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Маппинг видов оплат не настроен</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>В STS пришёл новый pay_type без записи в TL_МаппингОплат — строки пропущены</Comment>
+				</Properties>
+			</EnumValue>
 		</ChildObjects>
 	</Enum>
 </MetaDataObject>

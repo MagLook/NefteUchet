@@ -66,30 +66,87 @@
 							<v8:content>Кнопки управления загрузкой</v8:content>
 						</v8:item>
 					</ToolTip>
-					<Group>AlwaysHorizontal</Group>
+					<Group>Vertical</Group>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаКнопокДействийРасширеннаяПодсказка" id="311"/>
 					<ChildItems>
-						<Button name="Кнопка1" id="15">
-							<Type>UsualButton</Type>
-							<CommandName>Form.Command.КомандаОбновить</CommandName>
-							<ExtendedTooltip name="Кнопка1РасширеннаяПодсказка" id="16"/>
-						</Button>
-						<Button name="КнопкаПерезагрузитьПериод" id="300">
-							<Type>UsualButton</Type>
-							<CommandName>Form.Command.ПерезагрузитьПериод</CommandName>
-							<ExtendedTooltip name="КнопкаПерезагрузитьПериодРасширеннаяПодсказка" id="301"/>
-						</Button>
-						<Button name="КнопкаПодробныйОтчётОшибок" id="302">
-							<Type>UsualButton</Type>
-							<CommandName>Form.Command.ПодробныйОтчётОшибок</CommandName>
-							<ExtendedTooltip name="КнопкаПодробныйОтчётОшибокРасширеннаяПодсказка" id="303"/>
-						</Button>
-						<Button name="КнопкаОткрытьПомощь" id="304">
-							<Type>UsualButton</Type>
-							<CommandName>Form.Command.ОткрытьПомощь</CommandName>
-							<ExtendedTooltip name="КнопкаОткрытьПомощьРасширеннаяПодсказка" id="305"/>
-						</Button>
+						<UsualGroup name="ГруппаКнопокСтрока1" id="312">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Загрузка</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Загрузка и перезагрузка периода</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКнопокСтрока1РасширеннаяПодсказка" id="313"/>
+							<ChildItems>
+								<Button name="Кнопка1" id="15">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.КомандаОбновить</CommandName>
+									<ExtendedTooltip name="Кнопка1РасширеннаяПодсказка" id="16"/>
+								</Button>
+								<Button name="КнопкаПерезагрузитьПериод" id="300">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПерезагрузитьПериод</CommandName>
+									<ExtendedTooltip name="КнопкаПерезагрузитьПериодРасширеннаяПодсказка" id="301"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаКнопокСтрока2" id="314">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Диагностика</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Диагностика проблем загрузки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКнопокСтрока2РасширеннаяПодсказка" id="315"/>
+							<ChildItems>
+								<Button name="КнопкаПодробныйОтчётОшибок" id="302">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПодробныйОтчётОшибок</CommandName>
+									<ExtendedTooltip name="КнопкаПодробныйОтчётОшибокРасширеннаяПодсказка" id="303"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаКнопокСтрока3" id="316">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Справка</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Встроенная справка бухгалтеру</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКнопокСтрока3РасширеннаяПодсказка" id="317"/>
+							<ChildItems>
+								<Button name="КнопкаОткрытьПомощь" id="304">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОткрытьПомощь</CommandName>
+									<ExtendedTooltip name="КнопкаОткрытьПомощьРасширеннаяПодсказка" id="305"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>

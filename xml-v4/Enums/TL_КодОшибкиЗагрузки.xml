@@ -182,6 +182,54 @@
 					<Comment>В STS пришёл новый pay_type без записи в TL_МаппингОплат — строки пропущены</Comment>
 				</Properties>
 			</EnumValue>
+			<EnumValue uuid="5c9f8a34-6e72-4d0b-9f3a-7b5c6d8e9f0a">
+				<Properties>
+					<Name>Смена_БезПродаж</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Смена без продаж (sales пуст)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>В STS sales[] пуст или у всех fuel volume=0. Реальных смен без продаж не бывает — это сбой передачи данных от станции/STS</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="6d0a9b45-7f83-4e1c-a04b-8c6d7e9f0a1b">
+				<Properties>
+					<Name>Смена_БезРозницы</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Смена без розничных продаж (только корпоратив)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Продажи в смене есть, но ни одна не попала в retail_cash/retail_card. Возможно, все retail-топлива имели неизвестный service_code или маппинг оплат отбросил все строки</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="7e1b0c56-8094-4f2d-b15c-9d7e8f0a1b2c">
+				<Properties>
+					<Name>Топливо_НеизвестныйКод</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Топливо: неизвестный service_code из STS</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>В sales[].fuel[].service.service_code пришло значение, которого нет в маппинге TL_Настройки.НайтиНоменклатуруТоплива (обычно 1/2/3 для АИ-92/АИ-95/ДТ). Возможно АИ-98 или брендовое топливо — добавьте в настройки</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="8f2c1d67-91a5-403e-b26d-ae8f9a1b2c3d">
+				<Properties>
+					<Name>Документ_УжеЗагружен</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ уже загружен (идемпотентность)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Информация, не ошибка. Документ с тем же КлючЗагрузки уже есть в TL_СтатусыЗагрузки. Чтобы перезагрузить — сначала удалите его через «Удалить выбранные»</Comment>
+				</Properties>
+			</EnumValue>
 		</ChildObjects>
 	</Enum>
 </MetaDataObject>

@@ -27,13 +27,33 @@ OUT_BSL = os.path.join(ROOT, "src", "CommonModules", "TL_ПомощьКонте�
 
 
 def detect_group(key: str) -> str:
+    # Префиксы — приоритет
     if key.startswith("checklist_"):
         return "checklist"
     if key.startswith("faq_"):
         return "faq"
-    if key.startswith("gloss_"):
+    if key.startswith("gloss_") or "словарь" in key or "термин" in key:
         return "gloss"
-    return "process"
+    # Подгруппы «Процессы» — по ключевым словам
+    k = key.lower()
+    if any(w in k for w in ["с_чего", "первая", "ежедневный", "с_нуля"]):
+        return "intro"
+    if any(w in k for w in ["загруз", "перезагруз", "переключение_режим",
+                             "документы_контура", "последние_доку", "техсписан"]):
+        return "loading"
+    if any(w in k for w in ["блюдо", "общепит", "рецепт", "продаётся_блюд",
+                             "продажи_общепит"]):
+        return "food"
+    if "настройк" in k:
+        return "setup"
+    if any(w in k for w in ["сверк", "расхожден", "реакц", "ошибк",
+                             "подробный_отчёт", "встроенная_помощь",
+                             "категории_ошибок", "неизвестн"]):
+        return "diag"
+    if any(w in k for w in ["проводк", "возврат", "поступлен",
+                             "конец_месяца", "деньx"]):
+        return "accounting"
+    return "process"  # «прочее»
 
 
 def first_title(md: str) -> str:

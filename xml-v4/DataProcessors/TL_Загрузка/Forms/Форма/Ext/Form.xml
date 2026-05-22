@@ -29,124 +29,91 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаФильтрыРасширеннаяПодсказка" id="2"/>
 			<ChildItems>
-				<InputField name="ТипДокументаФильтр" id="6">
-					<DataPath>ТипДокументаФильтр</DataPath>
-					<ListChoiceMode>true</ListChoiceMode>
-					<ContextMenu name="ТипДокументаФильтрКонтекстноеМеню" id="7"/>
-					<ExtendedTooltip name="ТипДокументаФильтрРасширеннаяПодсказка" id="8"/>
-				</InputField>
-				<InputField name="КодСтанции" id="3">
-					<DataPath>КодСтанции</DataPath>
-					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-					<ContextMenu name="КодСтанцииКонтекстноеМеню" id="4"/>
-					<ExtendedTooltip name="КодСтанцииРасширеннаяПодсказка" id="5"/>
-				</InputField>
-				<InputField name="ДатаНачала" id="9">
-					<DataPath>ДатаНачала</DataPath>
-					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-					<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="10"/>
-					<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="11"/>
-				</InputField>
-				<InputField name="ДатаОкончания" id="12">
-					<DataPath>ДатаОкончания</DataPath>
-					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-					<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="13"/>
-					<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="14"/>
-				</InputField>
-				<UsualGroup name="ГруппаКнопокДействий" id="310">
+				<UsualGroup name="ГруппаСтрока1" id="312">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Действия</v8:content>
+							<v8:content>Строка 1</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Кнопки управления загрузкой</v8:content>
+							<v8:content>Тип, станция, перезагрузка, отчёт ошибок</v8:content>
 						</v8:item>
 					</ToolTip>
-					<Group>Vertical</Group>
+					<Group>AlwaysHorizontal</Group>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаКнопокДействийРасширеннаяПодсказка" id="311"/>
+					<ExtendedTooltip name="ГруппаСтрока1РасширеннаяПодсказка" id="313"/>
 					<ChildItems>
-						<UsualGroup name="ГруппаКнопокСтрока1" id="312">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Загрузка</v8:content>
-								</v8:item>
-							</Title>
-							<ToolTip>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Загрузка и перезагрузка периода</v8:content>
-								</v8:item>
-							</ToolTip>
-							<Group>AlwaysHorizontal</Group>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаКнопокСтрока1РасширеннаяПодсказка" id="313"/>
-							<ChildItems>
-								<Button name="Кнопка1" id="15">
-									<Type>UsualButton</Type>
-									<CommandName>Form.Command.КомандаОбновить</CommandName>
-									<ExtendedTooltip name="Кнопка1РасширеннаяПодсказка" id="16"/>
-								</Button>
-								<Button name="КнопкаПерезагрузитьПериод" id="300">
-									<Type>UsualButton</Type>
-									<CommandName>Form.Command.ПерезагрузитьПериод</CommandName>
-									<ExtendedTooltip name="КнопкаПерезагрузитьПериодРасширеннаяПодсказка" id="301"/>
-								</Button>
-							</ChildItems>
-						</UsualGroup>
-						<UsualGroup name="ГруппаКнопокСтрока2" id="314">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Диагностика</v8:content>
-								</v8:item>
-							</Title>
-							<ToolTip>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Диагностика проблем загрузки</v8:content>
-								</v8:item>
-							</ToolTip>
-							<Group>AlwaysHorizontal</Group>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаКнопокСтрока2РасширеннаяПодсказка" id="315"/>
-							<ChildItems>
-								<Button name="КнопкаПодробныйОтчётОшибок" id="302">
-									<Type>UsualButton</Type>
-									<CommandName>Form.Command.ПодробныйОтчётОшибок</CommandName>
-									<ExtendedTooltip name="КнопкаПодробныйОтчётОшибокРасширеннаяПодсказка" id="303"/>
-								</Button>
-							</ChildItems>
-						</UsualGroup>
-						<UsualGroup name="ГруппаКнопокСтрока3" id="316">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Справка</v8:content>
-								</v8:item>
-							</Title>
-							<ToolTip>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Встроенная справка бухгалтеру</v8:content>
-								</v8:item>
-							</ToolTip>
-							<Group>AlwaysHorizontal</Group>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаКнопокСтрока3РасширеннаяПодсказка" id="317"/>
-							<ChildItems>
-								<Button name="КнопкаОткрытьПомощь" id="304">
-									<Type>UsualButton</Type>
-									<CommandName>Form.Command.ОткрытьПомощь</CommandName>
-									<ExtendedTooltip name="КнопкаОткрытьПомощьРасширеннаяПодсказка" id="305"/>
-								</Button>
-							</ChildItems>
-						</UsualGroup>
+						<InputField name="ТипДокументаФильтр" id="6">
+							<DataPath>ТипДокументаФильтр</DataPath>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ContextMenu name="ТипДокументаФильтрКонтекстноеМеню" id="7"/>
+							<ExtendedTooltip name="ТипДокументаФильтрРасширеннаяПодсказка" id="8"/>
+						</InputField>
+						<InputField name="КодСтанции" id="3">
+							<DataPath>КодСтанции</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="КодСтанцииКонтекстноеМеню" id="4"/>
+							<ExtendedTooltip name="КодСтанцииРасширеннаяПодсказка" id="5"/>
+						</InputField>
+						<Button name="КнопкаПерезагрузитьПериод" id="300">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ПерезагрузитьПериод</CommandName>
+							<ExtendedTooltip name="КнопкаПерезагрузитьПериодРасширеннаяПодсказка" id="301"/>
+						</Button>
+						<Button name="КнопкаПодробныйОтчётОшибок" id="302">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ПодробныйОтчётОшибок</CommandName>
+							<ExtendedTooltip name="КнопкаПодробныйОтчётОшибокРасширеннаяПодсказка" id="303"/>
+						</Button>
+						<Button name="КнопкаСбросРегистрацииПериода" id="306">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.СбросРегистрацииПериода</CommandName>
+							<ExtendedTooltip name="КнопкаСбросРегистрацииПериодаРасширеннаяПодсказка" id="307"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСтрока2" id="314">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Строка 2</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период, обновление, помощь</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСтрока2РасширеннаяПодсказка" id="315"/>
+					<ChildItems>
+						<InputField name="ДатаНачала" id="9">
+							<DataPath>ДатаНачала</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="10"/>
+							<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="11"/>
+						</InputField>
+						<InputField name="ДатаОкончания" id="12">
+							<DataPath>ДатаОкончания</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="13"/>
+							<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="14"/>
+						</InputField>
+						<Button name="Кнопка1" id="15">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.КомандаОбновить</CommandName>
+							<ExtendedTooltip name="Кнопка1РасширеннаяПодсказка" id="16"/>
+						</Button>
+						<Button name="КнопкаОткрытьПомощь" id="304">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ОткрытьПомощь</CommandName>
+							<ExtendedTooltip name="КнопкаОткрытьПомощьРасширеннаяПодсказка" id="305"/>
+						</Button>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>

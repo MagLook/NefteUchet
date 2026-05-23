@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CommandInterface xmlns="http://v8.1c.ru/8.3/xcf/extrnprops" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<CommandsPlacement>
+	<Command name="DataProcessor.TL_Загрузка.StandardCommand.OpenForm"><CommandGroup>CommandGroup.NavigationPanelImportant</CommandGroup><Placement>Auto</Placement></Command>
+	</CommandsPlacement>
+	<CommandsOrder>
+	<Command name="DataProcessor.TL_Загрузка.StandardCommand.OpenForm"><CommandGroup>NavigationPanelImportant</CommandGroup></Command>
+	<Command name="DataProcessor.TL_ЗагрузкаИзКаталога.StandardCommand.OpenForm"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="DataProcessor.TL_НастройкаОбменаСопутка.StandardCommand.OpenForm"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="DataProcessor.TL_НастройкаОбменаОбщепит.StandardCommand.OpenForm"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="DataProcessor.TL_НастройкаРасширения.StandardCommand.OpenForm"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="DataProcessor.TL_ПросмотрОшибок.StandardCommand.OpenForm"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="DataProcessor.TL_ПросмотрСверки.StandardCommand.OpenForm"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="InformationRegister.TL_МаппингОплат.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	</CommandsOrder>
+</CommandInterface>

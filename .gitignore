@@ -25,3 +25,5 @@ build/
 desktop.ini
 scripts/_out_*.log
 scripts/_out_*.txt
+scripts/probe_*.py
+scripts/_*.py

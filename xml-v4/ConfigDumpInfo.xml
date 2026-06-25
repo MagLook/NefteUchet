@@ -6,50 +6,62 @@
 		<Metadata name="Catalog.Организации" id="5a7ee0a1-a93b-4cb0-a126-ba39dc167fee" configVersion="8aac4d1278b481905e3109bb40771b7805b41f0f"/>
 		<Metadata name="Catalog.Склады" id="321ace45-41bc-4984-b2ef-bfeabd61a21b" configVersion="c017136612c4f5a5834deedfa57cc1561b3ba91a"/>
 		<Metadata name="CommonModule.TL_ApiКлиент" id="b9e0823e-4ce0-4c5f-ad5e-5b82c853025b" configVersion="41a8767b1f19561b1152e4ffdec3b971a0306872"/>
-		<Metadata name="CommonModule.TL_ApiКлиент.Module" id="b9e0823e-4ce0-4c5f-ad5e-5b82c853025b.0" configVersion="d36844bac703085e834872c9acf5e8ba60d0c2b8"/>
+		<Metadata name="CommonModule.TL_ApiКлиент.Module" id="b9e0823e-4ce0-4c5f-ad5e-5b82c853025b.0" configVersion="a4833dbc041036f8c0af002dc116e703eae1cfcf"/>
 		<Metadata name="CommonModule.TL_HTMLГенератор" id="d9769d16-7309-4295-8a8e-657daf929abb" configVersion="b0a70286b4ca62c4a4289c70adfc429c5498cc3b"/>
-		<Metadata name="CommonModule.TL_HTMLГенератор.Module" id="d9769d16-7309-4295-8a8e-657daf929abb.0" configVersion="1e9f46d25aea0347a00b462bb063abafddc42c03"/>
-		<Metadata name="CommonModule.TL_HTTPКлиентЦБ" id="c4967797-0e8c-4c4f-8fb2-9a537d6b1aaa" configVersion="5a24654ac3fd5e814881d3a8c44467195c64ca57"/>
-		<Metadata name="CommonModule.TL_HTTPКлиентЦБ.Module" id="c4967797-0e8c-4c4f-8fb2-9a537d6b1aaa.0" configVersion="e450a697e9b431bb3b6a49855c0502a29e482a80"/>
+		<Metadata name="CommonModule.TL_HTMLГенератор.Module" id="d9769d16-7309-4295-8a8e-657daf929abb.0" configVersion="48aee2971e9dbb9bf3d4e6bba061e4cbcdc33ff7"/>
+		<Metadata name="CommonModule.TL_HTTPКлиентЦБ" id="c4967797-0e8c-4c4f-8fb2-9a537d6b1aaa" configVersion="803557fc8979dd683fa6ea391b01c3214ace444e"/>
+		<Metadata name="CommonModule.TL_HTTPКлиентЦБ.Module" id="c4967797-0e8c-4c4f-8fb2-9a537d6b1aaa.0" configVersion="5597e9e71b7c95cdb0162aa09cbe02ef194491e8"/>
 		<Metadata name="CommonModule.TL_Маппинг" id="af10be91-f79e-4d16-96a1-e0404333efb0" configVersion="d6152df3c66622919bf7964f91cac0d8b873ad59"/>
-		<Metadata name="CommonModule.TL_Маппинг.Module" id="af10be91-f79e-4d16-96a1-e0404333efb0.0" configVersion="a1f6493641a8692ee0325f2ec24f44af79805649"/>
+		<Metadata name="CommonModule.TL_Маппинг.Module" id="af10be91-f79e-4d16-96a1-e0404333efb0.0" configVersion="d91beed0a64af3658410f26caa804361d5f27e3b"/>
 		<Metadata name="CommonModule.TL_МаппингЦБ" id="d8e801bb-d166-4d36-b614-4835a6a18511" configVersion="fa210c7d371413de0cdadb239081d1ca8bcea173"/>
-		<Metadata name="CommonModule.TL_МаппингЦБ.Module" id="d8e801bb-d166-4d36-b614-4835a6a18511.0" configVersion="fe9634a0c3d557e3890364204222a2fdcf283563"/>
-		<Metadata name="CommonModule.TL_Настройки" id="6fdb9b09-9017-4c07-8156-d475dc030f58" configVersion="6daa060d9aca95af673b00d1fd1e01460c399076"/>
-		<Metadata name="CommonModule.TL_Настройки.Module" id="6fdb9b09-9017-4c07-8156-d475dc030f58.0" configVersion="77b7151bbe3b596f54d7d22ff7da7a947c10fcc2"/>
+		<Metadata name="CommonModule.TL_МаппингЦБ.Module" id="d8e801bb-d166-4d36-b614-4835a6a18511.0" configVersion="c03b6ef35433ba0be979611ce888a4e40c1fc7b7"/>
+		<Metadata name="CommonModule.TL_Настройки" id="6fdb9b09-9017-4c07-8156-d475dc030f58" configVersion="782e449ad04ef50359396a3bc83a504a2217ca2d"/>
+		<Metadata name="CommonModule.TL_Настройки.Module" id="6fdb9b09-9017-4c07-8156-d475dc030f58.0" configVersion="679a341d2a9387a163c8cbaa909e583b96c093ff"/>
+		<Metadata name="CommonModule.TL_ПомощьКонтент" id="3a5f8e29-7c4d-4a1b-9e7f-2c8d6b5a4e3f" configVersion="225042d38c6ba20ff2b0055d0f2731d347d44ae2"/>
+		<Metadata name="CommonModule.TL_ПомощьКонтент.Module" id="3a5f8e29-7c4d-4a1b-9e7f-2c8d6b5a4e3f.0" configVersion="1bb65b21919bd9e5be513e4de775bb8dbebd1d2b"/>
 		<Metadata name="CommonModule.TL_РегистрСтатусов" id="efa4e42b-3922-405f-bffd-82b557293cb4" configVersion="64e703739c439d9fabac2eb1ab47a766db4543a2"/>
-		<Metadata name="CommonModule.TL_РегистрСтатусов.Module" id="efa4e42b-3922-405f-bffd-82b557293cb4.0" configVersion="36fbf9601089a9832ab44621680baf900101b767"/>
+		<Metadata name="CommonModule.TL_РегистрСтатусов.Module" id="efa4e42b-3922-405f-bffd-82b557293cb4.0" configVersion="587ec69e1aa4f38f32e44480f080060142f5fa62"/>
 		<Metadata name="CommonModule.TL_Сверка" id="e6771014-2c06-4aff-b4ad-74eddde46f49" configVersion="4aff21b43416f35cb2d7a7fead0b31d2c922d190"/>
-		<Metadata name="CommonModule.TL_Сверка.Module" id="e6771014-2c06-4aff-b4ad-74eddde46f49.0" configVersion="ffcdf8e98d138306c82612405310d18cc74dd997"/>
+		<Metadata name="CommonModule.TL_Сверка.Module" id="e6771014-2c06-4aff-b4ad-74eddde46f49.0" configVersion="acef339eccf19a7a699634b65c8a2a4933128ca5"/>
 		<Metadata name="CommonModule.TL_СозданиеДокументов" id="c27654b9-278b-4721-a365-95a99c45e9d3" configVersion="20bb94239a683275041e8c4f344c2f2f90e31560"/>
-		<Metadata name="CommonModule.TL_СозданиеДокументов.Module" id="c27654b9-278b-4721-a365-95a99c45e9d3.0" configVersion="65b52890a10a9e0a967276659aa39f4510db9fb7"/>
-		<Metadata name="CommonModule.TL_СопуткаСервис" id="1d953e86-138f-4925-8964-4f97858b5793" configVersion="3cfe87daf456c2d17c8cc8a0a69b9c66c47edf34"/>
-		<Metadata name="CommonModule.TL_СопуткаСервис.Module" id="1d953e86-138f-4925-8964-4f97858b5793.0" configVersion="1fc41f2f85f23f238e036f969db64443057dd0c0"/>
-		<Metadata name="Configuration.TradeLedger" id="4b6de83e-a2da-454a-9492-f8f4184182aa" configVersion="6b41940fc72aa99d607030ea482a13f8ce732419"/>
-		<Metadata name="DataProcessor.TL_Загрузка" id="0dabee39-c1f1-4b18-a85a-294c007e3704" configVersion="55c309f06c28672a7eaa9a3aa8add086c13a7fd5"/>
+		<Metadata name="CommonModule.TL_СозданиеДокументов.Module" id="c27654b9-278b-4721-a365-95a99c45e9d3.0" configVersion="f5fa6842e9f18fb7ffd9ee5b60ca8abba4313b83"/>
+		<Metadata name="CommonModule.TL_СопуткаСервис" id="1d953e86-138f-4925-8964-4f97858b5793" configVersion="b1bc62a34d0f1d7632ed07cbf0b8b06bf2a4e1fb"/>
+		<Metadata name="CommonModule.TL_СопуткаСервис.Module" id="1d953e86-138f-4925-8964-4f97858b5793.0" configVersion="ae2f94bb2bd84a1dfe39fa6678b1e2106e5a8099"/>
+		<Metadata name="Configuration.TradeLedger" id="4b6de83e-a2da-454a-9492-f8f4184182aa" configVersion="ed062615d87384c96d4ec50d495afaecb2e1d8d5"/>
+		<Metadata name="DataProcessor.TL_Загрузка" id="0dabee39-c1f1-4b18-a85a-294c007e3704" configVersion="530e9ae9b78c0473ce0d43c68c184623b1efb0b3"/>
 		<Metadata name="DataProcessor.TL_Загрузка.Form.Форма" id="39830bb4-2136-4707-8a4d-7ef49c3fb159" configVersion="e85f6de2dc0cec6d72c8db8d140d52ddc21140ed"/>
-		<Metadata name="DataProcessor.TL_Загрузка.Form.Форма.Form" id="39830bb4-2136-4707-8a4d-7ef49c3fb159.0" configVersion="3ab79aca3a8bfd27f0907f3cb914533ef98bb387"/>
+		<Metadata name="DataProcessor.TL_Загрузка.Form.Форма.Form" id="39830bb4-2136-4707-8a4d-7ef49c3fb159.0" configVersion="a23f2e374a09a1e00e939d4fbb81361ace89df11"/>
 		<Metadata name="DataProcessor.TL_Загрузка.Form.ФормаДетали" id="a1b2c3d4-0001-4000-8000-000000000001" configVersion="c7ed89096fb2ca5e1e7d142cc57c777f21e4e634"/>
-		<Metadata name="DataProcessor.TL_Загрузка.Form.ФормаДетали.Form" id="a1b2c3d4-0001-4000-8000-000000000001.0" configVersion="6f5eb344d3e2f8de569313ec1965fe468727c19a"/>
-		<Metadata name="DataProcessor.TL_НастройкаОбменаОбщепит" id="fafd7ce2-3a6e-4cff-8b79-ab6313c23d51" configVersion="c2d86f49148d6c731ad884e20a3a80603d03418c"/>
+		<Metadata name="DataProcessor.TL_Загрузка.Form.ФормаДетали.Form" id="a1b2c3d4-0001-4000-8000-000000000001.0" configVersion="eb2661c1b84d8a3456525e00db925b38e9d1f3e9"/>
+		<Metadata name="DataProcessor.TL_ЗагрузкаИзКаталога" id="6e46c323-7496-4b9a-bbc6-63540f233b28" configVersion="784a6c60691326bd67493fcb8ee121c1a7c8c820"/>
+		<Metadata name="DataProcessor.TL_НастройкаОбменаОбщепит" id="fafd7ce2-3a6e-4cff-8b79-ab6313c23d51" configVersion="a6a3373af41980e5f73020a6abd7f529b563392f"/>
 		<Metadata name="DataProcessor.TL_НастройкаОбменаОбщепит.Form.Форма" id="e04b16c7-9203-4094-b3ad-552c2fc4f41b" configVersion="77e9384af28df0fc0c994e5a5fbd16eefbe8d055"/>
-		<Metadata name="DataProcessor.TL_НастройкаОбменаОбщепит.Form.Форма.Form" id="e04b16c7-9203-4094-b3ad-552c2fc4f41b.0" configVersion="86749718c29ab0778f52e468aa25f6bc2fa498a8"/>
-		<Metadata name="DataProcessor.TL_НастройкаОбменаСопутка" id="8f6968f2-ef21-4fc8-aab6-db148639b041" configVersion="8d8301d4c99d777bf04139dfec68f61b495e17be"/>
+		<Metadata name="DataProcessor.TL_НастройкаОбменаОбщепит.Form.Форма.Form" id="e04b16c7-9203-4094-b3ad-552c2fc4f41b.0" configVersion="57bf91da170887ad1a4183ee7e85a8e615b391da"/>
+		<Metadata name="DataProcessor.TL_НастройкаОбменаСопутка" id="8f6968f2-ef21-4fc8-aab6-db148639b041" configVersion="2f38c3ea085bc0c3c80b94f0aab9edbedd532ec7"/>
 		<Metadata name="DataProcessor.TL_НастройкаОбменаСопутка.Form.Форма" id="70482536-f873-4918-9651-c3a80e9d67c4" configVersion="2ef90fe89daa94fedd88a9c6d6982b2361e98a6b"/>
-		<Metadata name="DataProcessor.TL_НастройкаОбменаСопутка.Form.Форма.Form" id="70482536-f873-4918-9651-c3a80e9d67c4.0" configVersion="e873d41a4936becdd9509473b82affed237e8d39"/>
-		<Metadata name="DataProcessor.TL_НастройкаРасширения" id="2607be9f-bad4-4820-ace3-7133f2c598a5" configVersion="7bf5be59260e0e49c3c1d5928ed1cc13dd2bc33c"/>
+		<Metadata name="DataProcessor.TL_НастройкаОбменаСопутка.Form.Форма.Form" id="70482536-f873-4918-9651-c3a80e9d67c4.0" configVersion="e46698e6049eca7f74a4005ab4811fb342048e54"/>
+		<Metadata name="DataProcessor.TL_НастройкаРасширения" id="2607be9f-bad4-4820-ace3-7133f2c598a5" configVersion="2b429fc5f4e1d100ee81611d97d9a7cd0b26d6de"/>
 		<Metadata name="DataProcessor.TL_НастройкаРасширения.Form.Форма" id="ef7b7fbb-16e8-4317-b1c4-883414bdc97b" configVersion="923cf6599b8eb9c49676a462a1f40102d0148536"/>
-		<Metadata name="DataProcessor.TL_НастройкаРасширения.Form.Форма.Form" id="ef7b7fbb-16e8-4317-b1c4-883414bdc97b.0" configVersion="2a3bdc79b7b1a40a8f64216cd547c45b4abf0d54"/>
-		<Metadata name="DataProcessor.TL_ПросмотрОшибок" id="3f7a8b21-9c4e-4d6f-b5a1-8e2d4c7f9013" configVersion="f2350d42490d50043845c3ea3b0874735c37bc5d"/>
+		<Metadata name="DataProcessor.TL_НастройкаРасширения.Form.Форма.Form" id="ef7b7fbb-16e8-4317-b1c4-883414bdc97b.0" configVersion="ba55e618187a27eb64fdb2a67ac76047624cc5f9"/>
+		<Metadata name="DataProcessor.TL_ПросмотрОшибок" id="3f7a8b21-9c4e-4d6f-b5a1-8e2d4c7f9013" configVersion="c206f2211f14ed170b904f179e19fd3cafe467c2"/>
 		<Metadata name="DataProcessor.TL_ПросмотрОшибок.Form.Форма" id="0dfb1f82-7b13-4388-9ca0-fd1a8e3157de" configVersion="05681de461b18775c4972dbc3cab8589c8285c52"/>
-		<Metadata name="DataProcessor.TL_ПросмотрОшибок.Form.Форма.Form" id="0dfb1f82-7b13-4388-9ca0-fd1a8e3157de.0" configVersion="bf2d4c8cf55fd3ec8b1b7be6fb34851d6377e148"/>
-		<Metadata name="DataProcessor.TL_ПросмотрСверки" id="2b5c6d7e-1f8a-49b3-a4c5-6e7d8f901234" configVersion="2603b6b189f7d4d102edc84ecc68b1dc82fc744f"/>
+		<Metadata name="DataProcessor.TL_ПросмотрОшибок.Form.Форма.Form" id="0dfb1f82-7b13-4388-9ca0-fd1a8e3157de.0" configVersion="6dd0637c19c6b191121d7e8b100f848d20ae2517"/>
+		<Metadata name="DataProcessor.TL_ПросмотрСверки" id="2b5c6d7e-1f8a-49b3-a4c5-6e7d8f901234" configVersion="2811c3853cfdd861618f66fd96347a5e7599c447"/>
 		<Metadata name="DataProcessor.TL_ПросмотрСверки.Form.Форма" id="3b1ca38b-0fb7-439b-9df5-511f9e415ca6" configVersion="8ae44805fb292fc681a8d87c3079860b65137c86"/>
-		<Metadata name="DataProcessor.TL_ПросмотрСверки.Form.Форма.Form" id="3b1ca38b-0fb7-439b-9df5-511f9e415ca6.0" configVersion="10cd324a87c9929f658bacddb80756e8367ec8d8"/>
-		<Metadata name="Enum.TL_КодОшибкиЗагрузки" id="47afe82b-15ee-405f-99b1-bcd214bd2b1c" configVersion="cead13990710aa7eb1b777c46afda232aee562c9">
+		<Metadata name="DataProcessor.TL_ПросмотрСверки.Form.Форма.Form" id="3b1ca38b-0fb7-439b-9df5-511f9e415ca6.0" configVersion="d2b6e89b1b1305bc5d7df6d99e064e8fd93de894"/>
+		<Metadata name="Enum.TL_КодОшибкиЗагрузки" id="47afe82b-15ee-405f-99b1-bcd214bd2b1c" configVersion="2eddcc35580942f53b6031771252d40d028057b5">
 			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.НСИ_НеНайдена" id="0febed23-da93-46bf-b7fc-d2d8d7661350"/>
+			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.STS_ОшибкаСервера" id="1f0e8c47-3522-4c7d-bf42-7d9e2a6f5b41"/>
+			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.STS_ОшибкаАвторизации" id="2c8f5d62-9a4b-4e1c-b283-6c4f8e2d9a73"/>
+			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.STS_ОшибкаСети" id="3a9d4e15-8c2f-4b7a-9d1e-7f8b4c5d6e8f"/>
+			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.МаппингОплат_НеНайден" id="4b8e7f23-5d61-4c9a-8e2f-6a4d5b7c8e9f"/>
+			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.Смена_БезПродаж" id="5c9f8a34-6e72-4d0b-9f3a-7b5c6d8e9f0a"/>
+			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.Смена_БезРозницы" id="6d0a9b45-7f83-4e1c-a04b-8c6d7e9f0a1b"/>
 			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.СуммаНеСходится" id="77fce384-fd7c-429b-b9a7-2fd58e38dc17"/>
+			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.Топливо_НеизвестныйКод" id="7e1b0c56-8094-4f2d-b15c-9d7e8f0a1b2c"/>
 			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.ВидОперацииНеСопоставлен" id="88053afa-0155-4261-944f-96defb926763"/>
+			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.Документ_УжеЗагружен" id="8f2c1d67-91a5-403e-b26d-ae8f9a1b2c3d"/>
+			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.Переклассификация_Топлива" id="9a3d2e78-a2b6-414f-c37e-bf9a0b2c3d4e"/>
 			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.СтавкаНДС_НеСопоставлена" id="a65612a2-9959-45ab-bc98-72927340bce4"/>
 			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.ОшибкаПроведения" id="a72dd6cb-485b-406c-9551-5022e3adc8c5"/>
 			<Metadata name="Enum.TL_КодОшибкиЗагрузки.EnumValue.Прочее" id="ac780ddf-d7f5-4ea9-86e0-ba2857fba566"/>
@@ -90,7 +102,7 @@
 			<Metadata name="Enum.TL_ТипОбъектаИсточника.EnumValue.Организация" id="fd0b4e7a-8238-45ec-a3f9-a231f44f0ded"/>
 			<Metadata name="Enum.TL_ТипОбъектаИсточника.EnumValue.Оприходование" id="fe8a05ac-88d5-4ae3-9bfb-07bbd116b7f7"/>
 		</Metadata>
-		<Metadata name="InformationRegister.TL_МаппингОплат" id="fb92bf21-24eb-4dd9-9a0a-8c844359f89a" configVersion="18f783cb0b7d4079dc02cfeb170a152ba7624c3c">
+		<Metadata name="InformationRegister.TL_МаппингОплат" id="fb92bf21-24eb-4dd9-9a0a-8c844359f89a" configVersion="27400e630f222c65e023a5a890daee6a93e6d43a">
 			<Metadata name="InformationRegister.TL_МаппингОплат.Resource.КаналОплаты" id="3a14e8d5-1f9b-49c2-8bba-7e8b6c84f3a1"/>
 			<Metadata name="InformationRegister.TL_МаппингОплат.Resource.Склад" id="4b25f9e6-2a0c-4ad3-9cdb-8f9c7d95041b"/>
 			<Metadata name="InformationRegister.TL_МаппингОплат.Dimension.ОбразецИмени" id="6d47f1b8-4c2e-4ce5-9af0-a1be9f1b7263"/>
@@ -112,7 +124,7 @@
 			<Metadata name="InformationRegister.TL_ОшибкиЗагрузки.Resource.СообщениеОшибки" id="e24703f3-a3c9-46dc-a192-d44670fa141a"/>
 			<Metadata name="InformationRegister.TL_ОшибкиЗагрузки.Resource.ИсточникUUID" id="ed1559d9-d545-4091-9b71-4e75634fbca3"/>
 		</Metadata>
-		<Metadata name="InformationRegister.TL_СверкаПакета" id="da8a0cc9-51c9-4b79-ae67-edd92a7ee900" configVersion="2c95e146a304137775f394efd767e9928290fcfe">
+		<Metadata name="InformationRegister.TL_СверкаПакета" id="da8a0cc9-51c9-4b79-ae67-edd92a7ee900" configVersion="0a59b7e817f342131fee20cd15ffeeab0a26fb5e">
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.Статус" id="04d92b90-6b7a-431b-8f1f-7ccbfb1ccfe9"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Dimension.ИдентификаторПакета" id="40d6bc43-6462-45c0-ae7d-81b5da268810"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.НДС_ЦБ" id="4b4c5398-1384-4155-b27c-529345feda14"/>
@@ -120,20 +132,28 @@
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.СтрокДокументов" id="5aa20061-e19b-4127-adbf-dc681529d2d0"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.ПериодС" id="7141ed38-d0b7-4410-9951-01cf517073a7"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.СуммаЦБ" id="76d5d63c-5dd3-4312-a3d0-5d1827520416"/>
+			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.ДатаСмены" id="82e55e59-b526-4513-bdeb-af85e6ae870e"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.ВремяЗагрузки" id="9fdfee58-ed53-4255-84c6-0fbf110fc727"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.СтрокНСИ" id="a2866b6c-7173-400c-9fad-a08374452ce2"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.СуммаБП" id="a5644e81-99ce-4d14-93e2-86bcbe1a44e9"/>
+			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.ОСЭНомер" id="a752f6f1-dd7f-4ee1-bc58-790c8e84fd3a"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.Источник" id="b303b43e-3709-4e77-9ad3-e54deab595bf"/>
+			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.НомерСмены" id="e34f5a74-cd61-452b-96f4-6edd77b6a045"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.ПериодПо" id="ec82d079-b724-471c-9c38-e764c1541239"/>
+			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.КодАЗС" id="f011d56c-0cdc-480b-944a-6f6be654d96a"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.Расхождение" id="f8da351c-966a-4db0-bcac-f55c0ea2c947"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.Комментарий" id="f9f4823e-30cc-480e-851a-f1e9ccc51fcf"/>
 		</Metadata>
-		<Metadata name="InformationRegister.TL_СоответствиеИсточников" id="68ece156-add5-4c12-a647-c41c72449a10" configVersion="47b039a01b3a716cf982325112c4f9827c3e795b">
+		<Metadata name="InformationRegister.TL_СоответствиеИсточников" id="68ece156-add5-4c12-a647-c41c72449a10" configVersion="78564d5e655ab17b33f69e225a3e1fc25f1c2692">
 			<Metadata name="InformationRegister.TL_СоответствиеИсточников.Resource.ИдентификаторПоследнегоПакета" id="072ac11e-ddea-4187-b9cb-f2cfc9a5bb82"/>
 			<Metadata name="InformationRegister.TL_СоответствиеИсточников.Resource.СсылкаОбъект" id="26392425-d4e7-43ba-bc48-17cea0397075"/>
+			<Metadata name="InformationRegister.TL_СоответствиеИсточников.Resource.ДатаСмены" id="66439180-eb6b-4843-a60f-9f1fa5029fc3"/>
+			<Metadata name="InformationRegister.TL_СоответствиеИсточников.Resource.ОСЭНомер" id="752574fa-981d-44b5-93f0-c807221021e5"/>
 			<Metadata name="InformationRegister.TL_СоответствиеИсточников.Resource.ХешПоследнегоПакета" id="876deaba-b31d-4f27-b5ec-f54e903036f6"/>
 			<Metadata name="InformationRegister.TL_СоответствиеИсточников.Dimension.ИсточникUUID" id="a8a2bb21-5f76-4453-aba5-6b1803bd1834"/>
+			<Metadata name="InformationRegister.TL_СоответствиеИсточников.Resource.НомерСмены" id="a8aea0e9-e669-48ff-b97d-71d7eabfac2d"/>
 			<Metadata name="InformationRegister.TL_СоответствиеИсточников.Dimension.Тип" id="d6817ff3-36a2-46a8-8745-1ceb42920080"/>
+			<Metadata name="InformationRegister.TL_СоответствиеИсточников.Resource.КодАЗС" id="e7dda53d-be61-487b-935c-e21a32b598ac"/>
 			<Metadata name="InformationRegister.TL_СоответствиеИсточников.Resource.ДатаПоследнейЗагрузки" id="fc18d0d1-265e-4052-9202-9551db4c2696"/>
 		</Metadata>
 		<Metadata name="InformationRegister.TL_СтатусыЗагрузки" id="01dcbccb-f5f1-430e-b14e-12851a053091" configVersion="ea0c25981046c7c0b13465f0f95073ac0757a645">
@@ -145,6 +165,6 @@
 		<Metadata name="Language.Русский" id="a6f687a1-09e0-4378-98a3-1706272e96d6" configVersion="40431a8f91b9ffe5dcae8152def2660d7864129d"/>
 		<Metadata name="Role.TL_ОсновнаяРоль" id="5aead9c2-38df-4ab8-b11f-f681b7a91416" configVersion="790cb438e632e08c12c1797313ae0b9b2c75b7f7"/>
 		<Metadata name="Role.TL_ОсновнаяРоль.Rights" id="5aead9c2-38df-4ab8-b11f-f681b7a91416.0" configVersion="4977159cd5905c3842c0b7598993e9703a9897bc"/>
-		<Metadata name="Subsystem.TL_Загрузка" id="e12a4344-7bb6-4c6d-874b-87ec8226e8c1" configVersion="ca0847f5d1effbfe2f717e2cda05180a870c35e4"/>
+		<Metadata name="Subsystem.TL_Загрузка" id="e12a4344-7bb6-4c6d-874b-87ec8226e8c1" configVersion="f24c58a9e1edbb47d69d121c661030d4b83a6c35"/>
 	</ConfigVersions>
 </ConfigDumpInfo>

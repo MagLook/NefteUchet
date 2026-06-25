@@ -3,25 +3,32 @@
 	<InformationRegister uuid="68ece156-add5-4c12-a647-c41c72449a10">
 		<InternalInfo>
 			<xr:GeneratedType name="InformationRegisterRecord.TL_СоответствиеИсточников" category="Record">
-				<xr:TypeId>ffacef3e-36e9-415b-9943-bab283be04d4</xr:TypeId><xr:ValueId>eb1a2c9c-ba69-4047-9d8f-1d9cd235e9a3</xr:ValueId>
+				<xr:TypeId>ffacef3e-36e9-415b-9943-bab283be04d4</xr:TypeId>
+				<xr:ValueId>eb1a2c9c-ba69-4047-9d8f-1d9cd235e9a3</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="InformationRegisterManager.TL_СоответствиеИсточников" category="Manager">
-				<xr:TypeId>64f7033e-96fb-4e78-b29c-10aa8e004160</xr:TypeId><xr:ValueId>e523cb6e-1186-4e06-89bb-60feff39ed25</xr:ValueId>
+				<xr:TypeId>64f7033e-96fb-4e78-b29c-10aa8e004160</xr:TypeId>
+				<xr:ValueId>e523cb6e-1186-4e06-89bb-60feff39ed25</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="InformationRegisterSelection.TL_СоответствиеИсточников" category="Selection">
-				<xr:TypeId>faa62391-1343-4835-b6b8-7e4aa0791d95</xr:TypeId><xr:ValueId>34134aa9-0a17-4964-b5a9-f4e282cced15</xr:ValueId>
+				<xr:TypeId>faa62391-1343-4835-b6b8-7e4aa0791d95</xr:TypeId>
+				<xr:ValueId>34134aa9-0a17-4964-b5a9-f4e282cced15</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="InformationRegisterList.TL_СоответствиеИсточников" category="List">
-				<xr:TypeId>f52fb69f-c2e6-4dcd-a7ca-f64503669f5f</xr:TypeId><xr:ValueId>2f69ba71-00dd-4950-872f-52e50193c117</xr:ValueId>
+				<xr:TypeId>f52fb69f-c2e6-4dcd-a7ca-f64503669f5f</xr:TypeId>
+				<xr:ValueId>2f69ba71-00dd-4950-872f-52e50193c117</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="InformationRegisterRecordSet.TL_СоответствиеИсточников" category="RecordSet">
-				<xr:TypeId>b3f5e14e-bea8-449b-97ac-b1b06ff60e12</xr:TypeId><xr:ValueId>f3893a8e-3150-4e72-bb88-78e36925d25d</xr:ValueId>
+				<xr:TypeId>b3f5e14e-bea8-449b-97ac-b1b06ff60e12</xr:TypeId>
+				<xr:ValueId>f3893a8e-3150-4e72-bb88-78e36925d25d</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="InformationRegisterRecordKey.TL_СоответствиеИсточников" category="RecordKey">
-				<xr:TypeId>00bd4486-f755-4173-9654-d9711fd74002</xr:TypeId><xr:ValueId>f129733f-32be-4dbf-92c5-e6e1f534a4de</xr:ValueId>
+				<xr:TypeId>00bd4486-f755-4173-9654-d9711fd74002</xr:TypeId>
+				<xr:ValueId>f129733f-32be-4dbf-92c5-e6e1f534a4de</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="InformationRegisterRecordManager.TL_СоответствиеИсточников" category="RecordManager">
-				<xr:TypeId>ed5bd2f2-738b-4710-9bc8-0144dec08b7a</xr:TypeId><xr:ValueId>0c513dd4-2b49-4e69-9aa9-e87cbd70b0d9</xr:ValueId>
+				<xr:TypeId>ed5bd2f2-738b-4710-9bc8-0144dec08b7a</xr:TypeId>
+				<xr:ValueId>0c513dd4-2b49-4e69-9aa9-e87cbd70b0d9</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
@@ -68,7 +75,7 @@
 					</Synonym>
 					<Comment/>
 					<Type>
-						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 					</Type>
 					<PasswordMode>false</PasswordMode>
 					<Format/>
@@ -81,7 +88,7 @@
 					<MinValue xsi:nil="true"/>
 					<MaxValue xsi:nil="true"/>
 					<FillFromFillingValue>false</FillFromFillingValue>
-					<FillValue xsi:type="xs:string"/>
+					<FillValue xsi:nil="true"/>
 					<FillChecking>DontCheck</FillChecking>
 					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
 					<ChoiceParameterLinks/>
@@ -123,7 +130,7 @@
 					<MinValue xsi:nil="true"/>
 					<MaxValue xsi:nil="true"/>
 					<FillFromFillingValue>false</FillFromFillingValue>
-					<FillValue xsi:type="xs:string"/>
+					<FillValue xsi:nil="true"/>
 					<FillChecking>DontCheck</FillChecking>
 					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
 					<ChoiceParameterLinks/>
@@ -253,7 +260,7 @@
 					<MinValue xsi:nil="true"/>
 					<MaxValue xsi:nil="true"/>
 					<FillFromFillingValue>false</FillFromFillingValue>
-					<FillValue xsi:type="xs:string"/>
+					<FillValue xsi:nil="true"/>
 					<FillChecking>DontCheck</FillChecking>
 					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
 					<ChoiceParameterLinks/>
@@ -338,7 +345,7 @@
 					<MinValue xsi:nil="true"/>
 					<MaxValue xsi:nil="true"/>
 					<FillFromFillingValue>false</FillFromFillingValue>
-					<FillValue xsi:type="xs:string"/>
+					<FillValue xsi:nil="true"/>
 					<FillChecking>DontCheck</FillChecking>
 					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
 					<ChoiceParameterLinks/>
@@ -420,7 +427,7 @@
 					<MinValue xsi:nil="true"/>
 					<MaxValue xsi:nil="true"/>
 					<FillFromFillingValue>false</FillFromFillingValue>
-					<FillValue xsi:type="xs:string"/>
+					<FillValue xsi:nil="true"/>
 					<FillChecking>DontCheck</FillChecking>
 					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
 					<ChoiceParameterLinks/>

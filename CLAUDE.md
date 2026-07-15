@@ -1,4 +1,6 @@
-# TradeLedger — расширение 1С:БП 3.0
+# ElsyPlus Ledger — 1С-расширение БП 3.0 (Элси+ Учёт)
+
+> **Бренд ElsyPlus** (ребрендинг 2026-06-26). 1С-компонент продукта ElsyPlus Ledger. Прежнее имя: TradeLedger.cfe. Канон: память `reference-brand-elsyplus-naming`.
 
 ## Суть
 

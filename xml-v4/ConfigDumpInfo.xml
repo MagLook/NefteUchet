@@ -8,13 +8,13 @@
 		<Metadata name="CommonModule.TL_ApiКлиент" id="b9e0823e-4ce0-4c5f-ad5e-5b82c853025b" configVersion="41a8767b1f19561b1152e4ffdec3b971a0306872"/>
 		<Metadata name="CommonModule.TL_ApiКлиент.Module" id="b9e0823e-4ce0-4c5f-ad5e-5b82c853025b.0" configVersion="a4833dbc041036f8c0af002dc116e703eae1cfcf"/>
 		<Metadata name="CommonModule.TL_HTMLГенератор" id="d9769d16-7309-4295-8a8e-657daf929abb" configVersion="b0a70286b4ca62c4a4289c70adfc429c5498cc3b"/>
-		<Metadata name="CommonModule.TL_HTMLГенератор.Module" id="d9769d16-7309-4295-8a8e-657daf929abb.0" configVersion="48aee2971e9dbb9bf3d4e6bba061e4cbcdc33ff7"/>
+		<Metadata name="CommonModule.TL_HTMLГенератор.Module" id="d9769d16-7309-4295-8a8e-657daf929abb.0" configVersion="727deacab8d3cbcdedadc4c78cf5e5cd7fda42f2"/>
 		<Metadata name="CommonModule.TL_HTTPКлиентЦБ" id="c4967797-0e8c-4c4f-8fb2-9a537d6b1aaa" configVersion="803557fc8979dd683fa6ea391b01c3214ace444e"/>
 		<Metadata name="CommonModule.TL_HTTPКлиентЦБ.Module" id="c4967797-0e8c-4c4f-8fb2-9a537d6b1aaa.0" configVersion="5597e9e71b7c95cdb0162aa09cbe02ef194491e8"/>
 		<Metadata name="CommonModule.TL_Маппинг" id="af10be91-f79e-4d16-96a1-e0404333efb0" configVersion="d6152df3c66622919bf7964f91cac0d8b873ad59"/>
-		<Metadata name="CommonModule.TL_Маппинг.Module" id="af10be91-f79e-4d16-96a1-e0404333efb0.0" configVersion="d91beed0a64af3658410f26caa804361d5f27e3b"/>
+		<Metadata name="CommonModule.TL_Маппинг.Module" id="af10be91-f79e-4d16-96a1-e0404333efb0.0" configVersion="21db16ab7140d208e035f31fedbf279b20f0f146"/>
 		<Metadata name="CommonModule.TL_МаппингЦБ" id="d8e801bb-d166-4d36-b614-4835a6a18511" configVersion="fa210c7d371413de0cdadb239081d1ca8bcea173"/>
-		<Metadata name="CommonModule.TL_МаппингЦБ.Module" id="d8e801bb-d166-4d36-b614-4835a6a18511.0" configVersion="c03b6ef35433ba0be979611ce888a4e40c1fc7b7"/>
+		<Metadata name="CommonModule.TL_МаппингЦБ.Module" id="d8e801bb-d166-4d36-b614-4835a6a18511.0" configVersion="8c8103d4e27bff8ccaae865b6a3534064f5a78e6"/>
 		<Metadata name="CommonModule.TL_Настройки" id="6fdb9b09-9017-4c07-8156-d475dc030f58" configVersion="782e449ad04ef50359396a3bc83a504a2217ca2d"/>
 		<Metadata name="CommonModule.TL_Настройки.Module" id="6fdb9b09-9017-4c07-8156-d475dc030f58.0" configVersion="679a341d2a9387a163c8cbaa909e583b96c093ff"/>
 		<Metadata name="CommonModule.TL_ПомощьКонтент" id="3a5f8e29-7c4d-4a1b-9e7f-2c8d6b5a4e3f" configVersion="225042d38c6ba20ff2b0055d0f2731d347d44ae2"/>
@@ -24,15 +24,15 @@
 		<Metadata name="CommonModule.TL_Сверка" id="e6771014-2c06-4aff-b4ad-74eddde46f49" configVersion="4aff21b43416f35cb2d7a7fead0b31d2c922d190"/>
 		<Metadata name="CommonModule.TL_Сверка.Module" id="e6771014-2c06-4aff-b4ad-74eddde46f49.0" configVersion="acef339eccf19a7a699634b65c8a2a4933128ca5"/>
 		<Metadata name="CommonModule.TL_СозданиеДокументов" id="c27654b9-278b-4721-a365-95a99c45e9d3" configVersion="20bb94239a683275041e8c4f344c2f2f90e31560"/>
-		<Metadata name="CommonModule.TL_СозданиеДокументов.Module" id="c27654b9-278b-4721-a365-95a99c45e9d3.0" configVersion="f5fa6842e9f18fb7ffd9ee5b60ca8abba4313b83"/>
+		<Metadata name="CommonModule.TL_СозданиеДокументов.Module" id="c27654b9-278b-4721-a365-95a99c45e9d3.0" configVersion="c7506fe4bbd68b77642755a6f27b8061b6cf4d67"/>
 		<Metadata name="CommonModule.TL_СопуткаСервис" id="1d953e86-138f-4925-8964-4f97858b5793" configVersion="b1bc62a34d0f1d7632ed07cbf0b8b06bf2a4e1fb"/>
-		<Metadata name="CommonModule.TL_СопуткаСервис.Module" id="1d953e86-138f-4925-8964-4f97858b5793.0" configVersion="ae2f94bb2bd84a1dfe39fa6678b1e2106e5a8099"/>
-		<Metadata name="Configuration.TradeLedger" id="4b6de83e-a2da-454a-9492-f8f4184182aa" configVersion="ed062615d87384c96d4ec50d495afaecb2e1d8d5"/>
+		<Metadata name="CommonModule.TL_СопуткаСервис.Module" id="1d953e86-138f-4925-8964-4f97858b5793.0" configVersion="77ce8576d2057556d09697fe2dcc813131d613fb"/>
+		<Metadata name="Configuration.TradeLedger" id="4b6de83e-a2da-454a-9492-f8f4184182aa" configVersion="ded586858b96b89aa2e6f5f4a83f15faa034a791"/>
 		<Metadata name="DataProcessor.TL_Загрузка" id="0dabee39-c1f1-4b18-a85a-294c007e3704" configVersion="530e9ae9b78c0473ce0d43c68c184623b1efb0b3"/>
 		<Metadata name="DataProcessor.TL_Загрузка.Form.Форма" id="39830bb4-2136-4707-8a4d-7ef49c3fb159" configVersion="e85f6de2dc0cec6d72c8db8d140d52ddc21140ed"/>
-		<Metadata name="DataProcessor.TL_Загрузка.Form.Форма.Form" id="39830bb4-2136-4707-8a4d-7ef49c3fb159.0" configVersion="a23f2e374a09a1e00e939d4fbb81361ace89df11"/>
+		<Metadata name="DataProcessor.TL_Загрузка.Form.Форма.Form" id="39830bb4-2136-4707-8a4d-7ef49c3fb159.0" configVersion="10e428771dc6b7756bd828c91aad5ca42b1af83e"/>
 		<Metadata name="DataProcessor.TL_Загрузка.Form.ФормаДетали" id="a1b2c3d4-0001-4000-8000-000000000001" configVersion="c7ed89096fb2ca5e1e7d142cc57c777f21e4e634"/>
-		<Metadata name="DataProcessor.TL_Загрузка.Form.ФормаДетали.Form" id="a1b2c3d4-0001-4000-8000-000000000001.0" configVersion="eb2661c1b84d8a3456525e00db925b38e9d1f3e9"/>
+		<Metadata name="DataProcessor.TL_Загрузка.Form.ФормаДетали.Form" id="a1b2c3d4-0001-4000-8000-000000000001.0" configVersion="fbba518df3d1729c5d9877f1fc9c74f6f13ca7cb"/>
 		<Metadata name="DataProcessor.TL_ЗагрузкаИзКаталога" id="6e46c323-7496-4b9a-bbc6-63540f233b28" configVersion="784a6c60691326bd67493fcb8ee121c1a7c8c820"/>
 		<Metadata name="DataProcessor.TL_НастройкаОбменаОбщепит" id="fafd7ce2-3a6e-4cff-8b79-ab6313c23d51" configVersion="a6a3373af41980e5f73020a6abd7f529b563392f"/>
 		<Metadata name="DataProcessor.TL_НастройкаОбменаОбщепит.Form.Форма" id="e04b16c7-9203-4094-b3ad-552c2fc4f41b" configVersion="77e9384af28df0fc0c994e5a5fbd16eefbe8d055"/>
@@ -124,6 +124,11 @@
 			<Metadata name="InformationRegister.TL_ОшибкиЗагрузки.Resource.СообщениеОшибки" id="e24703f3-a3c9-46dc-a192-d44670fa141a"/>
 			<Metadata name="InformationRegister.TL_ОшибкиЗагрузки.Resource.ИсточникUUID" id="ed1559d9-d545-4091-9b71-4e75634fbca3"/>
 		</Metadata>
+		<Metadata name="InformationRegister.TL_РаскладкаБлюд" id="be515270-89ea-410d-8804-fc4547a4aba5" configVersion="d09fe8dc0c941a7141ccbbcf33d8821eb85a15a8">
+			<Metadata name="InformationRegister.TL_РаскладкаБлюд.Dimension.Ингредиент" id="78ea14dc-940f-45b0-a59d-6ec1a73f5277"/>
+			<Metadata name="InformationRegister.TL_РаскладкаБлюд.Dimension.Документ" id="934b2b75-c5f7-42a9-9053-b937467fa092"/>
+			<Metadata name="InformationRegister.TL_РаскладкаБлюд.Resource.Блюдо" id="d640e5f5-6be1-405f-bc47-b7da6ddc91b3"/>
+		</Metadata>
 		<Metadata name="InformationRegister.TL_СверкаПакета" id="da8a0cc9-51c9-4b79-ae67-edd92a7ee900" configVersion="0a59b7e817f342131fee20cd15ffeeab0a26fb5e">
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.Статус" id="04d92b90-6b7a-431b-8f1f-7ccbfb1ccfe9"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Dimension.ИдентификаторПакета" id="40d6bc43-6462-45c0-ae7d-81b5da268810"/>
@@ -165,6 +170,6 @@
 		<Metadata name="Language.Русский" id="a6f687a1-09e0-4378-98a3-1706272e96d6" configVersion="40431a8f91b9ffe5dcae8152def2660d7864129d"/>
 		<Metadata name="Role.TL_ОсновнаяРоль" id="5aead9c2-38df-4ab8-b11f-f681b7a91416" configVersion="790cb438e632e08c12c1797313ae0b9b2c75b7f7"/>
 		<Metadata name="Role.TL_ОсновнаяРоль.Rights" id="5aead9c2-38df-4ab8-b11f-f681b7a91416.0" configVersion="4977159cd5905c3842c0b7598993e9703a9897bc"/>
-		<Metadata name="Subsystem.TL_Загрузка" id="e12a4344-7bb6-4c6d-874b-87ec8226e8c1" configVersion="f24c58a9e1edbb47d69d121c661030d4b83a6c35"/>
+		<Metadata name="Subsystem.TL_Загрузка" id="e12a4344-7bb6-4c6d-874b-87ec8226e8c1" configVersion="b80c127725539406f4cb37a5fa99a32ff84407a9"/>
 	</ConfigVersions>
 </ConfigDumpInfo>

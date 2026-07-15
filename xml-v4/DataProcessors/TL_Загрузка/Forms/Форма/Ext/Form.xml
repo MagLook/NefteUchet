@@ -114,6 +114,17 @@
 							<CommandName>Form.Command.ОткрытьПомощь</CommandName>
 							<ExtendedTooltip name="КнопкаОткрытьПомощьРасширеннаяПодсказка" id="305"/>
 						</Button>
+						<Button name="КнопкаПроверитьОстатки" id="326">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.КомандаПроверитьОстатки</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проверить остатки</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="КнопкаПроверитьОстаткиРасширеннаяПодсказка" id="327"/>
+						</Button>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
@@ -181,6 +192,17 @@
 									<CommandName>Form.Command.КомандаУдалить</CommandName>
 									<ExtendedTooltip name="КомандаУдалитьРасширеннаяПодсказка" id="213"/>
 								</Button>
+								<Button name="КомандаЗачиститьАннулированные" id="321">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.КомандаЗачиститьАннулированные</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Зачистить аннулированные</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="КомандаЗачиститьАннулированныеРасширеннаяПодсказка" id="322"/>
+								</Button>
 								<Button name="КомандаПровести" id="216">
 									<Type>UsualButton</Type>
 									<CommandName>Form.Command.КомандаПровести</CommandName>
@@ -210,6 +232,21 @@
 									<ExtendedTooltip name="Поле1РасширеннаяПодсказка" id="318"/>
 									<Events>
 										<Event name="OnChange">ПоказатьПроведённыеПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ПолеПоказатьАннулированные" id="323">
+									<DataPath>ПоказыватьАннулированные</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Показать аннулированные</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ПолеПоказатьАннулированныеКонтекстноеМеню" id="324"/>
+									<ExtendedTooltip name="ПолеПоказатьАннулированныеРасширеннаяПодсказка" id="325"/>
+									<Events>
+										<Event name="OnChange">ПоказатьАннулированныеПриИзменении</Event>
 									</Events>
 								</InputField>
 							</ChildItems>
@@ -1059,6 +1096,17 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ПоказыватьАннулированные" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать аннулированные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="КомандаОбновить" id="1">
@@ -1120,6 +1168,36 @@
 				</v8:item>
 			</ToolTip>
 			<Action>УдалитьВыбранные</Action>
+		</Command>
+		<Command name="КомандаЗачиститьАннулированные" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зачистить аннулированные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подготовить к удалению все аннулированные документы канала за период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗачиститьАннулированные</Action>
+		</Command>
+		<Command name="КомандаПроверитьОстатки" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить остатки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Диагностика отрицательных остатков 41.02 по складу станции с разбором причин</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьОстатки</Action>
 		</Command>
 		<Command name="КомандаВыбратьВсеВнешние" id="5">
 			<Title>

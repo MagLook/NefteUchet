@@ -24,6 +24,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.TL_ПросмотрОшибок</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.TL_ПросмотрСверки</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.TL_МаппингОплат</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.TL_РаскладкаБлюд</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

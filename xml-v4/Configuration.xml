@@ -78,6 +78,7 @@
 			<CommonModule>TL_МаппингЦБ</CommonModule>
 			<CommonModule>TL_Сверка</CommonModule>
 			<CommonModule>TL_СопуткаСервис</CommonModule>
+			<CommonModule>TL_ПриемникV3</CommonModule>
 			<Catalog>Склады</Catalog>
 			<Catalog>Номенклатура</Catalog>
 			<Catalog>Контрагенты</Catalog>
@@ -100,6 +101,10 @@
 			<InformationRegister>TL_ОшибкиЗагрузки</InformationRegister>
 			<InformationRegister>TL_СверкаПакета</InformationRegister>
 			<InformationRegister>TL_РаскладкаБлюд</InformationRegister>
+			<InformationRegister>TL_ДоверенныеПолитики</InformationRegister>
+			<InformationRegister>TL_ТекущиеРевизии</InformationRegister>
+			<InformationRegister>TL_КомпонентыГруппы</InformationRegister>
+			<InformationRegister>TL_ПопыткиПриема</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

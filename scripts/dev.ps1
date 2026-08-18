@@ -1,7 +1,8 @@
 ﻿param(
     [switch]$NoCopy,
     [switch]$DumpCfe,
-    [switch]$Clean
+    [switch]$Clean,
+    [switch]$NoInit
 )
 
 [Console]::InputEncoding = [System.Text.Encoding]::UTF8
@@ -29,6 +30,11 @@ Write-Host "XML:        $xmlPath"
 Write-Host "Расширение: $ext"
 Write-Host ""
 
+if (-not $Clean) {
+    Write-Host "ОШИБКА: полная загрузка XML разрешена только с -Clean — сначала нужен резерв DumpConfigToFiles." -ForegroundColor Red
+    exit 1
+}
+
 # === Шаг 1: Копирование .bsl из src/ в xml-v4/ ===
 if (-not $NoCopy) {
     Write-Host "Шаг 1: Копирование .bsl из src/ в xml-v4/..." -ForegroundColor Yellow
@@ -45,8 +51,10 @@ if (-not $NoCopy) {
         @{ Src = (Join-Path $srcCommon 'TL_МаппингЦБ.bsl');            Dst = (Join-Path $xmlPath 'CommonModules\TL_МаппингЦБ\Ext\Module.bsl');            Name = 'TL_МаппингЦБ' },
         @{ Src = (Join-Path $srcCommon 'TL_Сверка.bsl');               Dst = (Join-Path $xmlPath 'CommonModules\TL_Сверка\Ext\Module.bsl');               Name = 'TL_Сверка' },
         @{ Src = (Join-Path $srcCommon 'TL_СопуткаСервис.bsl');        Dst = (Join-Path $xmlPath 'CommonModules\TL_СопуткаСервис\Ext\Module.bsl');        Name = 'TL_СопуткаСервис' },
+        @{ Src = (Join-Path $srcCommon 'TL_ПриемникV3.bsl');           Dst = (Join-Path $xmlPath 'CommonModules\TL_ПриемникV3\Ext\Module.bsl');           Name = 'TL_ПриемникV3' },
         @{ Src = (Join-Path $srcDP 'TL_Загрузка\Forms\Форма\Module.bsl');              Dst = (Join-Path $xmlPath 'DataProcessors\TL_Загрузка\Forms\Форма\Ext\Form\Module.bsl');              Name = 'TL_Загрузка форма' },
         @{ Src = (Join-Path $srcDP 'TL_Загрузка\Forms\ФормаДетали\Module.bsl');         Dst = (Join-Path $xmlPath 'DataProcessors\TL_Загрузка\Forms\ФормаДетали\Ext\Form\Module.bsl');         Name = 'TL_Загрузка ФормаДетали' },
+        @{ Src = (Join-Path $srcDP 'TL_ПросмотрОшибок\Forms\Форма\Module.bsl');         Dst = (Join-Path $xmlPath 'DataProcessors\TL_ПросмотрОшибок\Forms\Форма\Ext\Form\Module.bsl');         Name = 'TL_ПросмотрОшибок форма' },
         @{ Src = (Join-Path $srcDP 'TL_НастройкаРасширения\Forms\Форма\Module.bsl');   Dst = (Join-Path $xmlPath 'DataProcessors\TL_НастройкаРасширения\Forms\Форма\Ext\Form\Module.bsl');   Name = 'TL_НастройкаРасширения форма' }
     )
 
@@ -77,11 +85,10 @@ if (-not (Test-Path $BuildDir)) {
     New-Item -ItemType Directory -Path $BuildDir | Out-Null
 }
 
-# === Шаг 1.5 (при -Clean): Удалить расширение из базы ===
+# === Шаг 1.5 (при -Clean): Резервная выгрузка расширения ===
 if ($Clean) {
     Write-Host "Шаг 1.5: Выгрузка текущего расширения из базы..." -ForegroundColor Magenta
-    $dumpDir = Join-Path $BuildDir 'xml-dump-live'
-    if (Test-Path $dumpDir) { Remove-Item $dumpDir -Recurse -Force }
+    $dumpDir = Join-Path $BuildDir ('xml-dump-live-' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
     New-Item -ItemType Directory -Path $dumpDir | Out-Null
 
     $dumpLogPath = Join-Path $BuildDir 'dev_dump.log'
@@ -100,7 +107,8 @@ if ($Clean) {
     if ($proc.ExitCode -eq 0) {
         Write-Host "  Выгружено в $dumpDir" -ForegroundColor Green
     } else {
-        Write-Host "  Выгрузка не удалась (код $($proc.ExitCode)) — продолжаем" -ForegroundColor Yellow
+        Write-Host "  ОШИБКА резервной выгрузки: код $($proc.ExitCode)" -ForegroundColor Red
+        exit 1
     }
     Write-Host ""
 }
@@ -140,10 +148,55 @@ if (Test-Path $logPath) {
 }
 Write-Host ""
 
+# === Шаг 2.25: Обязательная проверка модулей ===
+Write-Host "Шаг 2.25: Проверка модулей..." -ForegroundColor Yellow
+
+$checkLogPath = Join-Path $BuildDir 'dev_check_modules.log'
+if (Test-Path $checkLogPath) {
+    Remove-Item -LiteralPath $checkLogPath -Force
+}
+$checkArgs = @(
+    "DESIGNER",
+    "/F", "`"$base`"",
+    "/N", "`"$user`"",
+    "/P", "`"$pwd`"",
+    "/CheckModules",
+    "-Server",
+    "-ThinClient",
+    "-ExternalConnection",
+    "-Extension", $ext,
+    "/Out", "`"$checkLogPath`"",
+    "/DisableStartupDialogs",
+    "/DisableStartupMessages"
+)
+
+$proc = Start-Process -FilePath $platform -ArgumentList $checkArgs -Wait -PassThru -NoNewWindow
+$checkLogText = ""
+if (Test-Path $checkLogPath) {
+    $checkLogText = [System.IO.File]::ReadAllText($checkLogPath, [System.Text.Encoding]::GetEncoding(1251)).Trim()
+}
+$checkSucceeded = $proc.ExitCode -eq 0 -and (
+    -not $checkLogText -or
+    $checkLogText -match '^Синтаксических ошибок не обнаружено!?$'
+)
+if (-not $checkSucceeded) {
+    Write-Host "  ОШИБКА проверки модулей: код $($proc.ExitCode)" -ForegroundColor Red
+    if ($checkLogText) {
+        Write-Host "  Лог:" -ForegroundColor Red
+        $checkLogText | Write-Host
+    }
+    exit 1
+}
+Write-Host "  Проверка модулей -> OK: синтаксических ошибок не обнаружено" -ForegroundColor Green
+Write-Host ""
+
 # === Шаг 2.5: Инициализация настроек через COM (py -3-32) ===
-Write-Host "Шаг 2.5: Инициализация настроек ГИГ через COM..." -ForegroundColor Yellow
-$initPy = Join-Path $ScriptDir 'init_defaults.py'
-if (-not (Test-Path $initPy)) {
+if ($NoInit) {
+    Write-Host "Шаг 2.5: Инициализация пропущена (-NoInit)" -ForegroundColor Gray
+} else {
+    Write-Host "Шаг 2.5: Инициализация настроек ГИГ через COM..." -ForegroundColor Yellow
+    $initPy = Join-Path $ScriptDir 'init_defaults.py'
+    if (-not (Test-Path $initPy)) {
     # Создаём скрипт инициализации
     @'
 # -*- coding: utf-8 -*-
@@ -157,12 +210,13 @@ if not conn.TL_Настройки.НастройкиЗаполнены():
 else:
     print('  Настройки уже заполнены')
 '@ | Set-Content -Path $initPy -Encoding UTF8
-}
-$pyProc = Start-Process -FilePath 'py' -ArgumentList @('-3-32', $initPy) -Wait -PassThru -NoNewWindow
-if ($pyProc.ExitCode -eq 0) {
-    Write-Host "  Инициализация -> OK" -ForegroundColor Green
-} else {
-    Write-Host "  Инициализация -> ошибка (не критично)" -ForegroundColor Yellow
+    }
+    $pyProc = Start-Process -FilePath 'py' -ArgumentList @('-3-32', $initPy) -Wait -PassThru -NoNewWindow
+    if ($pyProc.ExitCode -eq 0) {
+        Write-Host "  Инициализация -> OK" -ForegroundColor Green
+    } else {
+        Write-Host "  Инициализация -> ошибка (не критично)" -ForegroundColor Yellow
+    }
 }
 Write-Host ""
 

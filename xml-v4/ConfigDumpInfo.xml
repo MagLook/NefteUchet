@@ -14,7 +14,7 @@
 		<Metadata name="CommonModule.TL_Маппинг" id="af10be91-f79e-4d16-96a1-e0404333efb0" configVersion="d6152df3c66622919bf7964f91cac0d8b873ad59"/>
 		<Metadata name="CommonModule.TL_Маппинг.Module" id="af10be91-f79e-4d16-96a1-e0404333efb0.0" configVersion="21db16ab7140d208e035f31fedbf279b20f0f146"/>
 		<Metadata name="CommonModule.TL_МаппингЦБ" id="d8e801bb-d166-4d36-b614-4835a6a18511" configVersion="fa210c7d371413de0cdadb239081d1ca8bcea173"/>
-		<Metadata name="CommonModule.TL_МаппингЦБ.Module" id="d8e801bb-d166-4d36-b614-4835a6a18511.0" configVersion="8c8103d4e27bff8ccaae865b6a3534064f5a78e6"/>
+		<Metadata name="CommonModule.TL_МаппингЦБ.Module" id="d8e801bb-d166-4d36-b614-4835a6a18511.0" configVersion="8f133b0468d8a39046b6beceba68747b0cef3492"/>
 		<Metadata name="CommonModule.TL_Настройки" id="6fdb9b09-9017-4c07-8156-d475dc030f58" configVersion="782e449ad04ef50359396a3bc83a504a2217ca2d"/>
 		<Metadata name="CommonModule.TL_Настройки.Module" id="6fdb9b09-9017-4c07-8156-d475dc030f58.0" configVersion="679a341d2a9387a163c8cbaa909e583b96c093ff"/>
 		<Metadata name="CommonModule.TL_ПомощьКонтент" id="3a5f8e29-7c4d-4a1b-9e7f-2c8d6b5a4e3f" configVersion="225042d38c6ba20ff2b0055d0f2731d347d44ae2"/>
@@ -26,8 +26,10 @@
 		<Metadata name="CommonModule.TL_СозданиеДокументов" id="c27654b9-278b-4721-a365-95a99c45e9d3" configVersion="20bb94239a683275041e8c4f344c2f2f90e31560"/>
 		<Metadata name="CommonModule.TL_СозданиеДокументов.Module" id="c27654b9-278b-4721-a365-95a99c45e9d3.0" configVersion="c7506fe4bbd68b77642755a6f27b8061b6cf4d67"/>
 		<Metadata name="CommonModule.TL_СопуткаСервис" id="1d953e86-138f-4925-8964-4f97858b5793" configVersion="b1bc62a34d0f1d7632ed07cbf0b8b06bf2a4e1fb"/>
-		<Metadata name="CommonModule.TL_СопуткаСервис.Module" id="1d953e86-138f-4925-8964-4f97858b5793.0" configVersion="77ce8576d2057556d09697fe2dcc813131d613fb"/>
-		<Metadata name="Configuration.TradeLedger" id="4b6de83e-a2da-454a-9492-f8f4184182aa" configVersion="ded586858b96b89aa2e6f5f4a83f15faa034a791"/>
+		<Metadata name="CommonModule.TL_СопуткаСервис.Module" id="1d953e86-138f-4925-8964-4f97858b5793.0" configVersion="f807fe0e9618f956e87d27497626de1b4968f143"/>
+		<Metadata name="CommonModule.TL_ПриемникV3" id="8f07587d-c1ad-5474-a34c-2c2c4b961bfc" configVersion="8a42f7ebdf7fee8a0401fa03d1becec0dd842e21"/>
+		<Metadata name="CommonModule.TL_ПриемникV3.Module" id="8f07587d-c1ad-5474-a34c-2c2c4b961bfc.0" configVersion="479c4a82f5dd09d7bb97bc75e7bf27297ecb8520"/>
+		<Metadata name="Configuration.TradeLedger" id="4b6de83e-a2da-454a-9492-f8f4184182aa" configVersion="70eee3857a404433c778acc61ca616330b78db79"/>
 		<Metadata name="DataProcessor.TL_Загрузка" id="0dabee39-c1f1-4b18-a85a-294c007e3704" configVersion="530e9ae9b78c0473ce0d43c68c184623b1efb0b3"/>
 		<Metadata name="DataProcessor.TL_Загрузка.Form.Форма" id="39830bb4-2136-4707-8a4d-7ef49c3fb159" configVersion="e85f6de2dc0cec6d72c8db8d140d52ddc21140ed"/>
 		<Metadata name="DataProcessor.TL_Загрузка.Form.Форма.Form" id="39830bb4-2136-4707-8a4d-7ef49c3fb159.0" configVersion="10e428771dc6b7756bd828c91aad5ca42b1af83e"/>
@@ -79,12 +81,14 @@
 			<Metadata name="Enum.TL_ПолеОшибки.EnumValue.Прочее" id="cc496d6d-5fb3-4bfa-bb22-075835097e29"/>
 			<Metadata name="Enum.TL_ПолеОшибки.EnumValue.Договор" id="db5d8da1-8e7c-4ed7-a765-0f8430ceac67"/>
 		</Metadata>
-		<Metadata name="Enum.TL_СтатусПакета" id="e220d41d-c1b5-4063-a6ee-65cf9e131c5b" configVersion="6bfcc10d7977a705f592b1d3ed944d593ffa3b54">
+		<Metadata name="Enum.TL_СтатусПакета" id="e220d41d-c1b5-4063-a6ee-65cf9e131c5b" configVersion="eb1ced18b6a5c3f070dedd92bc65d95c332eaaaf">
+			<Metadata name="Enum.TL_СтатусПакета.EnumValue.ЗаблокированоМаппингом" id="1116179f-3777-5327-8ddd-28b140901e37"/>
 			<Metadata name="Enum.TL_СтатусПакета.EnumValue.ПринятоЧастично" id="7dcf348c-6d9e-4812-9bb0-a64624f3ebc2"/>
 			<Metadata name="Enum.TL_СтатусПакета.EnumValue.Отклонено" id="9512e688-eab6-47ae-bdde-4c367ce46c1a"/>
 			<Metadata name="Enum.TL_СтатусПакета.EnumValue.ПринятоЦеликом" id="98ee0577-ab93-4484-bdc7-29c3712831ba"/>
 			<Metadata name="Enum.TL_СтатусПакета.EnumValue.Получен" id="bd9aff75-4b2b-4dde-ab91-51cee011df60"/>
 			<Metadata name="Enum.TL_СтатусПакета.EnumValue.Валидирован" id="c894ab97-7e62-46bb-881a-c399a3f1f4d0"/>
+			<Metadata name="Enum.TL_СтатусПакета.EnumValue.ТребуетПроверки" id="4c938a75-ae71-5c08-9716-5b8f356b9f35"/>
 		</Metadata>
 		<Metadata name="Enum.TL_ТипОбъектаИсточника" id="48848662-3963-4420-b34f-5faad4aa58a1" configVersion="2ac8d996f17e4261744da2c33fbff2700470e004">
 			<Metadata name="Enum.TL_ТипОбъектаИсточника.EnumValue.Списание" id="04534c88-a850-42d9-a0dc-56089eac1f6e"/>
@@ -148,6 +152,52 @@
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.КодАЗС" id="f011d56c-0cdc-480b-944a-6f6be654d96a"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.Расхождение" id="f8da351c-966a-4db0-bcac-f55c0ea2c947"/>
 			<Metadata name="InformationRegister.TL_СверкаПакета.Resource.Комментарий" id="f9f4823e-30cc-480e-851a-f1e9ccc51fcf"/>
+		</Metadata>
+		<Metadata name="InformationRegister.TL_ДоверенныеПолитики" id="c8a05397-4d9c-5284-921f-64142daaa066" configVersion="a629bb5d648017d88fa21b2c1e885b34c7426698">
+			<Metadata name="InformationRegister.TL_ДоверенныеПолитики.Dimension.CompanyID" id="08757e8c-a0fb-58a7-b135-5ad22508d699"/>
+			<Metadata name="InformationRegister.TL_ДоверенныеПолитики.Dimension.StationID" id="ec99b2b0-2f82-5351-a319-1e80990aa623"/>
+			<Metadata name="InformationRegister.TL_ДоверенныеПолитики.Resource.PolicyID" id="c4c943c5-38b6-5e94-98a5-e8f66d19ca84"/>
+			<Metadata name="InformationRegister.TL_ДоверенныеПолитики.Resource.РевизияПолитики" id="877c5a52-e200-5e2f-b56f-463dfeb8ad05"/>
+			<Metadata name="InformationRegister.TL_ДоверенныеПолитики.Resource.ХешПолитики" id="9091b967-8f03-52e0-bbfd-7a7bf41e431c"/>
+			<Metadata name="InformationRegister.TL_ДоверенныеПолитики.Resource.TransportProducer" id="374935f0-e900-59bf-b9e4-9c29a96b65fa"/>
+			<Metadata name="InformationRegister.TL_ДоверенныеПолитики.Resource.ДатаОтсечкиТранспорта" id="73f52b83-ca32-5c1d-b8e8-1d9769e368fd"/>
+			<Metadata name="InformationRegister.TL_ДоверенныеПолитики.Resource.ОрганизацияUUID" id="6e6a5191-56eb-5725-978a-d7b9c9ac28a3"/>
+			<Metadata name="InformationRegister.TL_ДоверенныеПолитики.Resource.СкладUUID" id="aaaf2d73-d3bc-5131-8dfc-8c73dd1aeb39"/>
+			<Metadata name="InformationRegister.TL_ДоверенныеПолитики.Resource.Активна" id="126a2f4c-8ea2-5377-b6fe-eb45ce01653c"/>
+		</Metadata>
+		<Metadata name="InformationRegister.TL_ТекущиеРевизии" id="28e0999d-0a1c-598b-8409-d7acfe0876d3" configVersion="19344da73ce3e21011a8c2192f3928c59a5451f9">
+			<Metadata name="InformationRegister.TL_ТекущиеРевизии.Dimension.BusinessKeyHash" id="36a7a08a-8a08-5668-bd03-c87bcda44e64"/>
+			<Metadata name="InformationRegister.TL_ТекущиеРевизии.Resource.BusinessShiftID" id="30ff2020-2758-537c-a592-332de49bae8b"/>
+			<Metadata name="InformationRegister.TL_ТекущиеРевизии.Resource.ИдентификаторПакета" id="212e480e-9ace-56ea-8b75-64e1d4328cac"/>
+			<Metadata name="InformationRegister.TL_ТекущиеРевизии.Resource.РевизияПакета" id="9fc09d11-ad42-5d92-9f42-9b830372bc1b"/>
+			<Metadata name="InformationRegister.TL_ТекущиеРевизии.Resource.ХешПакета" id="fc25bb9a-b927-5442-a6ed-026cb2b9f123"/>
+			<Metadata name="InformationRegister.TL_ТекущиеРевизии.Resource.TransportProducer" id="1f991b1c-0260-5330-bf7c-f128bd0e2f94"/>
+			<Metadata name="InformationRegister.TL_ТекущиеРевизии.Resource.ПринятоВ" id="8f071d66-4a78-5feb-8de6-440e1ed6bdeb"/>
+		</Metadata>
+		<Metadata name="InformationRegister.TL_КомпонентыГруппы" id="274ac18f-a02f-54f4-9c61-3de7a2e6ef78" configVersion="e475e04e0f2427c31e416d6a259f049d35117791">
+			<Metadata name="InformationRegister.TL_КомпонентыГруппы.Dimension.BusinessKeyHash" id="f0e03110-fc94-5d0d-b13a-7a95a986ed52"/>
+			<Metadata name="InformationRegister.TL_КомпонентыГруппы.Dimension.Порядок" id="b7760fb2-e83c-584f-bec9-41afef839e7d"/>
+			<Metadata name="InformationRegister.TL_КомпонентыГруппы.Dimension.Тип" id="0e5efe33-adc5-5097-b1ea-9825e4e5bc4b"/>
+			<Metadata name="InformationRegister.TL_КомпонентыГруппы.Dimension.ИсточникUUID" id="c19bf55f-c74c-5a49-a19d-dd6d92ed7a1f"/>
+			<Metadata name="InformationRegister.TL_КомпонентыГруппы.Resource.SourceHash" id="714ed4ec-7d23-55a9-af93-7012f1f13f0e"/>
+			<Metadata name="InformationRegister.TL_КомпонентыГруппы.Resource.TargetHash" id="5225835f-ea18-5aa9-a812-db3d67069235"/>
+			<Metadata name="InformationRegister.TL_КомпонентыГруппы.Resource.СсылкаОбъект" id="17e5ef7c-7e20-5cfe-8c97-df2c5d87e0d0"/>
+			<Metadata name="InformationRegister.TL_КомпонентыГруппы.Resource.Проведен" id="ab3b7534-b093-5e7c-b95f-f7284a4f6e12"/>
+			<Metadata name="InformationRegister.TL_КомпонентыГруппы.Resource.РевизияПакета" id="0ce3bcc2-93a8-5d2f-87fe-bf0937a4f74a"/>
+		</Metadata>
+		<Metadata name="InformationRegister.TL_ПопыткиПриема" id="b1aeefd7-080f-5557-a065-8ddea794dc68" configVersion="99e37be65752549e81ebbfbb1ca8281fd38c20b5">
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Dimension.AttemptID" id="71be175d-c260-5f85-b4ff-5b3930aef717"/>
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Resource.BusinessKeyHash" id="f0ea938e-0554-5e39-986e-1c16d2996270"/>
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Resource.BusinessShiftID" id="d7bcc5e6-0450-58fb-9ad8-f6ecac587fd6"/>
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Resource.ИдентификаторПакета" id="1c6299a4-c61f-57b8-9336-46d381da2623"/>
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Resource.РевизияПакета" id="6d0ac65b-2438-5494-8a37-015e33eb25f0"/>
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Resource.ХешПакета" id="878c937e-3ab0-54cd-ad91-81912aa5ca9a"/>
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Resource.TransportProducer" id="3e419548-33c6-5cee-84ee-3cc570dce93f"/>
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Resource.НомерПопытки" id="f4d938fc-2296-5cda-ae90-9955386111fe"/>
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Resource.Результат" id="be8567cf-eb72-5edc-baad-56211ca1740a"/>
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Resource.КодОшибки" id="09173a61-8717-5716-83ab-5cf56c8848f2"/>
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Resource.ОписаниеОшибки" id="9b31f4bf-6aa0-51d9-ad3d-f6c423d2ef4b"/>
+			<Metadata name="InformationRegister.TL_ПопыткиПриема.Resource.ПолученоВ" id="e2f4c3e9-f071-5611-ac50-7d7de57a05a7"/>
 		</Metadata>
 		<Metadata name="InformationRegister.TL_СоответствиеИсточников" id="68ece156-add5-4c12-a647-c41c72449a10" configVersion="78564d5e655ab17b33f69e225a3e1fc25f1c2692">
 			<Metadata name="InformationRegister.TL_СоответствиеИсточников.Resource.ИдентификаторПоследнегоПакета" id="072ac11e-ddea-4187-b9cb-f2cfc9a5bb82"/>

@@ -1,0 +1,103 @@
+{
+  "database": "Elsy AZK central production",
+  "captured_at": "2026-08-09T14:07:11",
+  "period": {
+    "from": "2026-06-11T00:00:00",
+    "to": "2026-08-10T00:00:00"
+  },
+  "documents_station_208": {
+    "ПоступлениеТоваровУслугНаАЗК": {
+      "exists": true,
+      "total": 82,
+      "posted": 81,
+      "draft": 1,
+      "marked": 0,
+      "first_date": "11.06.2026 0:00:00",
+      "last_date": "06.08.2026 13:37:20"
+    },
+    "ВозвратТоваровПоставщикуНаАЗК": {
+      "exists": false
+    },
+    "ВозвратТоваровПоставщику": {
+      "exists": true,
+      "total": 0,
+      "posted": 0,
+      "draft": 0,
+      "marked": 0,
+      "first_date": "",
+      "last_date": ""
+    },
+    "ОтчетОРозничныхПродажах": {
+      "exists": true,
+      "total": 61,
+      "posted": 61,
+      "draft": 0,
+      "marked": 0,
+      "first_date": "10.06.2026 23:53:29",
+      "last_date": "05.08.2026 23:50:14"
+    },
+    "ВыпускПродукции": {
+      "exists": true,
+      "total": 59,
+      "posted": 59,
+      "draft": 0,
+      "marked": 0,
+      "first_date": "11.06.2026 15:18:27",
+      "last_date": "05.08.2026 23:49:54"
+    },
+    "ТТК": {
+      "exists": true,
+      "total": 0,
+      "posted": 0,
+      "draft": 0,
+      "marked": 0,
+      "first_date": "",
+      "last_date": ""
+    }
+  },
+  "purchase_goods": {
+    "rows": 964,
+    "documents": 82,
+    "количество": 0.0,
+    "сумма": 2836000.24
+  },
+  "retail_goods": {
+    "rows": 7304,
+    "documents": 59,
+    "количество": 0.0,
+    "сумма": 2296957.0
+  },
+  "retail_returns": {
+    "rows": 0,
+    "documents": 0,
+    "количество": 0.0,
+    "сумма": 0.0
+  },
+  "purchase_documents_skipped_by_exporter": {
+    "Услуги": {
+      "rows": 0,
+      "documents": 0
+    },
+    "ВозвратнаяТара": {
+      "rows": 0,
+      "documents": 0
+    }
+  },
+  "returns_all_stations": {
+    "ВозвратТоваровПоставщикуНаАЗК": {
+      "exists": false
+    },
+    "ВозвратТоваровПоставщику": {
+      "exists": true,
+      "total": 0,
+      "posted": 0,
+      "last_date": ""
+    }
+  },
+  "foodservice_dish_coverage": {
+    "sold_dishes": 32,
+    "released_dishes": 32,
+    "sold_without_release": [],
+    "release_rows_without_recipe": []
+  }
+}

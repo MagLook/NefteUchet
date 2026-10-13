@@ -2,8 +2,12 @@
     [switch]$NoCopy,
     [switch]$DumpCfe,
     [switch]$Clean,
-    [switch]$NoInit
+    [switch]$NoInit,
+    [switch]$DumpOnly
 )
+
+# -DumpOnly — только выгрузить расширение из базы и выйти: ни копирования, ни загрузки.
+if ($DumpOnly) { $Clean = $true; $NoCopy = $true }
 
 [Console]::InputEncoding = [System.Text.Encoding]::UTF8
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
@@ -111,6 +115,13 @@ if ($Clean) {
         exit 1
     }
     Write-Host ""
+}
+
+# -DumpOnly: выгрузка сделана — остановиться ДО загрузки. Сверить каталог выгрузки
+# с xml-v4 и только потом запускать загрузку отдельной командой.
+if ($DumpOnly) {
+    Write-Host "Только выгрузка (-DumpOnly): в базу ничего не загружено. Сверьте $dumpDir с $xmlPath, затем запускайте загрузку." -ForegroundColor Cyan
+    exit 0
 }
 
 # === Шаг 2: LoadConfigFromFiles + UpdateDBCfg ===
